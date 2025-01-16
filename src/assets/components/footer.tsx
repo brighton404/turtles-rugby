@@ -50,8 +50,9 @@ const footer: React.FC = () => {
                 </div>
                 <div className="column flex-spread gap-10">
                     <div className="Collecter row gap-2">
-                        <input type="text" id="newsletter" />
-                        <Button color={ButtonColor.Secondary} state={ButtonState.Default} isOutlined={false} > Coming soon </Button>
+                        {/* <label htmlFor="newsletter" className="no_truncate" id="newsletterInputLabel">Your Email</label> */}
+                        <input type="text" id="newsletter" placeholder="Your Email" />
+                        <Button color={ButtonColor.Primary} state={ButtonState.Default} isOutlined={false} > Coming soon </Button>
                     </div>                    
                     <span className="truncate Text_S_Normal">By subscribing you agree to with our Privacy Policy and provide consent to receive updates from the club.</span>
                 </div>
@@ -61,14 +62,14 @@ const footer: React.FC = () => {
             <hr />
             <div className="row gap-20 m-column">
                 <div className="row flex-spread gap-20 m-column">
-                    <span>© 2024 Malindi Turtles Rugby Club. All rights reserved.</span>
-                    <div className="row gap-10 m-flex-wrap">
+                    <span className="m-txt_Middle">© 2024 Malindi Turtles Rugby Club. All rights reserved.</span>
+                    <div className="row m-align-y m-content-x1 gap-10 m-flex-wrap">
                         <a href="">Privacy Policy</a>
                         <a href="">Terms of Service</a>
                         <a href="">Cookies Settings</a>
                     </div>
                 </div>
-                <div className="row gap-10">
+                <div className="row m-align-y m-content-x1 gap-10">
                     <a href="https://www.facebook.com/MalindiTurtlesRugby" target="_blank"><Icons variant="facebook"/></a>
                     <a href="https://www.instagram.com/malinditurtlesrugby/" target="_blank"><Icons variant="instagram"/></a>
                     <a href="https://x.com/RugbyMalindi" target="_blank"><Icons variant="twitter"/></a>

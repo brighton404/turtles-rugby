@@ -96,6 +96,12 @@ footer {
   max-width: 100%;
   overflow: hidden;
 }
+footer #newsletterInputLabel {
+  display: flex;
+  position: absolute;
+  margin-left: 10px;
+  transform: translateY(50%);
+}
 footer .details {
   gap: var(--Pd_40);
 }
@@ -103,6 +109,9 @@ footer .link {
   display: flex;
   width: 100%;
   padding: var(--Pd_8) var(--Pd_0);
+}
+footer hr {
+  width: 100%;
 }
 footer .link a {
   display: flex;
@@ -114,6 +123,18 @@ footer .link a {
 }
 footer .link a:hover {
   text-decoration: underline;
+}
+footer .Newsletter-form input {
+  border: none;
+}
+footer .Newsletter-form .Collecter {
+  display: flex;
+  overflow: hidden;
+  align-self: stretch;
+  max-width: 100%;
+  border: 1px solid black;
+  border-radius: 10px;
+  height: 50px;
 }
 .hero {
   width: 100%;
@@ -788,6 +809,7 @@ h6{ font-size: var(--Txt_20); font-weight: bold;}
 /*Text effects*/
 .bold {font-weight: 500;}
 .truncate { text-wrap: wrap;}
+.no_truncate { text-wrap: nowrap;}
 .no_margins { margin: 0px;}
 .txt_Middle { text-align: center;}
 .no_underline {
@@ -803,26 +825,26 @@ h6{ font-size: var(--Txt_20); font-weight: bold;}
 .heroCanvas .img {  display: flex;  margin: 0px;  padding: 0px;  object-fit:contain;  background-repeat: no-repeat;  background-size: cover; }
 
 .heroCanvas .one {
-  width: 18%;  height: 75%;  border-radius: 0px 20px 0px 0px;  background-position: top center;  background-image: url("src/assets/media/hero/DSC_2154.png");  transition: width 0.3s;}
+  width: 18%;  height: 75%;  border-radius: 0px 20px 0px 0px;  background-position: top center;  background-image: url("./assets/media/hero/DSC_2154.png");  transition: width 0.3s;}
 .heroCanvas .one:hover { width: 24%;}
 
 .heroCanvas .two {
-  height: 90%;  width: 14%;  background-position: top center;  border-radius: 20px 20px 0px 0px;  background-image: url("src/assets/media/hero/DSC_1690.jpg");  transition: width 0.3s;}
+  height: 90%;  width: 14%;  background-position: top center;  border-radius: 20px 20px 0px 0px;  background-image: url("./assets/media/hero/DSC_1690.jpg");  transition: width 0.3s;}
 .heroCanvas .two:hover { width: 24%;}
 
 .heroCanvas .three {
-  height: 70%;  width: 18%;  background-position: top center;  border-radius: 20px 20px 0px 0px;  background-image: url("src/assets/media/hero/DSC_1448.jpg"); transition: width 0.3s;}
+  height: 70%;  width: 18%;  background-position: top center;  border-radius: 20px 20px 0px 0px;  background-image: url("./assets/media/hero/DSC_1448.jpg"); transition: width 0.3s;}
 .heroCanvas .three:hover { width: 24%;}
 
-.heroCanvas .four { height: 90%; width: 24%; background-position: top center; border-radius: 20px 20px 0px 0px; background-image: url("src/assets/media/hero/DSC_1644.jpg"); transition: width 0.3s;}
+.heroCanvas .four { height: 90%; width: 24%; background-position: top center; border-radius: 20px 20px 0px 0px; background-image: url("./assets/media/hero/DSC_1644.jpg"); transition: width 0.3s;}
 .heroCanvas .four:hover { width: 30%;}
 
 .heroCanvas .five {
-  height: 68%;  width: 16%;  background-position: top left;  border-radius: 20px 20px 0px 0px;  background-image: url("src/assets/media/hero/DSC_1372.jpg");  transition: width 0.3s;}
+  height: 68%;  width: 16%;  background-position: top left;  border-radius: 20px 20px 0px 0px;  background-image: url("./assets/media/hero/DSC_1372.jpg");  transition: width 0.3s;}
 .heroCanvas .five:hover { width: 24%;}
 
 .heroCanvas .six {
-  width: 20%;  height: 75%;  background-position: top center;  border-radius: 20px 0px 0px 0px; background-image: url("src/assets/media/hero/DSC_1383.jpg"); transition: width 0.3s;}
+  width: 20%;  height: 75%;  background-position: top center;  border-radius: 20px 0px 0px 0px; background-image: url("./assets/media/hero/DSC_1383.jpg"); transition: width 0.3s;}
 .heroCanvas .six:hover { width: 24%;}
 
 
@@ -831,23 +853,23 @@ h6{ font-size: var(--Txt_20); font-weight: bold;}
 .heroCanvas .img {  display: flex;  margin: 0px;  padding: 0px;  object-fit:contain;  background-repeat: no-repeat;  background-size: cover; }
 
 .hero-about .heroCanvas .one {
-  width: 200px;  height: 200px;  border-radius: 999px;  background-position: top center;  background-image: url("src/assets/media/hero/DSC_2154.png");  transition: width 0.3s;}
+  width: 200px;  height: 200px;  border-radius: 999px;  background-position: top center;  background-image: url("./assets/media/hero/DSC_2154.png");  transition: width 0.3s;}
 .hero-about .heroCanvas .one:hover { width: 24%;}
 
 .hero-about .heroCanvas .two {
-  width: 200px;  height: 200px;   background-position: top center;  border-radius: 20px;  background-image: url("src/assets/media/hero/DSC_1690.jpg");  transition: width 0.3s;}
+  width: 200px;  height: 200px;   background-position: top center;  border-radius: 20px;  background-image: url("./assets/media/hero/DSC_1690.jpg");  transition: width 0.3s;}
 .hero-about .heroCanvas .two:hover { width: 24%;}
 
 .hero-about .heroCanvas .three {
-  width: 200px;  height: 200px;   background-position: top center;  border-radius: 999px;   background-image: url("src/assets/media/hero/DSC_1448.jpg"); transition: width 0.3s;}
+  width: 200px;  height: 200px;   background-position: top center;  border-radius: 999px;   background-image: url("./assets/media/hero/DSC_1448.jpg"); transition: width 0.3s;}
 .hero-about .heroCanvas .three:hover { width: 24%;}
 
 .hero-about .heroCanvas .four { 
-  width: 200px;  height: 200px;  background-position: top center; border-radius: 20px; background-image: url("src/assets/media/hero/DSC_1644.jpg"); transition: width 0.3s;}
+  width: 200px;  height: 200px;  background-position: top center; border-radius: 20px; background-image: url("./assets/media/hero/DSC_1644.jpg"); transition: width 0.3s;}
 .hero-about .heroCanvas .four:hover { width: 30%;}
 
 .hero-about .heroCanvas .five {
-  width: 200px;  height: 200px;   background-position: top left;  border-radius: 999px;   background-image: url("src/assets/media/hero/DSC_1372.jpg");  transition: width 0.3s;}
+  width: 200px;  height: 200px;   background-position: top left;  border-radius: 999px;   background-image: url("./assets/media/hero/DSC_1372.jpg");  transition: width 0.3s;}
 .hero-about .heroCanvas .five:hover { width: 24%;}
 
 /* custom scrollbar */
@@ -944,6 +966,17 @@ h6{ font-size: var(--Txt_20); font-weight: bold;}
   .banner h1, .banner h2, .banner h3, .banner h4, .banner p, .banner > span { color: var(--base_100); font-weight: 500;}
   /* end of banner */
   header { background-color: var(--base_100);}
+  footer .Newsletter-form .Collecter {
+    border: 1px solid var(--base_0);
+    background-color: var(--base_10);
+  }
+  footer .Newsletter-form input {
+    background-color: var(--base_10);
+    color: var(--base_100);
+  }
+  footer #newsletterInputLabel {
+    color: var(--base_100);
+  }
   body {  background-color: var(--body-bg);}
   .button--primary { background-color: var(--base_100);}
   .button--secondary { background-color: var(--base_10);}
@@ -1041,6 +1074,13 @@ h6{ font-size: var(--Txt_20); font-weight: bold;}
 
   /*background colors*/
   header { background-color: var(--body-bg-alt);}
+  footer .Newsletter-form .Collecter {
+    border: 1px solid white;
+    background-color: var(--base_100);
+  }
+  footer #newsletterInputLabel {
+    color: var(--base_0);
+  }
   body {  background-color: var(--body-bg-alt);}
 
   .button--primary { background-color: var(--body-bg-alt);}
@@ -1125,7 +1165,7 @@ h6{ font-size: var(--Txt_20); font-weight: bold;}
 ⠀⠀⠀⠀⠀⠈⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣧⠀⠀⠀
 ⠀⠀⠀⠀⠀⠈⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠁⠀⠀⠀ 
 */
-/* Mobile Breakpoint */
+/* Tablet Breakpoint */
 @media only screen and (max-width: 1120px) {
   .About-SectionWrap .About-Turtles .About-Us-ObjectiveCard {
     display: flex;
@@ -1134,6 +1174,18 @@ h6{ font-size: var(--Txt_20); font-weight: bold;}
     width: 100%;
     max-width: 45%;
     transition: all 0.2s ease-in-out;
+  }
+  .hero p {
+    font-size: 14px;
+  }
+  .m-br {
+    display: flex;
+  }
+  .hero .desc {
+    padding: 20px;
+    gap: var(--Pd_20);
+    padding-left: 20%;
+    padding-right: 20%;
   }
 }
 
@@ -1145,6 +1197,7 @@ h6{ font-size: var(--Txt_20); font-weight: bold;}
   h4 { font-size: 24px;}
   h5 { font-size: 20px;}
   h6 { font-size: 18px;}
+  .m-txt_Middle { text-align: center;}
 
   /* footer { width: 100%;align-self: stretch;} */
   header nav:nth-child(2) { display: none; }
@@ -1161,6 +1214,7 @@ h6{ font-size: var(--Txt_20); font-weight: bold;}
 
 /* End of sidebar */
   .logo {  width: 42px;  aspect-ratio: 1 / 1;   background-image: url('./assets/media/logo_smaller.png');  background-repeat: no-repeat, repeat; background-position: center;  background-size: cover; }
+  .logo-small {  width: 42px;  aspect-ratio: 1 / 1;   background-image: url('./assets/media/logo_smaller.png');  background-repeat: no-repeat, repeat; background-position: center;  background-size: cover; }
 /*Body*/
 body {  margin: 0;  display: flex;  min-width: 320px; }
 
@@ -1227,6 +1281,8 @@ footer a {
 .hero .desc {
   padding: 20px;
   gap: var(--Pd_20);
+  padding-left: 20%;
+  padding-right: 20%;
 }
 .hero .Social-links a {
   font-size: 12px;
@@ -1243,7 +1299,7 @@ footer a {
   rotate: -45deg;  
 }
 .hero p {
-  font-size: 12px;
+  font-size: 14px;
 }
 .hero p, .hero h1 {
   text-wrap: wrap;
@@ -1268,6 +1324,137 @@ footer a {
   padding: 10vh 10vw;
   box-sizing: border-box;
 }
+.hero-about .Fancy {
+  z-index: 2;
+}
+.hero-about .Fancy span {
+  font-family: "Paytone One", serif;
+  font-size: 42px;
+}
+.hero-about .heroCanvas {
+  margin-top: -32px;
+  z-index: 1;
+}
+.About-SectionWrap {
+  display: flex;
+  flex-direction: column;
+  height: max-content;
+  padding-top: var(--Pd_30);
+  padding-left: var(--Pd_10);
+  padding-right: var(--Pd_10);
+  padding-bottom: var(--Pd_0);
+
+  z-index: 2;
+  gap: var(--Pd_10);
+}
+.About-SectionWrap .About-Turtles {
+  display: flex;
+  flex: 1 0 0;
+/*   border-left: 1px solid black; */
+  padding-left: var(--Pd_10);
+  padding-right: var(--Pd_10);
+}
+.About-SectionWrap .About-Turtles #strategies {
+  display: flex;
+  flex-direction: column;
+}
+.About-SectionWrap .About-Turtles #strategies .ObjectiveCards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--Pd_20);
+}
+.About-SectionWrap .About-Turtles .About-Us-ObjectiveCard {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  width: 100%;
+  max-width: 100%;
+  transition: all 0.2s ease-in-out;
+}
+.About-SectionWrap .About-Turtles .About-Us-ObjectiveCard:hover {
+  background-color: var(--orange_30);
+  padding-top: var(--Pd_0);
+  padding-bottom: var(--Pd_10);
+  padding-left: var(--Pd_6);
+  border-radius: var(--Cr_4);
+}
+.About-SectionWrap .About-Turtles .About-Us-ObjectiveCard ul{
+  margin: 0;
+}
+.About-SectionWrap .contentTable {
+  display: flex;
+  min-width: max-content;
+  max-width: 400px;
+  padding-right: var(--Pd_20);
+
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+  top: 0px;
+}
+.About-SectionWrap .contentTable ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-wrap: nowrap;
+}
+.About-SectionWrap .contentTable li {
+  text-wrap: nowrap;
+  cursor: pointer;
+}
+.About-SectionWrap .contentTable details {
+  margin: 0px;
+  cursor: pointer;
+}
+.About-SectionWrap .RightBar {
+  display: flex;
+  max-width: clamp(150px, 200px, 250px);
+  flex: 1 0 0;
+  height: max-content;
+  padding: var(--Pd_20);
+  position: sticky;  
+  top: 100px;
+}
+.About-SectionWrap .RightBar blockquote {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--orange_30);
+  margin: 0px;
+  padding: var(--Pd_10);
+  gap: var(--Pd_0);
+  border-radius: var(--Cr_5);
+}
+.About-SectionWrap .About-Turtles h1,
+.About-SectionWrap .About-Turtles h2, 
+.About-SectionWrap .About-Turtles h3, 
+.About-SectionWrap .About-Turtles h4, 
+.About-SectionWrap .About-Turtles h5 
+  {
+  line-height: clamp(2rem, 2.5vw, 3rem);
+}
+.About-SectionWrap .About-Turtles figure {
+  background-color: var(--orange_30);
+  margin: 0px;
+  padding: var(--Pd_10);
+  display: flex;
+  gap: var(--Pd_10);
+  border-radius: var(--Cr_5);
+}
+.About-SectionWrap .About-Turtles blockquote {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--orange_30);
+  margin: 0px;
+  padding: var(--Pd_10);
+  gap: var(--Pd_0);
+  border-radius: var(--Cr_5);
+}
+.About-SectionWrap .About-Turtles iframe {
+  width: 100%;
+  height: 500px;
+}
 .About-SectionWrap .RightBar {
   display: none;
 }
@@ -1287,20 +1474,46 @@ footer a {
 .align-y2 {  justify-content: end;} /*bottom left*/
 /* align works vertically*/
 .content-x { align-items: start;} /* default content mode*/
-.content-x1 { align-items: center;} /*content on the center*/
+.content-x1 { align-items: center;} /* content on the center*/
 .content-x2 { align-items: end;} /* content on the right*/
-.layouts {
+
+.m-align-y {  align-items: start;} /*  align-items: start; default alignment */
+.m-align-y1 {  align-items: center;} /* align-items: center; middle left*/
+.m-align-y2 {  align-items: end;} /* align-items: end; bottom left*/
+/* align works vertically*/
+.m-content-x { justify-content: flex-start;} /* justify-content: flex-start; default content mode*/
+.m-content-x1 { justify-content: center;} /* justify-content: center; content on the center*/
+.m-content-x2 { justify-content: end;} /* justify-content: end; content on the right*/
+.m-layouts {
   align-self: stretch;
   min-height: 200px;
   padding: var(--Pd_100) var(--Pd_30) var(--Pd_10);
   gap: 20px;
 }
-
+.FAQDiv {
+  padding-bottom: var(--Pd_10);
+}
+.TestimonialDiv {
+  padding-bottom: var(--Pd_150);
+}
+.TestimonialCard {
+  max-width: 100%;
+}
+.TestimonialCard_user {
+  padding: var(--Pd_10) ;
+  flex-direction: column;
+}
+.TestimonialCard_user hr {
+  height: 0px;
+  width: 100%;
+}
 .NewsCard-layouts {
   align-self: stretch;
   min-height: 200px;
-  padding: var(--Pd_10) var(--Pd_30);
-  justify-content: center;
+  padding: var(--Pd_10) var(--Pd_0);
+  justify-content: center;  
+  gap: var(--Pd_10);
+  flex-wrap: wrap;
 }
 .NewsCard {
   min-width: 300px;
@@ -1447,4 +1660,45 @@ footer a {
 
 .heroCanvas .six { display: none;}
 
+.hero-about {
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  padding: 4vh 2vw;
+  box-sizing: border-box;
+}
+/* about hero */
+.hero-about .heroCanvas { width: 100%; height: min-content; align-items: center; justify-content: center;  display: flex;  flex-direction: row;  gap: 0.4rem; margin-top: -12px; z-index: 1; }
+.hero-about .heroCanvas .img {  display: flex;  margin: 0px;  padding: 0px;  object-fit:contain;  background-repeat: no-repeat;  background-size: cover; }
+
+.hero-about .heroCanvas .one { display: none;
+  width: 120px;  height: 120px;  border-radius: 999px;  background-position: top center;  background-image: url("./assets/media/hero/DSC_2154.png");  transition: width 0.3s;}
+.hero-about .heroCanvas .one:hover { width: 24%;}
+
+.hero-about .heroCanvas .two { display: none;
+  width: 120px;  height: 120px;   background-position: top center;  border-radius: 20px;  background-image: url("./assets/media/hero/DSC_1690.jpg");  transition: width 0.3s;}
+.hero-about .heroCanvas .two:hover { width: 24%;}
+
+.hero-about .heroCanvas .three {
+  width: 120px;  height: 120px;   background-position: top center;  border-radius: 999px;   background-image: url("./assets/media/hero/DSC_1448.jpg"); transition: width 0.3s;}
+.hero-about .heroCanvas .three:hover { width: 24%;}
+
+.hero-about .heroCanvas .four { 
+  width: 120px;  height: 120px;  background-position: top center; border-radius: 20px; background-image: url("./assets/media/hero/DSC_1644.jpg"); transition: width 0.3s;}
+.hero-about .heroCanvas .four:hover { width: 30%;}
+
+.hero-about .heroCanvas .five {
+  width: 120px;  height: 120px;   background-position: top left;  border-radius: 999px;   background-image: url("./assets/media/hero/DSC_1372.jpg");  transition: width 0.3s;}
+.hero-about .heroCanvas .five:hover { width: 24%;}
+}
+
+/* smaller Breakpoints */
+@media only screen and (max-width: 620px) {
+  .hero .desc {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
 }

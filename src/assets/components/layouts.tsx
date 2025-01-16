@@ -11,7 +11,7 @@ export default function layout() {
 {/**Homepage */}
 export const Layout1 = () => {
     return (
-    <div className="column layouts FAQDiv">
+    <div className="column layouts m-layouts FAQDiv">
         <div className=" row spread m-column">
             <div className="column flex-spread">
                 <span className="Tagline no_margins">FAQ</span>
@@ -34,7 +34,7 @@ export const Layout1 = () => {
 {/**Testimoninals */}
 export const Layout2 = () => {
     return (
-        <div className="TestimonialDiv layouts column spread m-column align-y1 content-x1">
+        <div className="TestimonialDiv layouts m-layouts column spread m-column align-y1 content-x1">
             <TestimonialClub />
         </div>
     )
