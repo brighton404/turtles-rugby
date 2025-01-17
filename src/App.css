@@ -131,7 +131,7 @@ footer .Newsletter-form .Collecter {
   display: flex;
   overflow: hidden;
   align-self: stretch;
-  max-width: 100%;
+  max-width: 96%;
   border: 1px solid black;
   border-radius: 10px;
   height: 50px;
@@ -186,7 +186,7 @@ footer .Newsletter-form .Collecter {
   font-size: 120px;
 }
 .hero-about .heroCanvas {
-  margin-top: -32px;
+  margin-top: 0;
   z-index: 1;
 }
 .About-SectionWrap {
@@ -309,6 +309,36 @@ footer .Newsletter-form .Collecter {
 .About-SectionWrap .About-Turtles iframe {
   width: 100%;
   height: 500px;
+}
+article#sponsorPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .sponsorContentWrap {
+    width: 40vw;
+  }
+  h1, h2, h3, h4, h5, h6 { font-weight: bold; margin-top: 1.2em; margin-bottom: 0.8em; line-height: 1.2; }
+  h1 { font-size: 2em; padding-bottom: 0.3em; }
+  h2 { font-size: 1.75em; padding-bottom: 0.2em;}
+  h3 { font-size: 1.5em; }
+  h4 { font-size: 1.25em; }
+  h5 { font-size: 1em; }
+  h6 { font-size: 0.875em; }
+  p { margin: 1em 0; }
+  a { text-decoration: none; }
+  ul, ol { margin: 1em 0; padding-left: 1.5em; }
+  ul li { list-style-type: disc; }
+  ol li { list-style-type: decimal; }
+  pre, code { font-family: 'Courier New', Courier, monospace;  border-radius: 4px; }
+  pre { padding: 10px; overflow-x: auto; }
+  code { padding: 2px 4px; font-size: 0.9em; border-radius: 3px; }
+  blockquote { margin: 1em 0; padding-left: 1.5em; font-style: italic; }
+  table { width: 100%; border-collapse: collapse; margin: 1em 0; }
+  table th, table td { padding: 8px; text-align: left; }
+  table th { font-weight: bold; }
+  hr { border: none; margin: 2em 0; }
+  img { max-width: 100%; height: auto; border-radius: 4px; }
 }
 /*flex*/
 .row {  display: flex;  flex-direction: row; }
@@ -1227,7 +1257,7 @@ footer {
   display: flex;
   width: 100%;
   flex-direction: column;
-  padding: var(--Pd_100) var(--Pd_30);
+  padding: var(--Pd_100) var(--Pd_20);
   padding-bottom: var(--Pd_40);
   box-sizing: border-box;
   max-width: 100%;
@@ -1262,7 +1292,7 @@ footer .Newsletter-form .Tagline {
 }
 footer .Newsletter-form input {
   border: none;
-  width: 42vw;
+  width: 40vw;
   padding: 20px;
 }
 footer .Newsletter-form button {
@@ -1332,7 +1362,7 @@ footer a {
   font-size: 42px;
 }
 .hero-about .heroCanvas {
-  margin-top: -32px;
+  margin-top: 0;
   z-index: 1;
 }
 .About-SectionWrap {
@@ -1384,7 +1414,8 @@ footer a {
 .About-SectionWrap .contentTable {
   display: flex;
   min-width: max-content;
-  max-width: 400px;
+  width: 100%;
+  max-width: 100%;
   padding-right: var(--Pd_20);
 
   height: max-content;
@@ -1407,6 +1438,13 @@ footer a {
 .About-SectionWrap .contentTable details {
   margin: 0px;
   cursor: pointer;
+}
+.dropdown-container {
+  width: 100%;
+  max-width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
 }
 .About-SectionWrap .RightBar {
   display: flex;
@@ -1663,6 +1701,7 @@ footer a {
 .hero-about {
   width: 100%;
   height: 40vh;
+  min-height: max-content;
   display: flex;
   flex-direction: column;
   justify-content: end;
@@ -1671,10 +1710,22 @@ footer a {
   box-sizing: border-box;
 }
 /* about hero */
-.hero-about .heroCanvas { width: 100%; height: min-content; align-items: center; justify-content: center;  display: flex;  flex-direction: row;  gap: 0.4rem; margin-top: -12px; z-index: 1; }
+.hero-about .heroCanvas { 
+  width: 100%; 
+  flex-wrap: wrap;
+  height: min-content;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  gap: 0.4rem;
+  margin-top: 0px;
+  z-index: 1;
+  padding-top: 10vh;
+}
 .hero-about .heroCanvas .img {  display: flex;  margin: 0px;  padding: 0px;  object-fit:contain;  background-repeat: no-repeat;  background-size: cover; }
 
-.hero-about .heroCanvas .one { display: none;
+.hero-about .heroCanvas .one {
   width: 120px;  height: 120px;  border-radius: 999px;  background-position: top center;  background-image: url("./assets/media/hero/DSC_2154.png");  transition: width 0.3s;}
 .hero-about .heroCanvas .one:hover { width: 24%;}
 

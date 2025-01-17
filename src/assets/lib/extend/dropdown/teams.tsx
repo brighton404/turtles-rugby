@@ -10,7 +10,7 @@ export default function CardTeams() {
                         <span>Training schedule</span>
                         <p>Pre-made essentials like buttons and toasts</p>
                         </div>
-                        <div className="imageWrap"><img src="src/assets/lib/extend/dropdown/media/team photo.jpg" alt="" /></div>
+                        <div className="imageWrap"><img src="../src/assets/lib/extend/dropdown/media/team photo.jpg" alt="" /></div>
                     </div>
                 </div>
                 <div className='row gap-10 flex-spread'>
@@ -19,7 +19,7 @@ export default function CardTeams() {
                             <span>Home ground</span>
                             <p>Pre-made essentials like buttons and toasts</p>
                         </div>
-                        <div className="imageWrap"><img src="src/assets/lib/extend/dropdown/media/team photo.jpg" alt="" /></div>
+                        <div className="imageWrap"><img src="../src/assets/lib/extend/dropdown/media/team photo.jpg" alt="" /></div>
                     </div>
                 </div>
             </div>

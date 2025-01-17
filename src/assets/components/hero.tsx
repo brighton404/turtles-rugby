@@ -35,10 +35,7 @@ export default function hero() {
 
 export function HeroAbout() {
     return (
-        <div className="hero-about Text_L_Bold">
-            <div className="Fancy">
-                <span>Turtles Rugby</span>
-            </div>
+        <div className="hero-about Text_L_Bold align-y1 content-x1">
             <div className="heroCanvas align-y1 content-x1">
                 <div className="img one"></div>
                 <div className="img two"></div>

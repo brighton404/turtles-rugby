@@ -12,6 +12,7 @@ import { queryClient } from "./pages/news/blog/lib/queryClient";
 import { BlogPage } from "./pages/news/blog/lib/postWrap";
 import NotFound from "./pages/error";
 import { showConsoleMeme } from "./console";
+import SponsorForm from "./pages/community/media/sponsors";
 
 function App() {
   useEffect(() => {
@@ -68,6 +69,10 @@ function App() {
         title = "";
         metaDescription = "";
         break;
+        case "/sponsor":
+          title = "";
+          metaDescription = "";
+          break;
       default:
         title = "";
         metaDescription = "";
@@ -98,6 +103,7 @@ function App() {
         <Route path="/news/:id" element={<BlogPage />} />
         <Route path="/events" element={<Events />} />
         <Route path="/community" element={<Community />} />
+        <Route path="/sponsor" element={<SponsorForm />} />
         <Route path="*" element={<NotFound />}/>
       </Routes>
     <Footer />
