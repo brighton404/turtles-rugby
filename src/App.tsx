@@ -75,27 +75,27 @@ function App() {
          break;
 
          /* Production routes for testing */
-         case "mld-turtles-rugby.vercel.app/about":
+         case "https://mld-turtles-rugby.vercel.app/about":
           title = "";
           metaDescription = "";
           break;
-        case "mld-turtles-rugby.vercel.app/events":
+        case "https://mld-turtles-rugby.vercel.app/events":
           title = "";
           metaDescription = "";
           break;
-        case "mld-turtles-rugby.vercel.app/news":
+        case "https://mld-turtles-rugby.vercel.app/news":
           title = "";
           metaDescription = "";
           break;
-          case "mld-turtles-rugby.vercel.app/news/:id":
+          case "https://mld-turtles-rugby.vercel.app/news/:id":
             title = "";
             metaDescription = "";
             break;
-        case "mld-turtles-rugby.vercel.app/community":
+        case "https://mld-turtles-rugby.vercel.app/community":
           title = "";
           metaDescription = "";
           break;
-        case "mld-turtles-rugby.vercel.app/sponsor":
+        case "https://mld-turtles-rugby.vercel.app/sponsor":
             title = "";
             metaDescription = "";
            break;
@@ -134,13 +134,13 @@ function App() {
         <Route path="*" element={<NotFound />}/>
 
         {/* Production routes - Vercel */}
-        <Route path="mld-turtles-rugby.vercel.app/about" element={<About />} />
-        <Route path="mld-turtles-rugby.vercel.app/news" element={<News />} />
-        <Route path="mld-turtles-rugby.vercel.app/news/:id" element={<BlogPage />} />
-        <Route path="mld-turtles-rugby.vercel.app/events" element={<Events />} />
-        <Route path="mld-turtles-rugby.vercel.app/community" element={<Community />} />
-        <Route path="mld-turtles-rugby.vercel.app/sponsor" element={<Sponsor />} />
-        <Route path="mld-turtles-rugby.vercel.app/sponsor/*" element={<NotFound />}/>
+        <Route path="./about" element={<About />} />
+        <Route path="https://mld-turtles-rugby.vercel.app/news" element={<News />} />
+        <Route path="https://mld-turtles-rugby.vercel.app/news/:id" element={<BlogPage />} />
+        <Route path="https://mld-turtles-rugby.vercel.app/events" element={<Events />} />
+        <Route path="https://mld-turtles-rugby.vercel.app/community" element={<Community />} />
+        <Route path="https://mld-turtles-rugby.vercel.app/sponsor" element={<Sponsor />} />
+        <Route path="https://mld-turtles-rugby.vercel.app/sponsor/*" element={<NotFound />}/>
       </Routes>
     <Footer />
     </QueryClientProvider>
