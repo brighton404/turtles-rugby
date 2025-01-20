@@ -1,4 +1,5 @@
 import Icons from "../../icons";
+import teamPhoto from '@/assets/lib/extend/dropdown/media/team photo.jpg';
 
 export default function CardSupport() {
     return (
@@ -10,7 +11,7 @@ export default function CardSupport() {
                         <span>Community</span>
                         <p>Pre-made essentials like buttons and toasts</p>
                         </div>
-                        <div className="imageWrap"><img src="src/assets/lib/extend/dropdown/media/team photo.jpg" alt="" /></div>
+                        <div className="imageWrap"><img src={teamPhoto} alt="" /></div>
                     </div>
                 </div>
                 <div className='column gap-10 flex-spread'>
@@ -19,14 +20,14 @@ export default function CardSupport() {
                             <span>Home ground</span>
                             <p>Pre-made essentials like buttons and toasts</p>
                         </div>
-                        <div className="imageWrap"><img src="src/assets/lib/extend/dropdown/media/team photo.jpg" alt="" /></div>
+                        <div className="imageWrap"><img src={teamPhoto} alt="" /></div>
                     </div>
                     <div className="dropdown-AdCards-s">
                         <div className="contentWrap">
                             <span>Home ground</span>
                             <p>Pre-made essentials like buttons and toasts</p>
                         </div>
-                        <div className="imageWrap"><img src="src/assets/lib/extend/dropdown/media/team photo.jpg" alt="" /></div>
+                        <div className="imageWrap"><img src={teamPhoto} alt="" /></div>
                     </div>
                 </div>
             </div>
