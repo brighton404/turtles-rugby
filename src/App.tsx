@@ -12,7 +12,7 @@ import { queryClient } from "./pages/news/blog/lib/queryClient";
 import { BlogPage } from "./pages/news/blog/lib/postWrap";
 import NotFound from "./pages/error";
 import { showConsoleMeme } from "./console";
-import SponsorForm from "./pages/community/media/sponsors";
+import Sponsor from "./pages/community/sponsors";
 
 function App() {
   useEffect(() => {
@@ -103,7 +103,7 @@ function App() {
         <Route path="/news/:id" element={<BlogPage />} />
         <Route path="/events" element={<Events />} />
         <Route path="/community" element={<Community />} />
-        <Route path="/sponsor" element={<SponsorForm />} />
+        <Route path="/sponsor" element={<Sponsor />} />
         <Route path="*" element={<NotFound />}/>
       </Routes>
     <Footer />

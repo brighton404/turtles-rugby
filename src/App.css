@@ -314,9 +314,25 @@ article#sponsorPage {
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  details {
+    transition: all 0.1s ease-in-out;
+  }
+  details[open] {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--orange_30);
+    padding: 10px;
+    border-radius: var(--Cr_6);
+  }
   .sponsorContentWrap {
     width: 40vw;
+    @media only screen and (max-width: 1120px) {
+      width: 80vw;
+    }
+  }
+  .sponsorDiv {
+    padding-bottom: var(--Pd_20);
+    border-bottom: 2px solid var(--base_80);
   }
   h1, h2, h3, h4, h5, h6 { font-weight: bold; margin-top: 1.2em; margin-bottom: 0.8em; line-height: 1.2; }
   h1 { font-size: 2em; padding-bottom: 0.3em; }
@@ -333,13 +349,15 @@ article#sponsorPage {
   pre, code { font-family: 'Courier New', Courier, monospace;  border-radius: 4px; }
   pre { padding: 10px; overflow-x: auto; }
   code { padding: 2px 4px; font-size: 0.9em; border-radius: 3px; }
-  blockquote { margin: 1em 0; padding-left: 1.5em; font-style: italic; }
+  blockquote { margin: 1em 0; padding-left: 1.5rem; padding-right: 1rem; padding-top: 0.5rem; padding-bottom: 1rem; font-style: italic; background-color: var(--orange_30); border-radius: var(--Cr_6);}
   table { width: 100%; border-collapse: collapse; margin: 1em 0; }
   table th, table td { padding: 8px; text-align: left; }
   table th { font-weight: bold; }
   hr { border: none; margin: 2em 0; }
   img { max-width: 100%; height: auto; border-radius: 4px; }
 }
+/* end of sponsor page */
+
 /*flex*/
 .row {  display: flex;  flex-direction: row; }
 .row-x { display: flex; flex-direction: row-reverse;}
@@ -1752,4 +1770,9 @@ footer a {
     padding-left: 5%;
     padding-right: 5%;
   }
+}
+
+/* images - since i ran into an error with native img element path */
+.teamPhoto { 
+  src: format('../assets/lib/extend/dropdown/media/team photo.jpg');
 }
