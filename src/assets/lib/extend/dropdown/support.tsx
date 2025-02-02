@@ -1,7 +1,14 @@
+import { useNavigate } from "react-router-dom";
 import Icons from "../../icons";
 import teamPhoto from '@/assets/lib/extend/dropdown/media/team photo.jpg';
 
+
 export default function CardSupport() {
+    const navigate = useNavigate();
+
+    const onSponsor = () => {
+        navigate('/sponsor');
+      };
     return (
         <div className="cardTeams row gap-20">
             <div className='row wide-ratio-x gap-10'>
@@ -35,7 +42,9 @@ export default function CardSupport() {
                 <div className='column gap-10'>
                     <span className='bold Text_M_Normal'>Club support</span>
                     <div className="link"><a href="">Patnership <Icons variant="chevron-right"/></a></div>
-                    <div className="link"><a href="/sponsor">Sponsorship <Icons variant="chevron-right"/></a></div>
+                    <div className="link" onClick={onSponsor}>
+                        <a href="/sponsor">Sponsorship <Icons variant="chevron-right"/></a>
+                    </div>
                 </div>
                 <div className='column gap-10'>
                     <span className='bold Text_M_Normal'>Work</span>

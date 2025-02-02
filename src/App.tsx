@@ -73,33 +73,6 @@ function App() {
           title = "";
           metaDescription = "";
          break;
-
-         /* Production routes for testing */
-         case "https://mld-turtles-rugby.vercel.app/about":
-          title = "";
-          metaDescription = "";
-          break;
-        case "https://mld-turtles-rugby.vercel.app/events":
-          title = "";
-          metaDescription = "";
-          break;
-        case "https://mld-turtles-rugby.vercel.app/news":
-          title = "";
-          metaDescription = "";
-          break;
-          case "https://mld-turtles-rugby.vercel.app/news/:id":
-            title = "";
-            metaDescription = "";
-            break;
-        case "https://mld-turtles-rugby.vercel.app/community":
-          title = "";
-          metaDescription = "";
-          break;
-        case "https://mld-turtles-rugby.vercel.app/sponsor":
-            title = "";
-            metaDescription = "";
-           break;
-           /* End */
       default:
         title = "";
         metaDescription = "";
@@ -132,15 +105,6 @@ function App() {
         <Route path="/community" element={<Community />} />
         <Route path="/sponsor" element={<Sponsor />} />
         <Route path="*" element={<NotFound />}/>
-
-        {/* Production routes - Vercel */}
-        <Route path="./about" element={<About />} />
-        <Route path="https://mld-turtles-rugby.vercel.app/news" element={<News />} />
-        <Route path="https://mld-turtles-rugby.vercel.app/news/:id" element={<BlogPage />} />
-        <Route path="https://mld-turtles-rugby.vercel.app/events" element={<Events />} />
-        <Route path="https://mld-turtles-rugby.vercel.app/community" element={<Community />} />
-        <Route path="https://mld-turtles-rugby.vercel.app/sponsor" element={<Sponsor />} />
-        <Route path="https://mld-turtles-rugby.vercel.app/sponsor/*" element={<NotFound />}/>
       </Routes>
     <Footer />
     </QueryClientProvider>
