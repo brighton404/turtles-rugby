@@ -616,7 +616,7 @@ article#sponsorPage {
   border-radius: var(--Cr_8);
   transition: padding 0.3s;
 }
-.dropdownNav .link a {
+.dropdownNav .link .inner {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -984,8 +984,8 @@ h6{ font-size: var(--Txt_20); font-weight: bold;}
   .dropdown-AdCards-l:hover .imageWrap { padding: 4px; border-radius: 1.4rem;}
   .dropdown-AdCards-s:hover .imageWrap { padding: 4px; border-radius: 20px;}
   .dropdownNav .link:hover { background-color: var(--base_0); padding: 2px 10px;}
-  .dropdownNav .link:hover > a { color: var(--base_100);}
-  .dropdownNav .link:hover > a svg { stroke: var(--base_100);}
+  .dropdownNav .link:hover > .inner { color: var(--base_100);}
+  .dropdownNav .link:hover > .inner svg { stroke: var(--base_100);}
   .dropdown-AdCards-l p, .dropdown-AdCards-s p  { color: var(--base_50);}
 /* end of dropdown menu */
   .dropdown-container {
@@ -1091,8 +1091,8 @@ h6{ font-size: var(--Txt_20); font-weight: bold;}
   .dropdown-AdCards-l { background-color: var(--base_14); border: 1px solid var(--base_6);}
   .dropdown-AdCards-s {   background-color: var(--base_14); border: 1px solid var(--base_6);}
   .dropdownNav .link:hover { background-color: var(--base_14); padding: 2px 10px;}
-  .dropdownNav .link:hover > a { color: var(--base_100);}
-  .dropdownNav .link:hover > a svg { stroke: var(--base_100);}
+  .dropdownNav .link:hover > .inner { color: var(--base_100);}
+  .dropdownNav .link:hover > .inner svg { stroke: var(--base_100);}
   .dropdown-AdCards-l p { color: var(--base_46);}
   .dropdown-AdCards-s p { color: var(--base_46);}
   .dropdown-container {
