@@ -61,13 +61,23 @@ export default function CardSupport() {
     )
 };
 export const MobileCardSupport = () => {
+    const navigate = useNavigate();
+
+    const onSponsor = () => {
+        navigate('/sponsor');
+      };
     return (
         <div className="column gap-20">
             <div className="sidebarDropNav column gap-20">
                 <div className='column gap-10'>
                     <span className='bold Text_M_Normal'>Club support</span>
                     <div className="link"><div className="inner">Patnership <Icons variant="chevron-right"/></div></div>
-                    <div className="link"><a href="/sponsor">Sponsorship <Icons variant="chevron-right"/></a></div>
+                    <div className="link" onClick={onSponsor}>
+                        <div className="inner">
+                            Sponsorship
+                            <Icons variant="chevron-right"/>
+                        </div>                        
+                    </div>
                 </div>
                 <div className='column gap-10'>
                     <span className='bold Text_M_Normal'>Work</span>

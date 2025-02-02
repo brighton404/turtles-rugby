@@ -27,14 +27,14 @@ export default function CardTeams() {
             <div className="dropdownNav column gap-20">
                 <div className='column gap-10'>
                     <span className='bold Text_M_Normal'>Teams</span>
-                    <div className="link"><a href="">Senior Men's <Icons variant="chevron-right"/></a></div>
-                    <div className="link"><a href="">Senior Women's <Icons variant="chevron-right"/></a></div>
-                    <div className="link"><a href="">Youth <Icons variant="chevron-right"/></a></div>
+                    <div className="link"><div className="inner">Senior Men's <Icons variant="chevron-right"/></div></div>
+                    <div className="link"><div className="inner">Senior Women's <Icons variant="chevron-right"/></div></div>
+                    <div className="link"><div className="inner">Youth <Icons variant="chevron-right"/></div></div>
                 </div>
                 <div className='column gap-10'>
                     <span className='bold Text_M_Normal'>Mentorship</span>
-                    <div className="link"><a href="">Schools <Icons variant="chevron-right"/></a></div>
-                    <div className="link"><a href="">Register <Icons variant="chevron-right"/></a></div>
+                    <div className="link"><div className="inner">Schools <Icons variant="chevron-right"/></div></div>
+                    <div className="link"><div className="inner">Register <Icons variant="chevron-right"/></div></div>
                 </div>
             </div>
         </div>
@@ -47,14 +47,14 @@ export const MobileCardTeams = () =>  {
         <div className="sidebarDropNav column gap-20">
             <div className='column gap-10'>
                 <span className='bold Text_M_Normal'>Teams</span>
-                <div className="link"><a href="">Senior Men's <Icons variant="chevron-right"/></a></div>
-                <div className="link"><a href="">Senior Women's <Icons variant="chevron-right"/></a></div>
-                <div className="link"><a href="">Youth <Icons variant="chevron-right"/></a></div>
+                <div className="link"><div className="inner">Senior Men's <Icons variant="chevron-right"/></div></div>
+                <div className="link"><div className="inner">Senior Women's <Icons variant="chevron-right"/></div></div>
+                <div className="link"><div className="inner">Youth <Icons variant="chevron-right"/></div></div>
             </div>
             <div className='column gap-10'>
                 <span className='bold Text_M_Normal'>Mentorship</span>
-                <div className="link"><a href="">Schools <Icons variant="chevron-right"/></a></div>
-                <div className="link"><a href="">Register <Icons variant="chevron-right"/></a></div>
+                <div className="link"><div className="inner">Schools <Icons variant="chevron-right"/></div></div>
+                <div className="link"><div className="inner">Register <Icons variant="chevron-right"/></div></div>
             </div>
         </div>
     </div>
