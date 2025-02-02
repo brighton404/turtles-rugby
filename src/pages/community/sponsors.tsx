@@ -9,12 +9,12 @@ const sponsor: React.FC = () => {
                     <section className="sponsorDiv">
                         <h3>Platinum Sponsors</h3>
                         <details>
-                            <summary><strong>Role</strong></summary>
+                            <summary><span>Role</span></summary>
                             <div>
-                            <strong> Highest Level of Investment:</strong> 
-                            <br />
-                            Platinum sponsors typically make the largest financial contribution to the team.  
-                            <br />
+                            <h4><strong>Highest Level of Investment:</strong> </h4>
+                            <p>
+                            Platinum sponsors typically make the largest financial contribution to the team.
+                            </p>
                             <ul> 
                                 <li><strong>Extensive Branding Opportunities:</strong> They receive the most prominent branding placements, such as:
                                     <ul>
@@ -42,12 +42,12 @@ const sponsor: React.FC = () => {
                     <section  className="sponsorDiv">
                         <h3>Gold Sponsors</h3>
                         <details>
-                            <summary><strong>Role</strong></summary>
+                            <summary><span>Role</span></summary>
                             <div>
-                            <strong> Significant Investment:</strong> 
-                            <br />
+                            <h4><strong> Significant Investment:</strong></h4>
+                            <p>
                              Gold sponsors make a substantial financial contribution, but typically less than Platinum sponsors. 
-                            <br />
+                             </p>
                             <ul> 
                                 <li><strong>Prominent Branding:</strong> They receive prominent branding placements, such as:
                                     <ul>
@@ -74,12 +74,12 @@ const sponsor: React.FC = () => {
                     <section  className="sponsorDiv">
                         <h3>Silver Sponsors</h3>
                         <details>
-                            <summary><strong>Role</strong></summary>
+                            <summary><span>Role</span></summary>
                             <div>
-                            <strong>Moderate Investment::</strong> 
-                            <br />
-                            Silver sponsors make a moderate financial contribution to the team.  
-                            <br />
+                            <strong>Moderate Investment:</strong> 
+                            <p>
+                            Silver sponsors make a moderate financial contribution to the team.
+                            </p>
                             <ul> 
                                 <li><strong>Limited Branding Opportunities:</strong> They may receive some branding opportunities, such as:
                                     <ul>
@@ -117,6 +117,7 @@ const sponsor: React.FC = () => {
                 </section>
                 <section>
                 <h2>Past Sponsors & Partners</h2>
+                <p>
                     We are equally thankful to the businesses and organizations that have partnered with us in the past. Their legacy of support has been instrumental in shaping our club's history and success.  
                     <br /><br />
                     Company Name(Year(s) Sponsored:  2021–2023)  <br />
@@ -127,6 +128,7 @@ const sponsor: React.FC = () => {
                     <br /><br />
                     Organization Name(Year(s) Sponsored:  2019–2021)  <br />
                     Contribution:  "Provided financial support for training facilities.
+                </p>
 
                 </section>
                 <blockquote>

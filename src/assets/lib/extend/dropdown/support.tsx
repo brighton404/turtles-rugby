@@ -15,8 +15,8 @@ export default function CardSupport() {
                 <div className='row flex-spread'>
                     <div className="dropdown-AdCards-l">
                         <div className="contentWrap">
-                        <span>Community</span>
-                        <p>Pre-made essentials like buttons and toasts</p>
+                            <span>Community</span>
+                            <p>Pre-made essentials like buttons and toasts</p>
                         </div>
                         <div className="imageWrap"><img src={teamPhoto} alt="" /></div>
                     </div>
@@ -41,10 +41,15 @@ export default function CardSupport() {
             <div className="dropdownNav column gap-20">
                 <div className='column gap-10'>
                     <span className='bold Text_M_Normal'>Club support</span>
-                    <div className="link"><div className="inner">Patnership <Icons variant="chevron-right"/></div></div>
+                    <div className="link">
+                        <div className="inner">
+                            <span>Patnership</span>
+                            <Icons variant="chevron-right"/>
+                        </div>
+                    </div>
                     <div className="link" onClick={onSponsor}>
                         <div className="inner">
-                            Sponsorship
+                            <span>Sponsorship</span>
                             <Icons variant="chevron-right"/>
                         </div>                        
                     </div>
@@ -52,9 +57,16 @@ export default function CardSupport() {
                 <div className='column gap-10'>
                     <span className='bold Text_M_Normal'>Work</span>
                     <div className="link">
-                    <div className="inner">Jobs <Icons variant="chevron-right"/></div>
+                        <div className="inner">
+                            <span>Jobs</span>
+                            <Icons variant="chevron-right"/>
+                        </div>
                     </div>
-                    <div className="link"><div className="inner">Volunteer <Icons variant="chevron-right"/></div></div>
+                    <div className="link"><div className="inner">
+                        <span>Volunteer</span>
+                        <Icons variant="chevron-right"/>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -71,18 +83,33 @@ export const MobileCardSupport = () => {
             <div className="sidebarDropNav column gap-20">
                 <div className='column gap-10'>
                     <span className='bold Text_M_Normal'>Club support</span>
-                    <div className="link"><div className="inner">Patnership <Icons variant="chevron-right"/></div></div>
+                    <div className="link">
+                        <div className="inner">
+                            <span>Patnership</span>
+                            <Icons variant="chevron-right"/>
+                        </div>
+                    </div>
                     <div className="link" onClick={onSponsor}>
                         <div className="inner">
-                            Sponsorship
+                            <span>Sponsorship</span>
                             <Icons variant="chevron-right"/>
                         </div>                        
                     </div>
                 </div>
                 <div className='column gap-10'>
                     <span className='bold Text_M_Normal'>Work</span>
-                    <div className="link"><div className="inner">Jobs <Icons variant="chevron-right"/></div></div>
-                    <div className="link"><div className="inner">Volunteer <Icons variant="chevron-right"/></div></div>
+                    <div className="link">
+                        <div className="inner">
+                            <span>Jobs</span>
+                            <Icons variant="chevron-right"/>
+                        </div>
+                    </div>
+                    <div className="link">
+                        <div className="inner">
+                            <span>Volunteer</span>
+                            <Icons variant="chevron-right"/>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
