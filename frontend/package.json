@@ -1,0 +1,49 @@
+{
+  "name": "turtles-rugby",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@fullcalendar/daygrid": "^6.1.15",
+    "@fullcalendar/icalendar": "^6.1.15",
+    "@fullcalendar/interaction": "^6.1.15",
+    "@fullcalendar/list": "^6.1.15",
+    "@fullcalendar/react": "^6.1.15",
+    "@fullcalendar/timegrid": "^6.1.15",
+    "@iframe-resizer/child": "^5.3.3",
+    "@iframe-resizer/parent": "^5.3.3",
+    "@iframe-resizer/react": "^5.3.3",
+    "@tanstack/react-query": "^5.62.3",
+    "@types/ical": "^0.8.3",
+    "@types/node": "^22.10.1",
+    "@types/react-modal": "^3.16.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "axios": "^1.8.2",
+    "ical": "^0.8.0",
+    "ical.js": "latest",
+    "marked": "^15.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-modal": "^3.16.3",
+    "react-router-dom": "^7.0.2",
+    "vite-tsconfig-paths": "^5.1.4"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.2.19",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "@vitejs/plugin-react-swc": "^3.5.0",
+    "eslint": "^8.56.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "typescript": "^5.2.2",
+    "vite": "^5.1.0"
+  }
+}
