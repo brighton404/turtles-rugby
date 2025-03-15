@@ -1,7 +1,13 @@
 import { useEffect, useState } from "react";
 
+interface Clubmembers {
+  _id: string;
+  name: string;
+  email: string;
+}
+
 const MembersList = () => {
-  const [members, setMembers] = useState([]);
+  const [members, setMembers] = useState<Clubmembers[]>([]);
 
   useEffect(() => {
     fetch("http://localhost:5000/api/members")

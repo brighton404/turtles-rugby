@@ -1,6 +1,15 @@
 import { useEffect, useState } from "react";
 import { manageClub } from "@/api/managementApi";
 
+interface Clubmanagers {
+  _id: string;
+  name: string;
+  surname: string;
+  imageUrl: string;
+  position: string;
+}
+
+
 const ClubManagement = () => {
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
@@ -17,12 +26,12 @@ const ClubManagement = () => {
     }
   };
 
-    const [management, setManagment] = useState([]);
+    const [management, setManagement] = useState<Clubmanagers[]>([]); // ✅ Correctly typed state
   
     useEffect(() => {
       fetch("http://localhost:5000/api/management")
         .then((res) => res.json())
-        .then((data) => setManagment(data));
+        .then((data) => setManagement(data));
     }, []);
 
   return (
