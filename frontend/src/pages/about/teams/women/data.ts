@@ -7,7 +7,7 @@ export const teamMembers: TeamMember[] = [
         surname: "said",
         position: "Team manager",
         imageUrl: "../src/assets/media/hero/DSC_1372.jpg",
-        age: "27",
+        age: 27,
         weight: "75kgs",
     },
 ];
