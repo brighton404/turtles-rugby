@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Button.css';
 
 enum ButtonColor {
   Accent = 'accent',

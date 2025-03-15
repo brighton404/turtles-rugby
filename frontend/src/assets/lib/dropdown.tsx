@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import './dropdown.css';
 import { ButtonColor, ButtonState } from "./button";
 import Icons from "./icons";
 import ActionButton from "./actionButton";
