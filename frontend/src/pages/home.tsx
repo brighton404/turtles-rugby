@@ -3,6 +3,7 @@ import Hero from "../assets/components/hero";
 import { Layout1, Layout2 } from "../assets/components/layouts";
 
 const home: React.FC = () => {
+
     return (
     <>
     <Hero />
