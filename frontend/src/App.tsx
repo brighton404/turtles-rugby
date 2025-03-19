@@ -16,7 +16,6 @@ import Partner from "./pages/community/partners";
 import Teams from "./pages/about/teams/teams";
 import MentorshipPage from "./pages/community/Mentorship";
 import JoinForm from "./assets/components/ads/joinClub";
-import ClubManagement from "./assets/components/ads/manageClub";
 
 function App() {
   
@@ -140,7 +139,6 @@ function App() {
         <Route path="/membership" element={<JoinForm />} />
         <Route path="/sponsor" element={<Sponsor />} />
         <Route path="/partners" element={<Partner />} />
-        {/* <Route path="/:ClubManagement" element={<ClubManagement />} /> */}
         <Route path="*" element={<NotFound />}/>
       </Routes>
     <Footer />
