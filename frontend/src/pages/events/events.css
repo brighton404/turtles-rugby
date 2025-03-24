@@ -1,0 +1,18 @@
+.EventDialog[data-state="open"] {
+	position: fixed;
+	display: flex;
+	left: 35vw; top: 20vw;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+	background-color: #00000060;
+	border: none;
+	border-radius: 10px;
+	overflow: hidden;
+}
+.EventDialogCard {
+	width: 30vw;
+	height: min-content;
+	background-color: #ffb340;
+	padding: 20px;
+}

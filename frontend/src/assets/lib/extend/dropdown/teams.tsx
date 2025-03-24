@@ -18,8 +18,8 @@ export default function CardTeams() {
                 <div className='row flex-spread'>
                     <div className="dropdown-AdCards-l">
                         <div className="contentWrap">
-                        <span>Training schedule</span>
-                        <p>Pre-made essentials like buttons and toasts</p>
+                        <span>Age grade</span>
+                        <p>Schools under our training program</p>
                         </div>
                         <div className="imageWrap"><img src={teamPhoto} alt="" /></div>
                     </div>
@@ -27,8 +27,8 @@ export default function CardTeams() {
                 <div className='row gap-10 flex-spread'>
                     <div className="dropdown-AdCards-l">
                         <div className="contentWrap">
-                            <span>Home ground</span>
-                            <p>Pre-made essentials like buttons and toasts</p>
+                            <span>Training schedule</span>
+                            <p>Training schedules for each team</p>
                         </div>
                         <div className="imageWrap"><img src={teamPhoto} alt="" /></div>
                     </div>

@@ -7,12 +7,12 @@ import Icons from '../../../../assets/lib/icons';
 import { marked } from 'marked';
 
 export function BlogPage() {
-  const { id } = useParams<{ id: string }>();
+  const { title} = useParams<{ id: string, title: string }>();
   
   const { data: post, isLoading, error } = useQuery({
-    queryKey: ['blog-post', id],
-    queryFn: () => getPostById(id!),
-    enabled: !!id
+    queryKey: ['blog-post', title],
+    queryFn: () => getPostById(title!),
+    enabled: !!title
   });
 
   if (isLoading) {

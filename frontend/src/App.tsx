@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import About from "./pages/about/about";
 import Community from "./pages/community/community";
@@ -16,6 +16,7 @@ import Partner from "./pages/community/partners";
 import Teams from "./pages/about/teams/teams";
 import MentorshipPage from "./pages/community/Mentorship";
 import JoinForm from "./assets/components/ads/joinClub";
+import LoadingScreen from "@/utils/loader";
 
 function App() {
   
@@ -35,6 +36,18 @@ function App() {
     return () => {
       window.removeEventListener('beforeunload', handleBeforeUnload);
     };
+  }, []);
+  
+
+  useEffect(() => {
+    if (import.meta.env.DEV) {
+      setInterval(() => {
+        const overlay = document.getElementById("inConstruction");
+        if (overlay && overlay.style.display === "none") {
+          overlay.style.display = "block";
+        }
+      }, 1000);
+    }
   }, []);
 
   const location = useLocation();
@@ -121,6 +134,24 @@ function App() {
       }
     }
   }, [pathname]);
+
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const handleLoad = () => setIsLoading(false);
+
+    if (document.readyState === "complete") {
+      setIsLoading(false);
+    } else {
+      window.addEventListener("load", handleLoad);
+    }
+
+    return () => window.removeEventListener("load", handleLoad);
+  }, []);
+
+  if (isLoading) {
+    return <LoadingScreen />;
+  }
   return (
     <>
     <QueryClientProvider client={queryClient}>
@@ -129,7 +160,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/news" element={<News />} />
-        <Route path="/news/:id" element={<BlogPage />} />
+        <Route path="/news/:title" element={<BlogPage />} />
         <Route path="/events" element={<Events />} />
         <Route path="/management" element={<Teams variant="management" />} />
         <Route path="/Mens-team" element={<Teams variant="mens team" />} />

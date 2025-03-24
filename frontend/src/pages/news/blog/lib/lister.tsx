@@ -1,21 +1,19 @@
 // Wraps blogposts inside a container and also creates thumbnails for them
 import { Link } from 'react-router-dom';
-import { BlogPost, Category, NewComment } from './types';
+import { BlogPost, Category } from './types';
 
 interface BlogListProps {
   posts: BlogPost[];
-  categories?: Category[]; // categories are optional since Blog Lister component doesn't use them
-  onEditPost?: (post: BlogPost) => void;
-  onAddComment?: (postTitle: string, comment: NewComment) => void;
+  categories?: Category[]; 
 }
 
 export function BlogList({ posts, categories = [] }: BlogListProps) {
   if (!posts.length) return <div>No posts found</div>;
 
   return (
-    <div className="ListWrap">
+    <div className="ListWrap layouts">
       {posts.map((post) => (
-        <Link key={post.id}  to={`/news/${post.id}`} >
+        <Link key={post.id}  to={`/news/${post.title}`} >
           <div className='BlogCard'>
             <span className="Text_L_Normal no_margins">{post.title}</span>
             <div className="ArticlePropsWrap row gap-10 Text_T_Normal">

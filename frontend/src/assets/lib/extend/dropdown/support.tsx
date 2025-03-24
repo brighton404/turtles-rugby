@@ -19,7 +19,7 @@ export default function CardSupport() {
                     <div className="dropdown-AdCards-l">
                         <div className="contentWrap">
                             <span>Community</span>
-                            <p>Pre-made essentials like buttons and toasts</p>
+                            <p>Communities run by the club</p>
                         </div>
                         <div className="imageWrap"><img src={teamPhoto} alt="" /></div>
                     </div>
@@ -27,14 +27,14 @@ export default function CardSupport() {
                 <div className='column gap-10 flex-spread'>
                     <div className="dropdown-AdCards-l">
                         <div className="contentWrap">
-                            <span>Home ground</span>
+                            <span>Contribute</span>
                             <p>Pre-made essentials like buttons and toasts</p>
                         </div>
                         <div className="imageWrap"><img src={teamPhoto} alt="" /></div>
                     </div>
                     <div className="dropdown-AdCards-s">
                         <div className="contentWrap">
-                            <span>Home ground</span>
+                            <span>Sports Act</span>
                             <p>Pre-made essentials like buttons and toasts</p>
                         </div>
                         <div className="imageWrap"><img src={teamPhoto} alt="" /></div>

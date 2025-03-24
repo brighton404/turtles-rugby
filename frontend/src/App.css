@@ -95,6 +95,7 @@ footer {
   max-width: 100%;
   overflow: hidden;
   transition: padding 0.3s ease-in-out;
+  z-index: 3;
 }
 footer #newsletterInputLabel {
   display: flex;
@@ -466,7 +467,7 @@ article#sponsorPage {
 }
 .NewsCard h4 {
   margin: var(--Pd_0);
-  line-height: 4rem;
+  line-height: 2rem;
 }
 .NewsCard .NewsCard-image button {
   height: min-content;
@@ -486,10 +487,15 @@ article#sponsorPage {
   display: flex;
   flex: 1 0 0;
   padding: var(--Pd_100) var(--Pd_100);
-  overflow: hidden;
+  height: fit-content;
 }
-.blog input {
-  border-radius: 999px 0px 0px 999px;
+.blog .BlogSearch-Wrap {
+  display: flex;
+  align-self: stretch;
+  flex: 1 0 0;
+}
+.blog .BlogSearch-Wrap input {
+  width: 100%;
   padding: 10px 20px;
 }
 
@@ -501,7 +507,6 @@ article#sponsorPage {
   background-color: transparent;
   border: none;
   padding: 10px 0px 10px 10px;
-  border-radius: 0px 999px 999px 0px;
 }
 .blog .nav select option {
   margin: 0px;
@@ -526,6 +531,7 @@ article#sponsorPage {
   flex-wrap: wrap;
   gap: 10px;
   max-width: 100%;
+  padding: var(--Pd_0) var(--Pd_100) var(--Pd_10);
 }
 
 .ListWrap  .BlogCard {
@@ -969,13 +975,14 @@ h6{ font-size: var(--Txt_20); font-weight: bold;}
 .Markdown h5 { font-size: 1em; }
 .Markdown h6 { font-size: 0.875em; }
 .Markdown p { margin: 1em 0; }
-.Markdown a { text-decoration: none; }
+.Markdown a { text-decoration: underline; }
 .Markdown ul, ol { margin: 1em 0; padding-left: 1.5em; }
 .Markdown ul li { list-style-type: disc; }
 .Markdown ol li { list-style-type: decimal; }
-.Markdown pre, code { font-family: 'Courier New', Courier, monospace;  border-radius: 4px; }
-.Markdown pre { padding: 10px; overflow-x: auto; }
-.Markdown code { padding: 2px 4px; font-size: 0.9em; border-radius: 3px; }
+.Markdown pre, .Markdown code { font-family: 'Courier New', Courier, monospace;  border-radius: 4px;  }
+.Markdown pre > code { text-wrap: wrap;}
+.Markdown pre { padding: 10px; }
+.Markdown code { padding: 2px 4px; font-size: 0.9em; border-radius: 3px;}
 .Markdown blockquote { margin: 1em 0; padding-left: 1.5em; font-style: italic; }
 .Markdown table { width: 100%; border-collapse: collapse; margin: 1em 0; }
 .Markdown table th, table td { padding: 8px; text-align: left; }
@@ -1350,6 +1357,7 @@ form {
   .banner h1, .banner h2, .banner h3, .banner h4, .banner p, .banner > span { color: var(--base_100); font-weight: 500;}
   /* end of banner */
   header { background-color: var(--base_100);}
+  footer { background-color: var(--base_100);}
   footer .Newsletter-form .Collecter {
     border: 1px solid var(--base_0);
     background-color: var(--base_10);
@@ -1405,7 +1413,7 @@ form {
 .Markdown h6 { color: var(--base_60); }
 .Markdown a { color: #007bff; }
 .Markdown li, .Markdown ol, .Markdown ul { color: var(--base_0); }
-.Markdown pre, code { background-color: var(--base_90); border: none; color: var(--base_0);}
+.Markdown pre, .Markdown code { background-color: var(--base_90); border: none; color: var(--base_0);}
 .Markdown blockquote { border-left: 5px solid #ddd;  background-color: #f9f9f9; }
 .Markdown blockquote p { color: var(--base_0);}
 .Markdown table th, table td { border: 1px solid #ddd; color: var(--base_0); }
@@ -1455,12 +1463,20 @@ form {
   .sidebarDropNav .link:hover > span { color: var(--base_100);}
   .sidebarDropNav .link:hover .inner > svg { stroke: var(--base_100);}
   /* banner */
-  .banner { background-color: var(--base_100);}
+  .banner { background-color: var(--base_20);}
   .banner h1, .banner h2, .banner h3, .banner h4, .banner p, .banner > span { color: var(--base_0); font-weight: 500;}
   /* end of banner */
 
+  .FAQDiv P {
+    color: var(--base_40);
+  }
+  .FAQDiv H4 {
+    font-weight: normal;
+  }
+
   /*background colors*/
   header { background-color: var(--body-bg-alt);}
+  footer { background-color: var(--body-bg-alt);}
   footer .Newsletter-form .Collecter {
     border: 1px solid white;
     background-color: var(--base_100);
@@ -1488,12 +1504,18 @@ form {
   ol, li { color: var(--base_100);}
   .hero span, .hero p, .hero a { font-weight: normal;}
   .hero-about {
-    background-color: var(--base_100);
+    background-color: var(--base_8);
   }
   .hero-about span {
     color: var(--base_0);
   }
   .About-SectionWrap { background-color: var(--base_6);}
+  .About-SectionWrap .About-Turtles .About-Us-ObjectiveCard:hover {
+    background-color: var(--orange_30);
+
+    h5 {color: var(--base_0);}
+    ul, li {color: var(--base_0);}
+  }
 
   /* Blog/ News Page */
   .blog .nav input {
@@ -1534,7 +1556,7 @@ form {
   .Markdown a { color: var(--blue_26); }
   .Markdown details { color: var(--base_100); }
   .Markdown li, .Markdown ol, .Markdown ul { color: var(--base_100); }
-  .Markdown pre, code { background-color: var(--base_90); border: none; color: var(--base_0);}
+  .Markdown pre, .Markdown code { background-color: var(--base_90); border: none; color: var(--base_0);}
   .Markdown blockquote { border-left: 5px solid #ddd; background-color: #f9f9f9; }
   .Markdown blockquote p { color: var(--base_0);}
   .Markdown table th { border: 1px solid var(--base_10); color: var(--base_0); }
@@ -1769,7 +1791,6 @@ footer a {
   transition: all 0.2s ease-in-out;
 }
 .About-SectionWrap .About-Turtles .About-Us-ObjectiveCard:hover {
-  background-color: var(--orange_30);
   padding-top: var(--Pd_0);
   padding-bottom: var(--Pd_10);
   padding-left: var(--Pd_6);
@@ -2122,4 +2143,31 @@ footer a {
 /* images - since i ran into an error with native img element path */
 .teamPhoto { 
   src: format('../assets/lib/extend/dropdown/media/team photo.jpg');
+}
+
+#turtle-overlay {
+  display: flex;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+
+
+  background-color: rgba(43, 189, 226, 0.363);
+  img {
+    width: 150px;
+  }
+  .inner-turtle {
+    background-color: white;
+    width: max-content;
+    height: max-content;
+    border-radius: 10px;
+    padding: 20px;
+  }
 }

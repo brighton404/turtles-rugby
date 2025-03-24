@@ -16,6 +16,9 @@ const header: React.FC = () => {
         localStorage.setItem('theme', newTheme);
     };
     const [isSidebarOpen, setSidebarOpen] = useState(false);
+        const handleDonate = () => {
+          window.location.href = 'https://www.buymeacoffee.com/malinditurtlesrugby';
+        };
 
  return (
     <header>
@@ -32,7 +35,7 @@ const header: React.FC = () => {
         <div className="row flex-spread gap-2 align-y2 CAT">
             <div className="row m-none">
                 <Button onClick={toggleTheme} color={ButtonColor.Optimal} state={ButtonState.Default} icon={<Icons variant="sun"/>} isOutlined={false} >theme</Button>
-                <Button color={ButtonColor.Secondary} state={ButtonState.Default} isOutlined={false} > Join now </Button>
+                <Button color={ButtonColor.Accent} state={ButtonState.Default} isOutlined={false} onClick={handleDonate} > Donate </Button>
             </div>
             <div className="sideBar-button">
                 <div onClick={() => setSidebarOpen(true)}><Icons variant="menu"/></div>
