@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./Load.css";
+import "@/utils/load.css";
 
 const LoadingScreen = () => {
   const [dots, setDots] = useState(".");
