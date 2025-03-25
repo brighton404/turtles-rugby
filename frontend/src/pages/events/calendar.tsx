@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
+import listPlugin from "@fullcalendar/list"
 import interactionPlugin from "@fullcalendar/interaction";
 import { supabase } from "@/utils/supabase";
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@radix-ui/react-dialog";
@@ -85,12 +86,26 @@ const handleEventClick = (clickInfo: { event: EventApi }) => {
   setOpen(true);
 };
   
+const getCalendarView = () => (window.innerWidth < 768 ? "listWeek" : "dayGridMonth");
+const [calendarView, setCalendarView] = useState(getCalendarView);
+
+useEffect(() => {
+  const updateView = () => {
+    const newView = getCalendarView();
+    if (newView !== calendarView) {
+      setCalendarView(newView);
+    }
+  };
+
+  window.addEventListener("resize", updateView);
+  return () => window.removeEventListener("resize", updateView);
+}, [calendarView]);
+
   return (
     <>
-    
       <FullCalendar
-        plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
-        initialView="dayGridMonth"
+        plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin, listPlugin]}
+        initialView={calendarView}
         events={events}
         eventClick={handleEventClick}
         eventContent={(eventInfo) => {
@@ -145,52 +160,3 @@ const handleEventClick = (clickInfo: { event: EventApi }) => {
 }
 
 export default Calendar;
-
-/* 
-<FullCalendar
-  plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
-  initialView="dayGridMonth"
-  events={events}
-  eventContent={(eventInfo) => {
-    const startTime = new Date(eventInfo.event.start).toLocaleTimeString([], {
-      hour: "2-digit",
-      minute: "2-digit",
-    });
-
-    const endTime = new Date(eventInfo.event.end).toLocaleTimeString([], {
-      hour: "2-digit",
-      minute: "2-digit",
-    });
-
-    return (
-      <div>
-        <b>{startTime} - {endTime}</b>
-        <br />
-        <b>{eventInfo.event.title}</b>
-        <p style={{ fontSize: "12px", color: "#666" }}>
-          {eventInfo.event.extendedProps.description}
-        </p>
-      </div>
-    );
-  }}
-/> */
-
-/* 
-    <FullCalendar
-      plugins={[dayGridPlugin, timeGridPlugin, listPlugin, interactionPlugin]}
-      initialView="dayGridMonth"
-      events={events}
-      selectable={true}
-      editable={true}
-      dateClick={handleDateClick}
-      eventContent={(eventInfo) => (
-        <div id="EventDescFullCalendar">
-          <b>{eventInfo.event.title}</b>
-          <p style={{ fontSize: "12px", color: "#000" }}>
-            Location: {eventInfo.event.extendedProps.description}
-          </p>
-        </div>
-      )}
-    />
-
-*/

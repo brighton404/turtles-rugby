@@ -20,7 +20,7 @@ const footer: React.FC = () => {
                         <span className="Tagline">About us</span>
                         <div className="column top content-left">
                         <div className="link"><a href="" className="no_truncate">History</a></div>
-                        <div className="link"><a href="" className="no_truncate">Community Impact</a></div>
+                        <div className="link"><a href="" className="no_truncate">Impact</a></div>
                         <div className="link"><a href="" className="no_truncate">Sustainability</a></div>
                         <div className="link"><a href="" className="no_truncate">Join us</a></div>
                         <div className="link"><a href="" className="no_truncate">Brand toolkit</a></div>
@@ -46,9 +46,9 @@ const footer: React.FC = () => {
                     <div className="details-child">
                         <span className="Tagline">Contact</span>
                         <div className="column top content-left">
-                            <div className="link"><a href="" className="no_truncate">Email <Icons variant="mail"/></a></div>
-                            <div className="link"><a href="" className="no_truncate">Support Line <Icons variant="phone"/></a></div>
-                            <div className="link"><a href="" className="no_truncate">Feedback form <Icons variant="file"/></a></div>
+                            <div className="link"><a href="" className="no_truncate"><Icons variant="mail"/>Email</a></div>
+                            <div className="link"><a href="" className="no_truncate"><Icons variant="phone"/>Support Line</a></div>
+                            <div className="link"><a href="" className="no_truncate"><Icons variant="file"/>Feedback form</a></div>
                         </div>
                     </div>
                     {/* <div className="Newsletter-form column details-child"><div className="column"><span className="Tagline ">Subscribe</span><span className="truncate">Join our newsletter to stay up to date on features and releases.</span></div><div className="column flex-spread gap-10"><div className="Collecter row gap-2"><label htmlFor="newsletter" className="no_truncate" id="newsletterInputLabel">Your Email</label><input type="text" id="newsletter" placeholder="Your Email" /><Button color={ButtonColor.Accent} state={ButtonState.Disabled} isOutlined={false} > Coming soon </Button></div><span className="truncate Text_S_Normal">By subscribing you agree to with our Privacy Policy and provide consent to receive updates from the club.</span></div></div> */}
@@ -57,7 +57,7 @@ const footer: React.FC = () => {
             <div className="column gap-10">
                 <hr />
                 <div className="row gap-20 m-column">
-                    <div className="row flex-spread gap-20 m-column">
+                    <div className="row flex-spread gap-20 m-column flex-wrap">
                         <span className="m-txt_Middle no_truncate">© 2024 Malindi Turtles Rugby Club. All rights reserved.</span>
                         <div className="row m-align-y m-content-x1 gap-10 m-flex-wrap">
                             <a className="no_truncate" href="">Privacy Policy</a>

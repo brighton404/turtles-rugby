@@ -9,7 +9,7 @@ const events: React.FC = () => {
     <>
     <div className="space"></div>
     <AddCalendar />
-    <div className="layouts">
+    <div className="column layouts calendarWrap m-layouts ">
         <Calendar />
     </div>
     {/* <iframe src="" title="Styled Calendar" ></iframe> */}

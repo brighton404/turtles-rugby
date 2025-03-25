@@ -4,7 +4,6 @@ import { useQuery } from '@tanstack/react-query';
 import { getBlogPosts } from './lib/utils';
 import { BlogList } from './lib/lister';
 import { categories } from './lib/data';
-import AddCalendar from '@/assets/components/ads/addCalendar';
 
 const Blog: React.FC = () => {
   const { data: posts, isLoading: loading, error } = useQuery({
@@ -48,29 +47,22 @@ const Blog: React.FC = () => {
 
 
   return (
-    <div className='column flex-spread'>
-      <AddCalendar />
       <div className="blog column">
-          <div className='column flex-spread gap-20'>
-            <div className="row nav align-y1">
-              <div className='BlogSearch-Wrap'>
+            <div className="row align-y1 BlogSearch-Wrap">
                 <input type="text" placeholder="Search posts..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
                 <div className="selectStyle column align-y1 content-x1">
-                <select value={selectedCategory || ''} onChange={(e) => setSelectedCategory(e.target.value ? Number(e.target.value) : null)}>
-                  <option value="">All Categories</option>
-                  {categories.map(category => (
-                    <option key={category.id} value={category.id}>
-                      {category.name}
-                    </option>
-                  ))}
-                </select>
+                  <select value={selectedCategory || ''} onChange={(e) => setSelectedCategory(e.target.value ? Number(e.target.value) : null)}>
+                    <option value="">All Categories</option>
+                    {categories.map(category => (
+                      <option key={category.id} value={category.id}>
+                        {category.name}
+                      </option>
+                    ))}
+                  </select>
                 </div>
-              </div>
             </div>
             <BlogList posts={filteredPosts} categories={categories}/>
-          </div>
       </div>
-    </div>
   );
 };
 

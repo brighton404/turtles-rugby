@@ -95,7 +95,7 @@ footer {
   max-width: 100%;
   overflow: hidden;
   transition: padding 0.3s ease-in-out;
-  z-index: 3;
+  z-index: 2;
 }
 footer #newsletterInputLabel {
   display: flex;
@@ -114,6 +114,12 @@ footer .details-child {
   display: flex;
   flex-direction: column;
   flex: 1 0 0;
+  padding-left: var(--Pd_10);
+  padding-right: var(--Pd_10);
+
+  @media only screen and (max-width:900px) {
+    padding: var(--Pd_0) var(--Pd_20);
+  }
 }
 footer .Newsletter-form {
   padding-left: 100px;
@@ -139,7 +145,6 @@ footer hr {
 footer .link a {
   display: flex;
   text-decoration: none;
-  justify-content: space-between;
   align-items: center;
   width: 100%;
   gap: var(--Pd_20);
@@ -397,7 +402,7 @@ article#sponsorPage {
 .screenWide { width: 100vw;}
 /*Position*/
 .float-within { position: absolute;}
-
+.flex-wrap { flex-wrap: wrap; }
 .spread { justify-content: space-between;}
 .flex-spread { flex: 1 0 0;}
 /* justify works horizontally*/
@@ -480,35 +485,58 @@ article#sponsorPage {
 }
 .news {
   display: flex;
+  flex-direction: column;
   max-width: 100%;
+}
+.calendarWrap {
+  min-height: 50vh;
+  @media only screen and (max-width:900px) {
+    height: 80vh;
+  }
+  .fc {
+    flex: 1 0 0;
+  }
 }
 .blog {
   align-self: stretch;
   display: flex;
   flex: 1 0 0;
-  padding: var(--Pd_100) var(--Pd_100);
+  padding: var(--Pd_30) var(--Pd_100);
   height: fit-content;
+  gap: var(--Pd_10);
+
+  @media only screen and (max-width: 900px){
+    padding: var(--Pd_30) var(--Pd_30);
+  }
 }
 .blog .BlogSearch-Wrap {
   display: flex;
   align-self: stretch;
+  justify-content: space-between;
   flex: 1 0 0;
+  gap: var(--Pd_10);
+  padding: var(--Pd_0) var(--Pd_100) var(--Pd_10);
+
+  @media only screen and (max-width: 900px) {
+    padding: var(--Pd_0) var(--Pd_0) var(--Pd_10);  
+  }
 }
-.blog .BlogSearch-Wrap input {
+.blog input {
   width: 100%;
   padding: 10px 20px;
+  border-radius: 10px;
 }
 
-.blog .nav select {
+.blog select {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0px;
   background-color: transparent;
   border: none;
-  padding: 10px 0px 10px 10px;
+  padding: 10px;
 }
-.blog .nav select option {
+.blog select option {
   margin: 0px;
 }
 .ListWrap .displayTag {
@@ -517,10 +545,7 @@ article#sponsorPage {
   text-wrap: nowrap;
 }
 .blog .selectStyle {
-  border-right: 1px solid var(--base_0);
-  border-top: 1px solid var(--base_0);
-  border-bottom: 1px solid var(--base_0);
-  border-radius: 0px 999px 999px 0px;
+  border-radius: 10px;
   padding: 0px 10px 0px 0px;
 }
 .ListWrap a {
@@ -561,15 +586,14 @@ article#sponsorPage {
 /* Sidebar */
 .sidebar {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
   background-color: #2c3e5060;
   color: white;
   transition: transform 0.3s ease-in-out;
   transform: translateX(-100%);
-  z-index: 1000;
+  z-index: 4;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
 .sideBar-Wrap {
   display: flex;
@@ -1390,8 +1414,11 @@ form {
   .About-SectionWrap { background-color: var(--base_100);}
 
   /* Blog/ News Page */
-  .blog .nav input {
-    border: 1px solid var(--base_0);
+  .blog input {
+    border: 1px solid var(--base_80);
+  }
+  .blog .selectStyle {
+    border: 1px solid var(--base_80);
   }
   /* Markdown */
   .ListWrap  .BlogCard {
@@ -1518,12 +1545,12 @@ form {
   }
 
   /* Blog/ News Page */
-  .blog .nav input {
+  .blog input {
     border: 1px solid var(--base_80);
     background-color: var(--base_80);
     color: var(--base_10);
   }
-  .blog .nav .selectStyle {
+  .blog .selectStyle {
     border: 1px solid var(--base_80);
     background-color: var(--base_80);
   }
@@ -1658,7 +1685,6 @@ footer .link { display: flex; width: 100%; padding: var(--Pd_8) var(--Pd_0); }
 footer .link a {
   display: flex;
   text-decoration: none;
-  justify-content: space-between;
   align-items: center;
   width: 100%;
   gap: var(--Pd_20);
@@ -1974,11 +2000,9 @@ footer a {
   max-width: 100%;
   display: flex;
   align-items: center;
-  overflow: hidden;
 }
-.blog .nav input { width: 45vw; }
-.blog .nav { width: 100%; }
-.blog .nav select {
+.blog input { width: 45vw; }
+.blog select {
   width: 30vw;
   display: flex;
   align-items: center;
@@ -1987,22 +2011,14 @@ footer a {
   background-color: transparent;
   border: none;
   padding: 10px 0px 10px 10px;
-  border-radius: 0px 999px 999px 0px;
 }
-.blog .nav select option {
+.blog select option {
   margin: 0px;
 }
 .ListWrap .displayTag {
   border-radius: var(--Cr_6);
   padding: 4px 8px;
   text-wrap: nowrap;
-}
-.blog .selectStyle {
-  border-right: 1px solid var(--base_0);
-  border-top: 1px solid var(--base_0);
-  border-bottom: 1px solid var(--base_0);
-  border-radius: 0px 999px 999px 0px;
-  padding: 0px 10px 0px 0px;
 }
 .ListWrap a {
  text-decoration: none;
