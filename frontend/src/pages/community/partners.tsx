@@ -136,7 +136,7 @@ const partner: React.FC = () => {
                     <p>If you're interested in supporting our rugby club and being part of our vibrant community, we’d love to hear from you. Sponsorships provide businesses with great visibility, networking opportunities, and the chance to make a meaningful impact.  
                         <br />
                         <br />
-                    Contact us at contact@rugbyclub.comor call us at +1 234-567-890 for more information about sponsorship opportunities.  
+                    Contact us at malinditurtlesrugbyclub@gmail.com call us at +1 234-567-890 for more information about sponsorship opportunities.  
                         <br />
                         <br />
                     Thank you for your ongoing support! Together, we are building a stronger team and community.

@@ -1,4 +1,4 @@
-import Support from "../assets/components/ads/support";
+import { Support } from "../assets/components/ads/banners";
 import Hero from "../assets/components/hero";
 import { Layout1, Layout2 } from "../assets/components/layouts";
 

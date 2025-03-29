@@ -165,12 +165,24 @@ footer .Newsletter-form .Collecter {
   border-radius: 10px;
   height: 50px;
 }
+footer .no_truncate {
+  text-wrap: wrap;
+}
+.m-truncate {
+  text-wrap: wrap;
+}
 .hero {
   width: 100%;
   height: 100vh;
   display: flex;
   max-width: 100%;
   overflow: hidden;
+}
+.hero .desc {
+  padding: 0px 10%;
+}
+.hero * {
+  transition: all 0.3s ease-in-out;
 }
 .hero .CAT button span svg {
   rotate: 0deg;
@@ -413,6 +425,9 @@ article#sponsorPage {
 .content-x { align-items: start;} /* default content mode*/
 .content-x1 { align-items: center;} /*content on the center*/
 .content-x2 { align-items: end;} /* content on the right*/
+.s-br {
+  display: none;
+}
 /* Layouts after hero section */
 .layouts {
   align-self: stretch;
@@ -1631,8 +1646,8 @@ form {
   .hero .desc {
     padding: 20px;
     gap: var(--Pd_20);
-    padding-left: 20%;
-    padding-right: 20%;
+    padding-left: 10%;
+    padding-right: 10%;
   }
 }
 
@@ -1720,15 +1735,18 @@ footer a {
 .m-br {
   display: none;
 }
+.s-br {
+  display: block;
+}
 .hero {
-  height: 94vh;
-  padding-top: var(--Pd_50);
+  height: 85vh;
+  padding-top: var(--Pd_100);
 }
 .hero .desc {
   padding: 20px;
   gap: var(--Pd_20);
-  padding-left: 20%;
-  padding-right: 20%;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 .hero .Social-links a {
   font-size: 12px;
@@ -1744,8 +1762,17 @@ footer a {
 .hero .CAT button:hover > span svg {
   rotate: -45deg;  
 }
+.hero h1 { 
+  font-size: 34px; 
+  line-height: 2.4rem; 
+  font-weight: bolder;
+  
+}
 .hero p {
-  font-size: 14px;
+  font-size: 15px;
+}
+.hero .gap-40 {
+  gap: 20px;
 }
 .hero p, .hero h1 {
   text-wrap: wrap;
@@ -1755,9 +1782,10 @@ footer a {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: var(--Pd_8) var(--Pd_16);
+  padding: var(--Pd_6) var(--Pd_12);
+  transform: scale(150%);
 }
-.hero .link a { font-weight: 600; }
+.hero .link a { font-weight: 600; display: none;}
 .hero h1 {font-weight: normal;}
 
 .hero-about {
@@ -2152,8 +2180,8 @@ footer a {
 /* smaller Breakpoints */
 @media only screen and (max-width: 620px) {
   .hero .desc {
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 7%;
+    padding-right: 7%;
   }
 }
 

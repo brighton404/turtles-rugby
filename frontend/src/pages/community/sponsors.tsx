@@ -136,7 +136,7 @@ const sponsor: React.FC = () => {
                     <p>If you're interested in supporting our rugby club and being part of our vibrant community, we’d love to hear from you. Sponsorships provide businesses with great visibility, networking opportunities, and the chance to make a meaningful impact.  
                         <br />
                         <br />
-                    Contact us at contact@rugbyclub.comor call us at +1 234-567-890 for more information about sponsorship opportunities.  
+                    Contact us at malinditurtlesrugbyclub@gmail.com call us at +1 234-567-890 for more information about sponsorship opportunities.  
                         <br />
                         <br />
                     Thank you for your ongoing support! Together, we are building a stronger team and community.
@@ -148,45 +148,3 @@ const sponsor: React.FC = () => {
 }
 
 export default sponsor;
-
-
-/* 
-The terms "Gold," "Silver," and "Platinum" are often used to denote different sponsorship levels for a rugby team, with Platinum being the highest and most prestigious level. Here's a breakdown of the typical differences:
-
-Platinum Sponsor:
-
-Highest Level of Investment: Platinum sponsors typically make the largest financial contribution to the team.
-Extensive Branding Opportunities: They receive the most prominent branding placements, such as:
-    Primary Jersey Sponsorship: Their logo is displayed prominently on the team's jerseys.
-    Exclusive Naming Rights: They may have the right to name the stadium or a specific area within it.
-    Extensive Advertising: Their brand is featured on LED boards, scoreboards, and other high-visibility areas during matches.
-VIP Treatment: Platinum sponsors often receive VIP hospitality packages, including exclusive access to players, coaches, and matchday events.
-Marketing and PR Support: The team may provide significant marketing and public relations support to promote the sponsor's brand.
-
-Gold Sponsor:
-
-Significant Investment: Gold sponsors make a substantial financial contribution, but typically less than Platinum sponsors.
-Prominent Branding: They receive prominent branding placements, such as:
-    Secondary Jersey Sponsorship: Their logo may be displayed on a less prominent area of the team's jerseys.
-    Advertising Space: They may have advertising space on LED boards, scoreboards, and other areas within the stadium.
-    Matchday Hospitality: They may receive hospitality packages, but potentially with less exclusivity than Platinum sponsors.
-Marketing and PR Support: The team may provide some marketing and public relations support to promote the sponsor's brand.
-
-Silver Sponsor:
-
-Moderate Investment: Silver sponsors make a moderate financial contribution to the team.
-Limited Branding Opportunities: They may receive some branding opportunities, such as:
-    Advertising Space: They may have advertising space in the team's matchday program or on the team's website.
-    Matchday Hospitality: They may receive some hospitality benefits, but typically less than Gold or Platinum sponsors.
-Limited Marketing and PR Support: The team may provide limited marketing and public relations support to promote the sponsor's brand.
-
-Key Points:
-
-* The specific benefits and costs associated with each sponsorship level can vary significantly depending on the team, the league, and the specific agreement.
-* Teams may also offer other sponsorship levels, such as Bronze or even higher levels above Platinum (e.g., Diamond).
-* The value of a sponsorship is not solely determined by the financial contribution, but also by the exposure and brand recognition it provides.
-
-To get a more accurate understanding of the specific differences between sponsorship levels for a particular rugby team, it's best to consult the team's official sponsorship information or contact them directly.
-
-
-*/

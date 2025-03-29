@@ -58,7 +58,7 @@ const footer: React.FC = () => {
                 <hr />
                 <div className="row gap-20 m-column">
                     <div className="row flex-spread gap-20 m-column flex-wrap">
-                        <span className="m-txt_Middle no_truncate">© 2024 Malindi Turtles Rugby Club. All rights reserved.</span>
+                        <span className="m-txt_Middle no_truncate m-truncate">© 2024 Malindi Turtles Rugby Club. <br className="s-br" /> All rights reserved.</span>
                         <div className="row m-align-y m-content-x1 gap-10 m-flex-wrap">
                             <a className="no_truncate" href="">Privacy Policy</a>
                             <a className="no_truncate" href="">Terms of Service</a>

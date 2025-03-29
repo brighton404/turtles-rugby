@@ -1,4 +1,4 @@
-import Support from "@/assets/components/ads/support";
+import Support from "@/assets/components/ads/banners";
 import MembersList from "./membersList";
 
 const community: React.FC = () => {

@@ -1,4 +1,4 @@
-import Support from "@/assets/components/ads/support";
+import Support from "@/assets/components/ads/banners";
 import SchoolMentorshipForm from "@/assets/components/ads/mentorship";
 
 const mentorshipPage: React.FC = () => {

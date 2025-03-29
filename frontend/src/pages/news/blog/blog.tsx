@@ -18,7 +18,7 @@ const Blog: React.FC = () => {
 
   if (loading) {
     return (
-      <div>
+      <div className="layouts column align-y1 content-x1">
         <div>
           <div></div>
           <p>Loading posts...</p>
