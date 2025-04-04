@@ -18,7 +18,7 @@ const Blog: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="layouts column align-y1 content-x1">
+      <div className="layouts column align-y1 content-x1 loadingDiv">
         <div>
           <div></div>
           <p>Loading posts...</p>
@@ -47,7 +47,7 @@ const Blog: React.FC = () => {
 
 
   return (
-      <div className="blog column">
+      <section className="blog column">
             <div className="row align-y1 BlogSearch-Wrap">
                 <input type="text" placeholder="Search posts..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
                 <div className="selectStyle column align-y1 content-x1">
@@ -62,7 +62,7 @@ const Blog: React.FC = () => {
                 </div>
             </div>
             <BlogList posts={filteredPosts} categories={categories}/>
-      </div>
+      </section>
   );
 };
 

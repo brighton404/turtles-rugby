@@ -512,11 +512,15 @@ article#sponsorPage {
     flex: 1 0 0;
   }
 }
+.loadingDiv {
+  min-height: 50vh;
+}
 .blog {
   align-self: stretch;
   display: flex;
   flex: 1 0 0;
   padding: var(--Pd_30) var(--Pd_100);
+  min-height: 78vh;
   height: fit-content;
   gap: var(--Pd_10);
 
@@ -528,7 +532,6 @@ article#sponsorPage {
   display: flex;
   align-self: stretch;
   justify-content: space-between;
-  flex: 1 0 0;
   gap: var(--Pd_10);
   padding: var(--Pd_0) var(--Pd_100) var(--Pd_10);
 
@@ -1330,6 +1333,115 @@ form {
   background-color: var(--base_88);
   border: 1px solid var(--base_60);
 }
+.AccordionSection {
+  gap: 20px;
+  align-self: stretch;
+  min-height: 200px;
+  max-width: 100%;
+  padding: var(--Pd_100) var(--Pd_300);
+  padding-top: var(--Pd_10);
+
+  @media only screen and (max-width: 540px) {
+      overflow: hidden;
+      padding: var(--Pd_10) var(--Pd_16);
+  }
+}
+.AccordionSection > .child1 {
+  padding: 10px 30px;
+}
+.Accordion-wrap .child-desc {
+  transition: all 1s ease-in-out;
+}
+.Accordion-wrap:hover {
+  background-color: var(--base_96);
+  border-radius: 20px;
+}
+.Accordion-wrap {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 30px;
+  transition: all 0.1s ease-in-out;
+  align-self: stretch;
+  
+
+  h2 {font-size:x-large;}
+
+  .child1 {
+    display: flex;
+    text-align: left;
+    align-items: center;
+    cursor: pointer;
+    gap: var(--Pd_100);
+    justify-content: space-between;
+    span {
+      font-size: xx-large;
+    }
+  }
+  .span {
+    font-size: large;
+  }
+}
+.Inline-Ad {
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 5px 0px;
+}
+
+.horizontal-scroll {
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  white-space: nowrap;
+  transition: all 1s ease;
+  & > div {
+    display: flex;
+    animation: scrollText 15s infinite linear;
+  }
+}
+
+@keyframes scrollText {
+  from   { transform: translateX(0%); }
+  to { transform: translateX(-50%); }
+}
+.FeaturedEvent {
+  display: flex;
+  height: 60vh;
+  overflow: hidden;
+  transition: all 1s ease-out;
+}
+.FeaturedEvent .event-banner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--Pd_10);
+  padding: 40px 40px;
+  flex: 0.5 0 0;
+  h2, p {margin:0;}
+}
+.FeaturedEvent .event-dates {
+  font-size: 16px;
+}
+.FeaturedEvent .event-map {
+  font-size: 16px;
+}
+.FeaturedEvent .event-desc {
+  font-size: 20px;
+}
+.FeaturedEvent .shade {
+  display: flex;
+  flex: 1 0 0;
+  align-items: end;
+}
+.bannerGhost {
+  background: linear-gradient(78deg, rgba(18,18,18,1) 0%, rgba(12,12,12,1) 100%, rgba(255,255,255,0) 100%);
+  transition: all 1s ease-out;
+  animation: pulse 0.1s linear;
+  height: 60vh;
+}
+@keyframes pulse {
+  100% { background: linear-gradient(78deg, rgba(18,18,18,1) 0%, rgba(12,12,12,1) 44%, rgba(255,255,255,0) 100%);}
+  0% { background: linear-gradient(78deg, rgba(18,18,18,1) 0%, rgba(12,12,12,1) 100%, rgba(255,255,255,0) 100%);}
+}
 /* 
 ⠀⠀⠀⢘⣾⣾⣿⣾⣽⣯⣼⣿⣿⣴⣽⣿⣽⣭⣿⣿⣿⣿⣿⣧
 ⠀⠀⠀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
@@ -1446,6 +1558,22 @@ form {
   .ListWrap .ArticlePropsWrap span {
     color: var(--base_50);
   }
+  .Inline-Ad {
+    background-color: var(--base_10);
+    p {color: var(--base_100); font-weight: 300;}
+  }
+  .blog {
+    background-color: var(--base_98);
+  }
+  .FeaturedEvent .event-banner {
+    h2 {color: var(--base_90)}
+    p {color: var(--base_90)}
+    a { color: var(--base_90)}
+  }
+/*   .FeaturedEvent {
+    background: rgb(18,18,18);
+    background: linear-gradient(78deg, rgba(18,18,18,1) 0%, rgba(12,12,12,1) 44%, rgba(255,255,255,0) 100%); 
+  } */
   /* Markdown */
 .Markdown body { color: #333; background-color: #f8f9fa; }
 .Markdown h1 { border-bottom: 2px solid var(--base_0); }
@@ -1471,7 +1599,7 @@ form {
 [data-theme='dark'] {
    /*Text definition*/
   --body-bg: #fff;
-  --body-bg-alt: #101010;
+  --body-bg-alt: #141414;
   a { color: var(--base_100) }
   .icon-stroke { stroke: var(--base_100);}
   .icon-fill { fill: var(--base_100);}
@@ -1507,19 +1635,44 @@ form {
   .sidebarDropNav .link:hover .inner > svg { stroke: var(--base_100);}
   /* banner */
   .banner { background-color: var(--base_20);}
-  .banner h1, .banner h2, .banner h3, .banner h4, .banner p, .banner > span { color: var(--base_0); font-weight: 500;}
+  .banner h1, .banner h2, .banner h3, .banner h4, .banner > span { color: var(--base_80); font-weight: 500;}
+  .banner p {
+    color: var(--base_80); font-weight: 400;
+  }
+  .banner button.button--secondary {
+    background-color: var(--base_20);
+  }
+  .banner button.button--secondary span {
+    color: var(--base_90);
+  }
   /* end of banner */
-
+  .Inline-Ad {
+    background-color: var(--orange_22);
+    p {color: var(--base_0); font-weight: 300;}
+  }
   .FAQDiv P {
     color: var(--base_40);
   }
   .FAQDiv H4 {
     font-weight: normal;
   }
+  .AccordionSection {
+    h2 {color: var(--base_86);}
+    span {color: var(--base_86);}
+  }
+  .Accordion-wrap:hover {
+    h2 {color: var(--base_86);}
+    span {color: var(--base_86);}
+    .span {color: var(--base_86);}
+    background-color: var(--base_10) ;
+  }
 
   /*background colors*/
   header { background-color: var(--body-bg-alt);}
   footer { background-color: var(--body-bg-alt);}
+  footer * {
+    color: var(--base_88);
+  }
   footer .Newsletter-form .Collecter {
     border: 1px solid white;
     background-color: var(--base_100);
@@ -1546,6 +1699,12 @@ form {
   p {color: var(--base_100);}
   ol, li { color: var(--base_100);}
   .hero span, .hero p, .hero a { font-weight: normal;}
+  .hero h1 {
+    color: var(--base_86);
+  }
+  .hero p {
+    color: var(--base_40);
+  }
   .hero-about {
     background-color: var(--base_8);
   }
@@ -1586,6 +1745,9 @@ form {
       h2 { color: var(--base_0)}
       p { color: var(--base_0)}
     }
+  }
+  .blog {
+    background-color: var(--base_14);
   }
 
   /* Markdown */
@@ -1747,6 +1909,9 @@ footer a {
   gap: var(--Pd_20);
   padding-left: 10%;
   padding-right: 10%;
+}
+.hero .Social-links {
+  display: none;
 }
 .hero .Social-links a {
   font-size: 12px;

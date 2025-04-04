@@ -11,7 +11,7 @@ export function BlogList({ posts, categories = [] }: BlogListProps) {
   if (!posts.length) return <div>No posts found</div>;
 
   return (
-    <div className="ListWrap layouts">
+    <section className="ListWrap layouts">
       {posts.map((post) => (
         <Link key={post.id}  to={`/news/${post.title}`} >
           <div className='BlogCard'>
@@ -36,7 +36,7 @@ export function BlogList({ posts, categories = [] }: BlogListProps) {
           </div>
         </Link>
       ))}
-    </div>
+    </section>
   );
 }
 

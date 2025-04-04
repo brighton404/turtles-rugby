@@ -4,7 +4,7 @@ import Icons from "../lib/icons";
 
 export default function hero() {
     return (
-        <div className="hero">
+        <section className="hero">
             <div className="column flex-spread align-y2 gap-40">
                 <div className="wrap-desc column align-y2 content-x1 gap-20">
                     <div className="desc column gap-20 m-flex-spread">
@@ -16,11 +16,11 @@ export default function hero() {
                         </div>                    
                 </div>
                 <div className="Social-links row gap-2 align-y1 m-flex-wrap wide-flex">
-                    <div className="link"><Icons variant="facebook"/><a href="">Facebook</a></div>
-                    <div className="link"><Icons variant="instagram"/><a href="">Instagram</a></div>
-                    <div className="link"><Icons variant="twitter"/><a href="">Twitter</a></div>
-                    <div className="link"><Icons variant="Whatsapp"/><a href="">Whatsapp</a></div>
-                    <div className="link"><Icons variant="Youtube"/><a href="">Youtube</a></div>
+                    <a className="link" href="https://www.facebook.com/MalindiTurtlesRugby"><Icons variant="facebook"/><a>Facebook</a></a>
+                    <a className="link" href="https://www.instagram.com/malinditurtlesrugby/"><Icons variant="instagram"/><a>Instagram</a></a>
+                    <a className="link" href="https://x.com/RugbyMalindi"><Icons variant="twitter"/><a>Twitter</a></a>
+                    <a className="link" href="https://chat.whatsapp.com/FUnw2QN9aFE9QguDCOt4F9"><Icons variant="Whatsapp"/><a>Whatsapp</a></a>
+                    <a className="link" href="https://www.instagram.com/malinditurtlesrugby/"><Icons variant="Youtube"/><a>Youtube</a></a>
                 </div>
                 <div className="heroCanvas align-y content-x2">
                     <div className="img one"></div>
@@ -31,13 +31,13 @@ export default function hero() {
                     <div className="img six"></div>
                 </div>
             </div>
-        </div>
+        </section>
     )
 };
 
 export function HeroAbout() {
     return (
-        <div className="hero-about Text_L_Bold align-y1 content-x1">
+        <section className="hero-about Text_L_Bold align-y1 content-x1">
             <div className="heroCanvas align-y1 content-x1">
                 <div className="img one"></div>
                 <div className="img two"></div>
@@ -45,6 +45,6 @@ export function HeroAbout() {
                 <div className="img four"></div>
                 <div className="img five"></div>
             </div>
-        </div>
+        </section>
     )
 };

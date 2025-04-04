@@ -6,6 +6,7 @@ const snrWomen: React.FC = ({ }) => {
 
     return (
       <>
+      <div className="space"></div>
         <WomenBanner />
         <div className="team-container">
           {teamMembers.map((member) => (

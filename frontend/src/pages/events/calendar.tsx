@@ -125,9 +125,6 @@ useEffect(() => {
               <b>{startTime} - {endTime}</b>
               <br />
               <b>{eventInfo.event.title}</b>
-              <p style={{ textWrap: "wrap" }}>
-                {eventInfo.event.extendedProps.description}
-              </p>
             </div>
           );
         }}
