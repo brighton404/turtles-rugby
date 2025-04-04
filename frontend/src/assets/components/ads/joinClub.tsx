@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { joinClub } from "@/api/memberApi";
+import PageInDevelopment from "@/utils/development";
+import { Support } from "./banners";
 
 const JoinForm = () => {
   const [name, setName] = useState("");
@@ -17,6 +19,10 @@ const JoinForm = () => {
   };
 
   return (
+    <>
+    <div className="space"></div>
+    <Support/>
+    <PageInDevelopment />
     <div className="layouts joinClub">
       <form onSubmit={handleSubmit} id="joinClub">
         <h4>Club Membership Form</h4>
@@ -40,6 +46,7 @@ const JoinForm = () => {
         <button type="submit">Join Club</button>
       </form>
     </div>
+    </>
   );
 };
 

@@ -6,8 +6,8 @@ import EventBanner from "@/pages/events/lib/newEvent";
 
 export default function layout() {
     return (
-    <div className="layouts">
-        <h2>layout default</h2>
+    <div className="column layouts align-y1 content-x1 banner">
+        <h2>MALINDI TURTLES RUGBY CLUB</h2>
     </div>
     )
 }
@@ -61,9 +61,9 @@ export const Layout4 = () => {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     const faqs = [
-      { question: 'Is there a joining feegy?', answer: 'React is a JavaScript library for building UI.' },
-      { question: 'What is Framer Motion?', answer: 'Framer Motion is a library for animations in React.' },
-      { question: 'How do I use this component?', answer: 'Simply import and use it in your project.' },
+      { question: 'Is there a joining fee?', answer: 'Based on the position of the club right now in the community and in regard for development of it, there is no registration fee for members or players who would like to associate themselves with the club.' },
+      { question: 'Do you offer any training programs', answer: 'Yes, we do offer different programs within the club e.g school rugby coaching' },
+      { question: 'Do you participate in any Rugby Leagues?', answer: 'Currently we do not participate in any leagues but its in our goal to participate in any kenyan rugby leagues in the future' },
     ];
     
     return (

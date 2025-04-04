@@ -1,5 +1,9 @@
+import PageInDevelopment from "@/utils/development";
+
 const partner: React.FC = () => {
     return (
+        <>
+        <PageInDevelopment />
         <article className="layouts m-layouts" id="sponsorPage">
             <div className="sponsorContentWrap">
                 <h1>Our Sponsors & Partners</h1>
@@ -144,6 +148,7 @@ const partner: React.FC = () => {
                 </blockquote>
         </div>
         </article>
+        </>
     );
 }
 

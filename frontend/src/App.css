@@ -1416,6 +1416,9 @@ form {
   gap: var(--Pd_10);
   padding: 40px 40px;
   flex: 0.5 0 0;
+  @media only screen and (max-width: 540px) {
+    flex: 1 0 0;
+  }
   h2, p {margin:0;}
 }
 .FeaturedEvent .event-dates {

@@ -17,12 +17,9 @@ export function BlogPage() {
 
   if (isLoading) {
     return (
-      <div>
-        <div>
-          <div></div>
-          <p>Loading post...</p>
-        </div>
-      </div>
+      <div className="layouts m-layouts column align-y1 content-x1 loadingDiv">
+      <p style={{color: `black`}}>Loading post...</p>
+  </div>
     );
   }
   

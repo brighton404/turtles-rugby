@@ -4,8 +4,8 @@ import Button from "../../lib/button";
 
 export default function layout() {
     return (
-    <div className="layouts">
-        <h2>layout default</h2>
+        <div className="column layouts align-y1 content-x1 banner">
+        <h2>MALINDI TURTLES RUGBY CLUB</h2>
     </div>
     )
 }

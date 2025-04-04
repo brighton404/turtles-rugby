@@ -8,7 +8,7 @@ import { useLocation } from "react-router-dom";
 
 const PageInDevelopment: React.FC = () => {
   const location = useLocation();
-  const developmentPages = ["/mentorship", "/membership", "/test"];
+  const developmentPages = ["/mentorship", "/membership", "/sponsor", "/partners"];
   if (!developmentPages.includes(location.pathname)) {
     return null;
   }
