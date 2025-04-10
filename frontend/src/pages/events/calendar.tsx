@@ -8,6 +8,8 @@ import { supabase } from "@/utils/supabase";
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@radix-ui/react-dialog";
 import { EventApi } from "@fullcalendar/core";
 import './events.css';
+import "tippy.js/dist/tippy.css";
+import tippy from "tippy.js";
 
 
 const Calendar = () => { 
@@ -78,15 +80,15 @@ const Calendar = () => {
     }
   }; */
 
-const [selectedEvent, setSelectedEvent] = useState<null | EventApi>(null);
+const [selectedEvent, /* setSelectedEvent */] = useState<null | EventApi>(null);
 const [open, setOpen] = useState(false);
 
-const handleEventClick = (clickInfo: { event: EventApi }) => {
+/* const handleEventClick = (clickInfo: { event: EventApi }) => {
   setSelectedEvent(clickInfo.event);
   setOpen(true);
-};
+}; */
   
-const getCalendarView = () => (window.innerWidth < 768 ? "listWeek" : "dayGridMonth");
+const getCalendarView = () => (window.innerWidth < 768 ? "listMonth" : "dayGridMonth");
 const [calendarView, setCalendarView] = useState(getCalendarView);
 
 useEffect(() => {
@@ -107,7 +109,7 @@ useEffect(() => {
         plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin, listPlugin]}
         initialView={calendarView}
         events={events}
-        eventClick={handleEventClick}
+        /* eventClick={handleEventClick} */
         eventContent={(eventInfo) => {
           const startDate = eventInfo.event.start ? new Date(eventInfo.event.start) : null;
           const endDate = eventInfo.event.end ? new Date(eventInfo.event.end) : null;
@@ -127,6 +129,11 @@ useEffect(() => {
               <b>{eventInfo.event.title}</b>
             </div>
           );
+        }}
+        eventDidMount={(info) => {
+          tippy(info.el, {
+            content: info.event.extendedProps.description || "No description",
+          });
         }}
       />
       {selectedEvent && (

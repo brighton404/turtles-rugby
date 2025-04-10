@@ -74,7 +74,7 @@ export default function EventBanner() {
       <div style={styles.shade} className='shade'>
         <div className="event-banner">
           <h2>{event.title}</h2>
-          <div className='row m-column gap-10 content-x1'>
+          <div className='row m-column gap-10 content-x1 m-align-y'>
           <p className='event-dates'>{new Date(event.start).toLocaleDateString()} - {new Date(event.end).toLocaleDateString()}</p>
           <a href={event.gmaps} className='event-map'>{event.location}</a>
           </div>

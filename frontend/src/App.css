@@ -1752,6 +1752,8 @@ form {
   .blog {
     background-color: var(--base_14);
   }
+  .fc b, .fc td { color: white;}
+  .fc a {color: black;}
 
   /* Markdown */
   .Markdown body { color: #333; background-color: #f8f9fa; }
