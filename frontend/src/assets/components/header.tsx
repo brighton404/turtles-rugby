@@ -1,8 +1,8 @@
-import { useState } from "react";
 import Button, { ButtonColor, ButtonState } from "../lib/button";
 import Dropdown from "../lib/dropdown";
 import Icons from "../lib/icons";
 import Sidebar from "./extend/sidebar";
+import { useSidebar } from "./extend/sidebarContext";
 
 const header: React.FC = () => {
     const toggleTheme = () => {
@@ -15,11 +15,10 @@ const header: React.FC = () => {
         // Save the theme to localStorage
         localStorage.setItem('theme', newTheme);
     };
-    const [isSidebarOpen, setSidebarOpen] = useState(false);
         const handleDonate = () => {
           window.location.href = 'https://www.buymeacoffee.com/malinditurtlesrugby';
         };
-
+    const { openSidebar } = useSidebar();
  return (
     <header>
     <div className="row wide align-y1 content-x1">
@@ -38,10 +37,10 @@ const header: React.FC = () => {
                 <Button color={ButtonColor.Accent} state={ButtonState.Default} isOutlined={false} onClick={handleDonate} > Donate </Button>
             </div>
             <div className="sideBar-button">
-                <div onClick={() => setSidebarOpen(true)}><Icons variant="menu"/></div>
+                <div onClick={openSidebar}><Icons variant="menu"/></div>
             </div>
         </div>
-        <Sidebar isOpen={isSidebarOpen}  onClose={() => setSidebarOpen(false)}/>
+        <Sidebar />
     </div>
     </header>
  );

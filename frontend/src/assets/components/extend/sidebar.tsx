@@ -3,31 +3,23 @@ import { ButtonColor, ButtonState } from '../../lib/actionButton';
 import Button from '../../lib/button';
 import SidebarNav from '../../lib/extend/dropdown/sidebarNav';
 import Icons from '../../lib/icons';
+import { useSidebar } from './sidebarContext';
 
-type SidebarProps = {
-  
-  isOpen: boolean;
-  onClose: () => void;
-};
-
-const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
+const Sidebar: React.FC = () => {
+  const { isOpen, closeSidebar } = useSidebar();
   const sidebarRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const handleOutsideClick = (event: MouseEvent) => {
-      if (
-        sidebarRef.current &&
-        !sidebarRef.current.contains(event.target as Node) &&
-        isOpen
-      ) {
-        onClose();
+      if (sidebarRef.current && !sidebarRef.current.contains(event.target as Node) && isOpen) {
+        closeSidebar();
       }
     };
-
     document.addEventListener('mousedown', handleOutsideClick);
     return () => {
       document.removeEventListener('mousedown', handleOutsideClick);
     };
-  }, [isOpen, onClose]);
+  }, [isOpen, closeSidebar]);
 
   const toggleTheme = () => {
     const currentTheme = document.documentElement.getAttribute('data-theme');
@@ -45,17 +37,17 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
       <div ref={sidebarRef} className='sideBar-Wrap'>
         <div className="column gap-20">
           <div className='row content-x1'>
-            <button className="close-button" onClick={onClose}>&times;</button>
+            <button className="close-button" onClick={closeSidebar}>&times;</button>
             <div className="column flex-spread content-x2">
               <Button onClick={toggleTheme} color={ButtonColor.Optimal} state={ButtonState.Default} icon={<Icons variant="sun"/>} isOutlined={false} >theme</Button>
             </div>
           </div>
           <div className='column gap-20'>
-            <Button color={ButtonColor.Primary} state={ButtonState.Default} isOutlined={false} navigateTo="/"> Home </Button>
-            <Button color={ButtonColor.Primary} state={ButtonState.Default} isOutlined={false} navigateTo="/about"> About </Button>
+            <Button color={ButtonColor.Primary} state={ButtonState.Default} isOutlined={false} navigateTo="/" onClick={closeSidebar}> Home </Button>
+            <Button color={ButtonColor.Primary} state={ButtonState.Default} isOutlined={false} navigateTo="/about" onClick={closeSidebar}> About </Button>
             <SidebarNav label={'Teams'} displayCard={'m-teams'} />
-            <Button color={ButtonColor.Primary} state={ButtonState.Default} isOutlined={false} navigateTo="/news"> News </Button>
-            <Button color={ButtonColor.Primary} state={ButtonState.Default} isOutlined={false} navigateTo="/events"> Events </Button>
+            <Button color={ButtonColor.Primary} state={ButtonState.Default} isOutlined={false} navigateTo="/news" onClick={closeSidebar}> News </Button>
+            <Button color={ButtonColor.Primary} state={ButtonState.Default} isOutlined={false} navigateTo="/events" onClick={closeSidebar}> Events </Button>
             <SidebarNav label={'Support'} displayCard={'m-support'} />
           </div>        
         </div>

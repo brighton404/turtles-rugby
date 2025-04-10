@@ -1,9 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import Icons from "../../icons";
 import teamPhoto from '@/assets/lib/extend/dropdown/media/team photo.jpg';
-
+import { useSidebar } from "@/assets/components/extend/sidebarContext";
 
 export default function CardSupport() {
+
     const navigate = useNavigate();
 
     const onSponsor = () => {
@@ -12,6 +13,7 @@ export default function CardSupport() {
       const onPartner = () => {
         navigate('/partners');
       };
+      const { closeSidebar } = useSidebar();
     return (
         <div className="cardTeams row gap-20">
             <div className='row wide-ratio-x gap-10'>
@@ -45,12 +47,12 @@ export default function CardSupport() {
                 <div className='column gap-10'>
                     <span className='bold Text_M_Normal'>Club support</span>
                     <div className="link">
-                        <div className="inner" onClick={onPartner}>
+                        <div className="inner" onClick={() => { onPartner(); closeSidebar(); }}>
                             <span>Patnership</span>
                             <Icons variant="chevron-right"/>
                         </div>
                     </div>
-                    <div className="link" onClick={onSponsor}>
+                    <div className="link" onClick={() => { onSponsor(); closeSidebar(); }}>
                         <div className="inner">
                             <span>Sponsorship</span>
                             <Icons variant="chevron-right"/>
@@ -84,18 +86,19 @@ export const MobileCardSupport = () => {
       const onPartner = () => {
         navigate('/partners');
       };
+      const { closeSidebar } = useSidebar();
     return (
         <div className="column gap-20">
             <div className="sidebarDropNav column gap-20">
                 <div className='column gap-10'>
                     <span className='bold Text_M_Normal'>Club support</span>
                     <div className="link">
-                        <div className="inner" onClick={onPartner}>
+                        <div className="inner" onClick={() => { onPartner(); closeSidebar(); }}>
                             <span>Patnership</span>
                             <Icons variant="chevron-right"/>
                         </div>
                     </div>
-                    <div className="link" onClick={onSponsor}>
+                    <div className="link"onClick={() => { onSponsor(); closeSidebar(); }}>
                         <div className="inner">
                             <span>Sponsorship</span>
                             <Icons variant="chevron-right"/>

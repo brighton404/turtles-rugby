@@ -17,6 +17,7 @@ import Teams from "./pages/about/teams/teams";
 import MentorshipPage from "./pages/community/Mentorship";
 import JoinForm from "./assets/components/ads/joinClub";
 import LoadingScreen from "@/utils/loader";
+import { SidebarProvider } from "./assets/components/extend/sidebarContext";
 
 function App() {
   
@@ -155,6 +156,7 @@ function App() {
   return (
     <>
     <QueryClientProvider client={queryClient}>
+    <SidebarProvider>
     <Header />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -173,6 +175,7 @@ function App() {
         <Route path="*" element={<NotFound />}/>
       </Routes>
     <Footer />
+    </SidebarProvider>
     </QueryClientProvider>
     </>
   );
