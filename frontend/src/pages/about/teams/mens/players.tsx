@@ -12,12 +12,15 @@ const SkeletonCard = () => (
 const snrMen: React.FC = () => {
   const [TurtlePlayers, setItems] = useState<any[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
-
+  
   useEffect(() => {
     async function fetchItems() {
       setLoading(true);
-      const { data, error } = await supabase.from("TurtlePlayers").select("*");
-
+      const { data, error } = await supabase
+        .from("TurtlePlayers")
+        .select("*")
+        .eq("gender", "male"); 
+  
       if (error) {
         console.error("Error fetching items:", error);
       } else {
@@ -25,7 +28,7 @@ const snrMen: React.FC = () => {
       }
       setLoading(false);
     }
-
+  
     fetchItems();
   }, []);
 
