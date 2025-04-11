@@ -25,7 +25,7 @@ const EventCard: React.FC<EventCardProps> = ({ event }) => {
 
     return (
         <div className="event-card" style={styles.background}>
-            <div className="column card-description-wrap">
+            <div className="card-description-wrap">
                 <div className="event-name column">
                     <h3>{event.title}</h3>
                 </div>
@@ -44,9 +44,9 @@ const EventCard: React.FC<EventCardProps> = ({ event }) => {
                             <span className="Text_S_Normal bold">Description</span>
                             <span className="Text_S_Normal">{event.description}</span>
                         </div>
-                    </div>
-                    <Button color={ButtonColor.Secondary} state={ButtonState.Default} isOutlined={false} onClick={Ticket}> Get Tickets </Button>
+                    </div>                    
                 </div>
+                <Button color={ButtonColor.Secondary} state={ButtonState.Default} isOutlined={false} onClick={Ticket}> Get Tickets </Button>
             </div>
         </div>
     )
