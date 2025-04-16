@@ -35,12 +35,9 @@ const DropdownTree: React.FC<DropdownTreeProps> = ({ data }) => {
 
     return (
       <li className="tree-item" style={{ paddingLeft: `${level * 20}px` }}>
-        <div className="tree-label">
+        <div className="tree-label" onClick={toggleOpen}>
           {node.children && (
-            <span
-              className={`arrow ${isOpen ? "open" : ""}`}
-              onClick={toggleOpen}
-            >
+            <span className={`arrow ${isOpen ? "open" : ""}`} onClick={toggleOpen}>
               ▶
             </span>
           )}

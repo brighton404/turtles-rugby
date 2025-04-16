@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { applyForMentorship } from "@/api/mentorshipApi";
+import { JoinSchools } from "./banners";
 
 const SchoolMentorshipForm = () => {
   const [schoolName, setSchoolName] = useState("");
@@ -30,6 +31,8 @@ const SchoolMentorshipForm = () => {
   };
 
   return (
+    <>
+    <JoinSchools />
     <div className="layouts schoolMentorship">
         <form onSubmit={handleSubmit} id="schoolMentorshipForm">
         <h1>School Mentorship Application</h1>
@@ -83,6 +86,7 @@ const SchoolMentorshipForm = () => {
         <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Submit Application</button>
       </form>
     </div>
+    </>
   );
 };
 

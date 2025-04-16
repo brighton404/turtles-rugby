@@ -15,7 +15,7 @@ const data = [
   { label: "Media, Marketing & Membership", link: "#MediaMarketingandMembership"},
   { label: "Wellbeing & Welfare", link: "#WellbeingandWelfare"},
   { label: "Volunteers & Social Events", link: "#VolunteersandSocialEvents"},
-  { label: "Get Involve", link: "#GetInvolve"},
+  { label: "Get Involved", link: "#GetInvolved"},
 /*   { label: "Youth & Community Development", 
       children: [
           { label: "SWOT Analysis", link: "#Development" },
@@ -27,7 +27,7 @@ const data = [
 
 const ClubManagement: React.FC = ({ }) => {
 
-      const [TurtlePlayers, setItems] = useState<any[]>([]);
+      const [TurtleMgt, setItems] = useState<any[]>([]);
       const [loading, setLoading] = useState<boolean>(true);
       
       useEffect(() => {
@@ -36,6 +36,7 @@ const ClubManagement: React.FC = ({ }) => {
           const { data, error } = await supabase
             .from("TurtleManagement")
             .select("*")
+            .order('id', { ascending: true })
           if (error) {
             console.error("Error fetching items:", error);
           } else {
@@ -47,6 +48,23 @@ const ClubManagement: React.FC = ({ }) => {
         fetchItems();
       }, []);
 
+      const clubPresident = TurtleMgt.find(member => member.position === "Club President");
+      const clubChairperson = TurtleMgt.find(member => member.position === "Club Chairperson");
+      const clubViceChairperson = TurtleMgt.find(member => member.position === "Club Vice Chairperson");
+      const clubSecretary = TurtleMgt.find(member => member.position === "Club Secretary");
+      const clubTreasurer = TurtleMgt.find(member => member.position === "Club Treasurer");
+      const clubRugbyDirector = TurtleMgt.find(member => member.position === "Club Director of Rugby");
+      const clubYouthDevelopmentOfficer = TurtleMgt.find(member => member.position === "Youth Development Officer");
+      const clubSchoolsandCommunityLiaison = TurtleMgt.find(member => member.position === "Schools & Community Liaison");
+      const clubFacilitiesManager = TurtleMgt.find(member => member.position === "Facilities Manager");
+      const clubMatchdayCoordinator = TurtleMgt.find(member => member.position === "Matchday Coordinator");
+      const clubHeadofCommunications = TurtleMgt.find(member => member.position === "Head of Communications");
+      const clubMarketingandSponsorshipManager = TurtleMgt.find(member => member.position === "Marketing and Sponsorship Manager");
+      const clubMembershipOfficer = TurtleMgt.find(member => member.position === "Membership Officer");
+      const clubSafeguardingOfficer = TurtleMgt.find(member => member.position === "Safeguarding Officer");
+      const clubWelfareandInclusionOfficer = TurtleMgt.find(member => member.position === "Welfare and Inclusion Officer");
+      const clubVolunteerCoordinator = TurtleMgt.find(member => member.position === "Volunteer Coordinator");
+      const clubSocialEventsManager = TurtleMgt.find(member => member.position === "Social Events Manager");
     return (
       <>
       <div className="space"></div>
@@ -57,8 +75,8 @@ const ClubManagement: React.FC = ({ }) => {
         <div className="mgt-container">
         {loading
           ? Array.from({ length: 20 }).map((_, idx) => <SkeletonCard key={idx} />)
-          : TurtlePlayers.map((player) => (
-              <MgtMemberCard key={player.id} management={player} />
+          : TurtleMgt.map((member) => (
+              <MgtMemberCard key={member.id} management={member} />
             ))}
       </div>
       <div className="mgt-content">
@@ -68,19 +86,22 @@ const ClubManagement: React.FC = ({ }) => {
         <div className="mgt-pos-wrap">
           <div className="mgt-child">
             <div>
-              <h3>Club Leadership</h3>
+              <h3 id="clubleadership">Club Leadership</h3>
             </div>
             <div className="mgt-child1">
               <div className="mgt-child2">
                 <h4> Club President </h4>
+                <h5>{clubPresident?.full_name || "No current president"}</h5>
                 <p>As the figurehead of the club, provides strategic direction and ensures the club stays true to its core values. With a deep history in the local rugby community, [he/she/they] champions inclusivity, youth development, and long-term sustainability.</p>
               </div>
               <div className="mgt-child2">
                 <h4> Chairperson </h4>
+                <h5>{clubChairperson?.full_name || "No current chairperson"}</h5>                
                 <p>Responsible for leading committee meetings and ensuring that all departments function cohesively, oversees the governance of the club. </p>
               </div>
               <div className="mgt-child2">
                 <h4> Vice Chairperson </h4>
+                <h5>{clubViceChairperson?.full_name || "No current Vice chairperson"}</h5>
                 <p>Supporting the Chairperson and stepping in when required, helps bridge communication across teams and plays a pivotal role in key decision-making processes.</p>
               </div>           
             </div>
@@ -90,14 +111,17 @@ const ClubManagement: React.FC = ({ }) => {
             <div className="mgt-child1">
               <div className="mgt-child2">
                 <h4> Club Secretary </h4>
+                <h5>{clubSecretary?.full_name || "No current secretary"}</h5>
                 <p>The organizational hub of our club, handles all administrative duties, including meeting agendas, minutes, and compliance documentation. [He/She/They] ensures smooth internal communications and official correspondences.</p>
               </div>
               <div className="mgt-child2">
                 <h4> Treasurer </h4>
+                <h5>{clubTreasurer?.full_name || "No current Treasurer"}</h5>
                 <p> keeps our finances in top shape, ensuring transparency, budgeting, and financial planning. Their diligent work behind the scenes supports everything from kit purchases to pitch maintenance.</p>
               </div>
               <div className="mgt-child2">
                 <h4> Director of Rugby </h4>
+                <h5>{clubRugbyDirector?.full_name || "No current chairperson"}</h5>
                 <p>Overseeing all rugby operations, is responsible for player development, coaching standards, and competition performance. [He/She/They] work closely with both senior and youth teams to uphold a high level of rugby across the board.</p>
               </div>
             </div>
@@ -107,10 +131,12 @@ const ClubManagement: React.FC = ({ }) => {
             <div className="mgt-child1">
               <div className="mgt-child2">
                 <h4> Youth Development Officer </h4>
+                <h5>{clubYouthDevelopmentOfficer?.full_name || "No current Youth Development Officer"}</h5>
                 <p>Dedicated to nurturing the next generation of players, manages all junior age-grade teams, coaching recruitment, safeguarding, and parent engagement.</p>
               </div>
               <div className="mgt-child2">
                 <h4> Schools & Community Liaison </h4>
+                <h5>{clubSchoolsandCommunityLiaison?.full_name || "No current Schools & Community Liaison"}</h5>
                 <p>Focused on outreach, builds and maintains partnerships with local schools, community groups, and councils to promote the sport and foster club involvement from grassroots.</p>
               </div>
             </div>
@@ -120,10 +146,12 @@ const ClubManagement: React.FC = ({ }) => {
             <div className="mgt-child1">
               <div className="mgt-child2">
                 <h4> Facilities Manager </h4>
+                <h5>{clubFacilitiesManager?.full_name || "No current Facilities Manager"}</h5>
                 <p>From pitch upkeep to clubhouse maintenance, ensures our physical environment is safe, functional, and welcoming.</p>
               </div>
               <div className="mgt-child2">
                 <h4> Matchday Coordinator </h4>
+                <h5>{clubMatchdayCoordinator?.full_name || "No current Matchday Coordinator"}</h5>
                 <p>Behind every home fixture is, who manages logistics, volunteer coordination, first aid presence, and hospitality to create a smooth matchday experience.</p>
               </div>
             </div>
@@ -133,14 +161,17 @@ const ClubManagement: React.FC = ({ }) => {
             <div className="mgt-child1">
             <div className="mgt-child2">
               <h4> Head of Communications </h4>
+              <h5>{clubHeadofCommunications?.full_name || "No current Head of Communications"}</h5>
               <p> leads our public voice — from press releases to newsletters and website updates. [He/She/They] keep our members informed and engaged.</p>
             </div>
             <div className="mgt-child2">
               <h4> Marketing & Sponsorship Manager </h4>
+              <h5>{clubMarketingandSponsorshipManager?.full_name || "No current Marketing & Sponsorship Manager"}</h5>
               <p>Tasked with growing the club’s visibility and funding, works closely with local businesses and sponsors to build partnerships that benefit both the club and the community.</p>
             </div>
             <div className="mgt-child2">
               <h4> Membership Officer </h4>
+              <h5><h5>{clubMembershipOfficer?.full_name || "No current Membership Officer"}</h5></h5>
               <p>Focused on the lifeblood of the club — our members — oversees sign-ups, renewals, and engagement to ensure everyone feels valued and connected.</p>
             </div>
             </div>
@@ -150,10 +181,12 @@ const ClubManagement: React.FC = ({ }) => {
             <div className="mgt-child1">
               <div className="mgt-child2">
                 <h4> Safeguarding Officer </h4>
+                <h5>{clubSafeguardingOfficer?.full_name || "No current Safeguarding Officer"}</h5>
                 <p>The voice for safety and inclusion, ensures all children and vulnerable adults are protected, championing a safe environment for all.</p>
               </div>
               <div className="mgt-child2">
                 <h4> Welfare & Inclusion Officer </h4>
+                <h5>{clubWelfareandInclusionOfficer?.full_name || "No current Welfare & Inclusion Officer"}</h5>
                 <p>is dedicated to supporting mental health, inclusion, and equal opportunities. [He/She/They] work to make the club a space for everyone.</p>
               </div>
             </div>
@@ -163,17 +196,19 @@ const ClubManagement: React.FC = ({ }) => {
             <div className="mgt-child1">
               <div className="mgt-child2">
                 <h4> Volunteer Coordinator </h4>
+                <h5>{clubVolunteerCoordinator?.full_name || "No current Volunteer Coordinator"}</h5>
                 <p>Our volunteers are the heart of the club, and ensures they are trained, supported, and celebrated for all their hard work.</p>
               </div>
               <div className="mgt-child2">
                 <h4> Social Events Manager </h4>
+                <h5>{clubSocialEventsManager?.full_name || "No current Social Events Manager"}</h5>
                 <p>From quiz nights to awards dinners, brings the fun. [He/She/They] plans inclusive and engaging events that unite members off the pitch.</p>
               </div>
             </div>
           </div>
-          <div className="mgt-child">
+          <div className="mgt-child" id="GetInvolved">
             <h4>Get Involved</h4>
-            <p>Our club thrives thanks to the hard work of these passionate individuals and the wider community. Interested in volunteering, coaching, or joining a committee? Reach out to [contact email or form link].</p>
+            <p>Our club thrives thanks to the hard work of these passionate individuals and the wider community. Interested in volunteering, coaching, or joining a committee? Reach out to <a href="mailto:malinditurtlesrugbyclub@gmail.com">Email</a> or fill out our webform <a href="/apply">Webform</a></p>
           </div>
         </div>
         <div className="RightBar">

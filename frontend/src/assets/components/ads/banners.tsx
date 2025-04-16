@@ -50,3 +50,33 @@ export const NewsLetter = () => {
         </div>
     )
 };
+
+export const JoinPlayers = () => {
+    return (
+        <div className="banner column flex-spread content-x1 gap-20">
+            <h2 className="no_margins txt_Middle">Ready to Join the Pack?</h2>
+            <p className="no_margins txt_Middle">Visit our training grounds, meet the team, and experience <br /> the thrill of Malindi Turtles Rugby Club for yourself.</p>
+            <p>You can also email your application via <a href="mailto:malinditurtlesrugbyclub@gmail.com">Email</a></p>
+        </div>
+    )
+};
+
+export const JoinMgt = () => {
+    return (
+        <div className="banner column flex-spread content-x1 gap-20">
+            <h2 className="no_margins txt_Middle">Join our Managing Committee</h2>
+            <p className="no_margins txt_Middle">Visit our training grounds, meet the team, and experience <br /> the thrill of Malindi Turtles Rugby Club for yourself.</p>
+            <p>You can also email your application via <a href="mailto:malinditurtlesrugbyclub@gmail.com">Email</a></p>
+        </div>
+    )
+};
+
+export const JoinSchools = () => {
+    return (
+        <div className="banner column flex-spread content-x1 gap-20">
+            <h2 className="no_margins txt_Middle">School Coaching Programme</h2>
+            <p className="no_margins txt_Middle">Visit our training grounds, meet the team, and experience <br /> the thrill of Malindi Turtles Rugby Club for yourself.</p>
+            <p>You can also email your application via <a href="mailto:malinditurtlesrugbyclub@gmail.com">Email</a></p>
+        </div>
+    )
+};

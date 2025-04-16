@@ -840,10 +840,7 @@ article#sponsorPage {
 }
 .tree-link {
   text-decoration: none;
-}
-
-.tree-link:hover {
-  text-decoration: underline;
+  width: 100%;
 }
 
 /*Button*/
@@ -1254,7 +1251,7 @@ form {
   }
 }
 
-.joinClub, .schoolMentorship {
+.joinClub, .schoolMentorship, .joinmgt {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1287,11 +1284,61 @@ form {
     border: none;
     height: 30px;
     padding: var(--Pd_2);
+    padding-left: var(--Pd_10);
     background-color: var(--base_96);
   }
   .description {
     color: var(--base_70);
   }
+}
+#joinMgt {
+  display: flex;
+  flex-direction: column;
+
+  padding: var(--Pd_10);
+  gap: var(--Pd_30);
+
+  button {
+    text-wrap: nowrap;
+  }
+
+  .form-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: var(--Pd_20);
+  }
+
+  .form-children-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: var(--Pd_4);
+  }
+  input {
+    border-radius: var(--Cr_6);
+    border: none;
+    height: 30px;
+    padding: var(--Pd_2);
+    padding-left: var(--Pd_10);
+    background-color: var(--base_96);
+  }
+  select {
+    padding: var(--Pd_8);
+    border-radius: var(--Cr_6);
+    background-color: var(--base_96);
+    border: none;
+  }
+  textarea {
+    border-radius: var(--Cr_6);
+    border: 1px solid var(--base_84);
+    resize: none;
+    min-height: 200px;
+  }
+  .description {
+    color: var(--base_70);
+  }
+}
+#GetInvolved {
+  padding: 20px;
 }
 .bcknd {
   h1, h2, h3, h4, h5, h6 { font-weight: bold; line-height: normal; margin: 0; }
@@ -1469,6 +1516,9 @@ form {
   display: flex;
   gap: 10px;
   padding: 6px 40px;
+  border-bottom: 2px solid var(--base_20);
+  position: sticky;
+  top: 7vh;
 }
 
 .tab-button {
@@ -1494,13 +1544,15 @@ form {
 }
 
 .tabs-content {
-  padding: 16px;
+  padding: 0px;
 }
 .tab-events-wrap {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -1877,6 +1929,7 @@ form {
     /* banner */
   .banner { background-color: var(--base_10);}
   .banner h1, .banner h2, .banner h3, .banner h4, .banner p, .banner > span { color: var(--base_100); font-weight: 500;}
+  .banner p a { color: white;}
   /* end of banner */
   header { background-color: var(--base_100);}
   footer { background-color: var(--base_100);}
@@ -1984,6 +2037,12 @@ form {
     span { color: var(--base_100)}
   }
   .mgt-content .mgt-pos-wrap {background-color: var(--base_100);}
+  #GetInvolved {
+    background-color: var(--base_10);
+    h4 { color: var(--base_96); font-weight: 500;}
+    p { color: var(--base_90);}
+    a { color: var(--base_100)}
+  }
 /*   .FeaturedEvent {
     background: rgb(18,18,18);
     background: linear-gradient(78deg, rgba(18,18,18,1) 0%, rgba(12,12,12,1) 44%, rgba(255,255,255,0) 100%); 
@@ -2025,6 +2084,7 @@ form {
   .icon-fill { fill: var(--base_100);}
   button.button--secondary .icon-stroke { stroke: var(--base_0);}
   span { color: var(--base_100) }
+  label { color: var(--base_100) }
   .dropWrap { background-color: var(--base_10);}
   .dropdown-AdCards-l { background-color: var(--base_14); border: 1px solid var(--base_6);}
   .dropdown-AdCards-s {   background-color: var(--base_14); border: 1px solid var(--base_6);}
@@ -2059,6 +2119,7 @@ form {
   .banner p {
     color: var(--base_80); font-weight: 400;
   }
+  .banner p a { color: white;}
   .banner button.button--secondary {
     background-color: var(--base_20);
   }
@@ -2177,11 +2238,12 @@ form {
   } */
   
   .tabs-header {
-    border-bottom: 1px solid #ddd;
+    background-color: var(--base_10);
   }
   
   .tab-button {
-    background-color: #eee;
+    background-color: var(--base_10);
+    color: var(--base_90);
   }
   
 /*   .tab-button:last-child {
@@ -2189,16 +2251,16 @@ form {
   } */
   
   .tab-button:hover {
-    background-color: #f0f0f0;
+    background-color: var(--base_20);
+    color: var(--base_100);
   }
   
   .tab-button.active {
-    background-color: #fff;
-    border-bottom: 2px solid #007acc;
-    color: #007acc;
+    background-color: var(--orange_8);
+    color: var(--base_0);
   }
   .event-card .card-description-wrap {
-    background-color: var(--base_100);
+    background-color: var(--base_8);
   }
   .mgt-about {
     background-color: var(--base_14);

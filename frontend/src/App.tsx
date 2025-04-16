@@ -18,6 +18,7 @@ import MentorshipPage from "./pages/community/Mentorship";
 import JoinForm from "./assets/components/ads/joinClub";
 import LoadingScreen from "@/utils/loader";
 import { SidebarProvider } from "./assets/components/extend/sidebarContext";
+import Apply from "./pages/apply";
 
 function App() {
   
@@ -172,6 +173,7 @@ function App() {
         <Route path="/membership" element={<JoinForm />} />
         <Route path="/sponsor" element={<Sponsor />} />
         <Route path="/partners" element={<Partner />} />
+        <Route path="/apply" element={<Apply />} />
         <Route path="*" element={<NotFound />}/>
       </Routes>
     <Footer />
