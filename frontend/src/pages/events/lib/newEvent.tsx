@@ -64,14 +64,11 @@ export default function EventBanner() {
       backgroundPosition: `center`,
       backgroundSize: `cover`,
     },
-    shade: {
-      background: `linear-gradient(45deg, rgba(18,18,18,1) 0%, rgba(12,12,12,1) 36%, rgba(255,255,255,0) 100%)`,
-    }
   }
 
   return (
     <div className="FeaturedEvent" style={styles.background}>
-      <div style={styles.shade} className='shade'>
+      <div className='shade'>
         <div className="event-banner">
           <h2>{event.title}</h2>
           <div className='row m-column gap-10 content-x1 m-align-y'>

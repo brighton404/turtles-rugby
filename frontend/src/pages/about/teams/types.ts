@@ -14,6 +14,8 @@ export interface ClubMembers {
     surname: string;
     position: string;
     imageUrl: string;
+    join_Date: string;
+    bio: string;
 }
 
 export interface ClubManagement {

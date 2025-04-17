@@ -55,7 +55,7 @@ export const JoinPlayers = () => {
     return (
         <div className="banner column flex-spread content-x1 gap-20">
             <h2 className="no_margins txt_Middle">Ready to Join the Pack?</h2>
-            <p className="no_margins txt_Middle">Visit our training grounds, meet the team, and experience <br /> the thrill of Malindi Turtles Rugby Club for yourself.</p>
+            <p className="no_margins txt_Middle">Fill out this webform or Visit our training grounds, meet the team, <br /> and experience  the thrill of Malindi Turtles Rugby Club yourself.</p>
             <p>You can also email your application via <a href="mailto:malinditurtlesrugbyclub@gmail.com">Email</a></p>
         </div>
     )
@@ -77,6 +77,15 @@ export const JoinSchools = () => {
             <h2 className="no_margins txt_Middle">School Coaching Programme</h2>
             <p className="no_margins txt_Middle">Visit our training grounds, meet the team, and experience <br /> the thrill of Malindi Turtles Rugby Club for yourself.</p>
             <p>You can also email your application via <a href="mailto:malinditurtlesrugbyclub@gmail.com">Email</a></p>
+        </div>
+    )
+};
+
+export const JoinMembers = () => {
+    return (
+        <div className="banner column flex-spread content-x1 gap-20">
+            <h2 className="no_margins txt_Middle">Become a member</h2>
+            <p className="no_margins txt_Middle"></p>
         </div>
     )
 };

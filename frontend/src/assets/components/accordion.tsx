@@ -10,13 +10,13 @@ const FAQAccordion: React.FC<{ question: string;
   return (
     <div className="Accordion-wrap">
       <div className="child1" onClick={onToggle}>
-        <h2 className="text-lg font-semibold">{question}</h2>
+        <h2 className="Text_L_Normal">{question}</h2>
         <span>{isOpen ? '-' : '+'}</span>
       </div>
       <AnimatePresence>
         {isOpen && (
           <motion.p
-            className="span"
+            className="Text_M_Normal"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}

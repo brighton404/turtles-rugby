@@ -1,14 +1,14 @@
-import Support from "@/assets/components/ads/banners";
+import {JoinMembers} from "@/assets/components/ads/banners";
 import MembersList from "./membersList";
 
 const community: React.FC = () => {
     return (
     <>
-    This is the community page
+    <div className="space"></div>
+    <JoinMembers />
     <div className="layouts">
         <MembersList />
     </div>
-    <Support />
     </>
 );
    }

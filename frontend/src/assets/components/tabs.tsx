@@ -17,6 +17,7 @@ export const Tabs: React.FC<TabsProps> = ({ children }) => {
   return (
     <div className="tabs-container">
       <div className="tabs-header">
+        <label className='Text_L_Normal bold tabs-label'>Tabs</label>
         {children.map((tab, index) => (
           <button
             key={index}

@@ -22,7 +22,10 @@ const JoinForm = () => {
     <JoinPlayers/>
     <div className="layouts joinClub">
       <form onSubmit={handleSubmit} id="joinClub">
-        <h4>Club Membership Form</h4>
+      <h2>Club Membership Form</h2>
+        <span className="Text_S_Normal truncate description">
+           Please fill out the form with your actual legal Information.
+        </span> 
         <div className="form-wrap">
           <div className="form-children-wrap">
             <span>Name</span>

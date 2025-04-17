@@ -15,14 +15,14 @@ export default function layout() {
 export const Layout1 = () => {
     return (
     <section className="column layouts m-layouts FAQDiv">
-        <div className=" row spread m-column">
+        <div className="row spread m-column">
             <div className="column flex-spread">
-                <span className="Tagline no_margins">FAQ</span>
+                <span className="Tagline no_margins">Info</span>
                 <h2 className="no_margins">Why Join the <br/> Malindi Turtles?</h2>
             </div>
             <div className="Text_L_Normal column flex-spread no_margins ">
                 <p>Combine your passion for rugby with the vibrant and laid-back atmosphere of Malindi. Enjoy the beautiful beaches, explore the local culture, and make lifelong friends.</p>
-                <div>
+            <div>
             </div>
             </div>
         </div>

@@ -7,8 +7,7 @@ interface MemberCardProps {
 const MemberCard: React.FC<MemberCardProps> = ({ member }) => {
 
     return (
-        <div className="team-member-card">
-            <img src={member.imageUrl} alt={` ${member.name}'s photo`} />
+        <div className="turtle-member-card">
             <div className="column card-description-wrap">
                 <div className="team-member-name column">
                     <div className="MTRC-Pl-name">{member.name}</div>
