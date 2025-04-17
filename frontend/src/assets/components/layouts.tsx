@@ -27,7 +27,7 @@ export const Layout1 = () => {
             </div>
         </div>
         <div className="NewsCard-layouts row m-row">
-            <LayoutCard emoji={"🏃🏼‍♂️"} header={"Develop Your Skills"} subtext={"Whether you're a seasoned veteran or a complete beginner, our experienced coaches will guide you on your rugby journey. "} image={`src/assets/media/hero/DSC_1372.jpg`} />
+            <LayoutCard emoji={"🏃🏼‍♂️"} header={"Develop Your Rugby Skills"} subtext={"Whether you're a seasoned veteran or a complete beginner, our experienced coaches will guide you on your rugby journey. "} image={`src/assets/media/hero/DSC_1372.jpg`} />
             <LayoutCard emoji={"👨‍👩‍👧‍👧"} header={"Become Part of a Family"} subtext={"Join a supportive and friendly community where camaraderie and sportsmanship are valued above all else."} image={`src/assets/media/hero/DSC_1372.jpg`} />
             <LayoutCard emoji={"💪🏼"} header={"Stay Active and Healthy"} subtext={"Rugby is a fantastic way to improve your fitness, build strength, and develop valuable teamwork and leadership skills."} image={`src/assets/media/hero/DSC_1372.jpg`} />
         </div>

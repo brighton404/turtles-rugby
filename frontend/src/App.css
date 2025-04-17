@@ -458,6 +458,9 @@ article#sponsorPage {
 }
 .FAQDiv {
   padding-bottom: var(--Pd_10);
+    h1, h2, h3, h4, h5, h6, span, p {
+    margin: 0px;
+  }
 }
 .TestimonialDiv {
   padding-bottom: var(--Pd_150);
@@ -484,7 +487,6 @@ article#sponsorPage {
   display: flex;
   flex: 1 0 0;
   min-height: 300px;
-  max-height: 30vh;
   gap: var(--Pd_12);
   padding: var(--Pd_10) var(--Pd_10) var(--Pd_14);
   border-radius: var(--Cr_10);
