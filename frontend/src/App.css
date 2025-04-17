@@ -249,6 +249,11 @@ footer .no_truncate {
 /*   border-left: 1px solid black; */
   padding-left: var(--Pd_20);
   padding-right: var(--Pd_10);
+  .page-body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--Pd_40);
+  }
 }
 .About-SectionWrap .About-Turtles #strategies {
   display: flex;

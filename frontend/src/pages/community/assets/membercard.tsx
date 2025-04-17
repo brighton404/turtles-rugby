@@ -1,9 +1,9 @@
 import React from "react";
-import { ClubMembers } from "@/pages/about/teams/types";
+import { Members } from "@/pages/about/teams/types";
 import FallbackAvatar from "@/assets/components/fallbackAvatar";
 
 interface memberCardProps {
-    member: ClubMembers;
+    member: Members;
 }
 const memberCard: React.FC<memberCardProps> = ({ member }) => {
 
