@@ -29,7 +29,7 @@ const about: React.FC = () => {
                         <p>Malindi Turtles Rugby Club is a vibrant hub of rugby passion and camaraderie located in the heart of Malindi. We are committed to fostering a love for the game while developing players of all ages and skill levels. Our club is more than just a sporting organization; it&#x27;s a family that embraces diversity, inclusivity, and a shared love for rugby.
                         </p>
                         <blockquote>
-                            <strong>Vision</strong>To be the premier rugby club in the region, providing a world-class rugby experience for players of all ages and abilities, while contributing positively to the local community.
+                            <strong>Vision</strong> To be the premier rugby club in the region, providing a world-class rugby experience for players of all ages and abilities, while contributing positively to the local community.
                         </blockquote>
                     </section>
                     <section id="History">
@@ -42,14 +42,14 @@ const about: React.FC = () => {
                         <p>This development plan outlines the strategic direction for all teams under the community. It identifies key areas for growth, sets clear objectives, and outlines the actions necessary to achieve them.<br/>To develop and promote rugby in Malindi, fostering a strong club culture, and achieving excellence in competition.<br/>
                         </p>
                         <section id="SWOTAnalysis">
-                            <h3><strong>SWOT Analysis</strong></h3>
+                            <h3>SWOT Analysis</h3>
                             <p>A thorough <a href="https://www.investopedia.com/terms/s/swot.asp#:~:text=What%20Is%20SWOT%20Analysis%3F">SWOT </a>analysis should be conducted to identify the club&#x27;s strengths, weaknesses, opportunities, and threats. This will inform the development of specific objectives and strategies.</p>
                         </section>
                         <section id="objectives">
-                            <h3><strong>Objectives</strong></h3>
+                            <h3>Objectives</h3>
                             <div>
                                 <div>
-                                    <p><strong>Short-term (1-2 years):</strong></p>
+                                    <p>Short-term (1-2 years):</p>
                                     <ul><li >Increase the number of members in the club. (both players and community members)</li></ul>
                                     <ul><li>Develop a comprehensive coaching and player development pathway</li></ul>
                                     <ul><li >Enhance the club&#x27;s financial stability through increased sponsorship and membership</li></ul>
@@ -57,14 +57,14 @@ const about: React.FC = () => {
                                     <ul><li >Improve the win-loss record of the senior men&#x27;s and women&#x27;s teams</li></ul>
                                 </div>
                                 <div>
-                                    <p><strong>Medium-term (3-5 years):</strong></p>
+                                    <p>Medium-term (3-5 years):</p>
                                     <ul><li >Increase community engagement through rugby-based initiatives</li></ul>
                                     <ul><li >Expand the club&#x27;s facilities to meet growing demand</li></ul>
                                     <ul><li >Establish a competitive youth rugby program</li></ul>
                                     <ul><li >Develop a high-performance pathway for elite players</li></ul>
                                 </div>
                                 <div>
-                                    <p><strong>Long-term (5+ years):</strong></p>
+                                    <p>Long-term (5+ years):</p>
                                     <ul><li >Become a leading rugby club in the country</li></ul>
                                     <ul><li >Produce national and international rugby representatives</li></ul>
                                     <ul><li >Develop a sustainable business model for the club</li></ul>
@@ -72,7 +72,7 @@ const about: React.FC = () => {
                             </div>
                         </section>
                         <section id="strategies">
-                            <h4><strong>Strategies</strong></h4>
+                            <h4>Strategies</h4>
                             <div className="ObjectiveCards">
                                 <div className="About-Us-ObjectiveCard">
                                     <h5>Youth Development:</h5>
@@ -109,7 +109,7 @@ const about: React.FC = () => {
                             </div>
                         </section>
                         <section id="Implementation">
-                            <h4><strong>Implementation and Evaluation</strong></h4>
+                            <h4>Implementation and Evaluation</h4>
                             <ul><li >Develop a detailed action plan outlining specific tasks, responsibilities, and timelines for each objective.</li></ul>
                             <ul><li>Allocate necessary resources, including budget, personnel, and equipment.</li></ul>
                             <ul><li >Regularly monitor progress and adjust the plan as needed.</li></ul>
@@ -125,7 +125,7 @@ const about: React.FC = () => {
             </article>
             <div className="RightBar">
                 <blockquote>
-                    <strong>Note</strong>Malindi Rugby Community is a CBO located in Malindi constituency of Kilifi County, Kenya.
+                    <strong>Note</strong> Malindi Rugby Community is a CBO located in Malindi constituency of Kilifi County, Kenya.
                 </blockquote>
             </div>
         </div>
