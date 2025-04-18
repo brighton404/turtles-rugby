@@ -1,13 +1,12 @@
 // types that determine that a file is a blog
 export interface BlogPost {
     id: string;
-    slug: string;
     title: string;
     content: string;
     author: string;
     date: string;
     categories: number[];
-    comments: Comment[];
+    created_at: string;
   }
   
   export interface Comment {

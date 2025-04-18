@@ -67,23 +67,21 @@ function App() {
     switch (pathname) {
       case "/":
         title = "Malindi Turtles Rugby Club";
-        metaDescription = "";
+        metaDescription = "Malindi Turtles Rugby Club is a vibrant hub of rugby passion and camaraderie located in the heart of Malindi. We are committed to fostering a love for the game while developing players of all ages and skill levels.";
         break;
       case "/about":
         title = "about the club";
-        metaDescription = "";
+        metaDescription = "Learn about the malindi turtles rugby club";
         break;
       case "/events":
         title = "upcoming events";
-        metaDescription = "";
+        metaDescription = "Get updates on upcoming club events";
         break;
       case "/news":
         title = "updates";
-        metaDescription = "";
+        metaDescription = "Get updates on post club events";
         break;
         case "/news/:id":
-          title = "article";
-          metaDescription = "";
           break;
         case "/management":
           title = "Club Management";
@@ -163,7 +161,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/news" element={<News />} />
-        <Route path="/news/:title" element={<BlogPage />} />
+        <Route path="/news/:id/:title" element={<BlogPage />} />
         <Route path="/events" element={<Events />} />
         <Route path="/management" element={<Teams variant="management" />} />
         <Route path="/Mens-team" element={<Teams variant="mens team" />} />

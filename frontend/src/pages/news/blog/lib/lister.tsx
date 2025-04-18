@@ -13,7 +13,7 @@ export function BlogList({ posts, categories = [] }: BlogListProps) {
   return (
     <section className="ListWrap layouts">
       {posts.map((post) => (
-        <Link key={post.id}  to={`/news/${post.title}`} >
+        <Link key={post.id && post.title}  to={`/news/${post.id}/${post.title}`} >
           <div className='BlogCard'>
             <span className="Text_L_Normal no_margins">{post.title}</span>
             <div className="ArticlePropsWrap row gap-10 Text_T_Normal">
