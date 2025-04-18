@@ -10,8 +10,8 @@ export function BlogPage() {
   const { id, title } = useParams<{ id: string; title: string }>();
 
   const { data: post, isLoading, error } = useQuery({
-    queryKey: ['blog-post', id],
-    queryFn: () => getPostById(id!, title),
+    queryKey: ['blog-post', id, title],
+    queryFn: () => getPostById(id!, title!),
     enabled: !!id && !!title, // enable only when both exist
   });
   

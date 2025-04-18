@@ -81,7 +81,7 @@ function App() {
         title = "updates";
         metaDescription = "Get updates on post club events";
         break;
-        case "/news/:id":
+        case "/news/:id/:title":
           break;
         case "/management":
           title = "Club Management";
@@ -155,27 +155,27 @@ function App() {
   return (
     <>
     <QueryClientProvider client={queryClient}>
-    <SidebarProvider>
-    <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/news" element={<News />} />
-        <Route path="/news/:id/:title" element={<BlogPage />} />
-        <Route path="/events" element={<Events />} />
-        <Route path="/management" element={<Teams variant="management" />} />
-        <Route path="/Mens-team" element={<Teams variant="mens team" />} />
-        <Route path="/Womens-team" element={<Teams variant="womens team" />} />
-        <Route path="/community" element={<Community />} />
-        <Route path="/mentorship" element={<MentorshipPage />} />
-        <Route path="/membership" element={<JoinForm />} />
-        <Route path="/sponsor" element={<Sponsor />} />
-        <Route path="/partners" element={<Partner />} />
-        <Route path="/apply" element={<Apply />} />
-        <Route path="*" element={<NotFound />}/>
-      </Routes>
-    <Footer />
-    </SidebarProvider>
+      <SidebarProvider>
+      <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/news/:id/:title" element={<BlogPage />} />
+          <Route path="/events" element={<Events />} />
+          <Route path="/management" element={<Teams variant="management" />} />
+          <Route path="/Mens-team" element={<Teams variant="mens team" />} />
+          <Route path="/Womens-team" element={<Teams variant="womens team" />} />
+          <Route path="/community" element={<Community />} />
+          <Route path="/mentorship" element={<MentorshipPage />} />
+          <Route path="/membership" element={<JoinForm />} />
+          <Route path="/sponsor" element={<Sponsor />} />
+          <Route path="/partners" element={<Partner />} />
+          <Route path="/apply" element={<Apply />} />
+          <Route path="*" element={<NotFound />}/>
+        </Routes>
+      <Footer />
+      </SidebarProvider>
     </QueryClientProvider>
     </>
   );
