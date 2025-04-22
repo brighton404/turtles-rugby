@@ -8,7 +8,7 @@ const news: React.FC = () => {
     <>
     <div className="space"></div>
     <Articles/>
-    <div className="news z-index-2">        
+    <div className="news">        
         <Tabs>
             <Tab label="Cards">
                 <><Blog /></>

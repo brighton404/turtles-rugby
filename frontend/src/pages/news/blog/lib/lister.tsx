@@ -1,5 +1,7 @@
-import { Link } from 'react-router-dom';
+/* import { Link } from 'react-router-dom'; */
+import SidebarPreview from '@/assets/components/sidebarPreview';
 import { BlogPost } from './types';
+import { useState } from 'react';
 
 interface BlogListProps {
   posts: BlogPost[];
@@ -15,11 +17,25 @@ export function BlogList({ posts }: BlogListProps) {
     );
   }
 
+  const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
+
+  const openSidebar = (post: BlogPost) => {
+    setSelectedPost(post);
+    setSidebarOpen(true);
+  };
+
+  const closeSidebar = () => {
+    setSelectedPost(null);
+    setSidebarOpen(false);
+  };
+
   return (
     <section className="ListWrap layouts">
       {posts.map((post) => (
-        <Link key={post.id && post.title} to={`/news/${post.id}/${post.title}`}>
-          <div className="BlogCard">
+        <div key={post.id && post.title} /* to={`/news/${post.id}/${post.title}`} */>
+          <div className="BlogCard" onClick={() => openSidebar(post)}>
+            {/* <button >{post.title}</button> */}
             <div className="blogcard-banner" style={{backgroundImage: `url('${post.imageUrl}')`, aspectRatio: '16 / 9', backgroundRepeat: 'no-repeat', backgroundPosition: 'top', backgroundSize: 'cover',}}></div>
             <div className="blog-desc">
               <div className="ArticlePropsWrap row gap-10 Text_T_Normal">              
@@ -61,8 +77,13 @@ export function BlogList({ posts }: BlogListProps) {
                 )}
             </div>
           </div>
-        </Link>
+        </div>
       ))}
+    <SidebarPreview
+        post={selectedPost}
+        isOpen={isSidebarOpen}
+        onClose={closeSidebar}
+      />
     </section>
   );
 }

@@ -711,7 +711,7 @@ article#sponsorPage {
     padding: var(--Pd_10) var(--Pd_0);
   }
 }
-.blog svg {
+.blog .BlogSearch-Wrap svg {
   position: absolute;
   left: 10px;
   top: 50%;
@@ -817,20 +817,28 @@ article#sponsorPage {
   display: flex;
   flex-direction: column;
   align-items: start;
-  justify-content: end;
+  justify-content: center;
 /*   width: 10vw; */
   min-width: 200px;
+  max-width: max-content;
   height: max-content;
   border-radius: var(--Cr_10);
   border: none;
   gap: 10px;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
 
   .blog-desc {
     display: flex;
     flex-direction: column;
     gap: 5px;
+    padding-top: 2px;
+    padding-right: 4px;
+    padding-bottom: 2px;
     padding-left: 4px;
     transition: all 0.3s ease-in-out;
+    align-self: stretch;
+    border-radius: var(--Cr_6);
    }
   .blogcard-banner {
     height: 200px;
@@ -855,6 +863,7 @@ article#sponsorPage {
 .Articles-banner {
   position: sticky;
   top: 8vh;
+  z-index: -1;
 }
 .self-center { justify-self: center;}
 .float-self-center { left: 50%; right: 50%; transform: translate(-50%, -50%);}
@@ -927,6 +936,48 @@ article#sponsorPage {
 .sidebar-link:hover {
   background-color: #34495e;
 }
+.sidebar-prev {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 40vw;
+  height: 100%;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem 2rem;
+  z-index: 1000;
+  overflow-y: auto;
+
+  @media only screen and (max-width: 900px) {
+    width: 60vw;
+    padding: 0.5rem 1rem;
+  }
+
+  .carriers {
+    display: flex;
+    gap: 4px;
+    align-self: stretch;
+    justify-content: space-between;
+  }
+  .sidebar-close-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .read-more {
+    display: inline-block;
+    margin-top: 1rem;
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+.sidebar-prev.open {
+  right: 0;
+  transition: right 1s ease-in-out;
+}
+
 #drop {
   padding: var(--Pd_10);
   @media only screen and (max-width: 1220px) {
@@ -935,7 +986,7 @@ article#sponsorPage {
 }
 .dropWrap a { text-decoration: none;}
 .dropdownCard { width: 20vw; height: 150px; padding: var(--Pd_6);}
-.dropdown-menu {  position: absolute;  border-Radius: var(--Cr_14);  margin-top: var(--Mg_10);  padding: 5px 0;  z-Index: 999;  opacity: 0;  transform: translateY(0px);  transition: opacity 0.3s ease, transform 0.3s ease, margin 0.3s ease-out;  visibility: hidden; margin: 0px 20vw; left: 0; right: 0;
+.dropdown-menu {  position: absolute;  border-Radius: var(--Cr_14);  margin-top: var(--Mg_10);  padding: 5px 0;  z-Index: 998;  opacity: 0;  transform: translateY(0px);  transition: opacity 0.3s ease, transform 0.3s ease, margin 0.3s ease-out;  visibility: hidden; margin: 0px 20vw; left: 0; right: 0;
   @media only screen and (max-width: 1220px) {
     margin: 0px 10vw;
   }
@@ -2238,6 +2289,9 @@ form {
   .sidebarDropNav .link:hover { background-color: var(--base_0); padding: 2px 10px;}
   .sidebarDropNav .link:hover .inner > span { color: var(--base_100);}
   .sidebarDropNav .link:hover .inner > svg { stroke: var(--base_100);}
+  .sidebar-prev { 
+    background-color: var(--body-bg)
+  }
 
     /* banner */
   .banner { background-color: var(--base_10);}
@@ -2292,10 +2346,13 @@ form {
   .blog .selectStyle {
     border: 1px solid var(--base_80);
   }
-  .ListWrap  .BlogCard {
+  .ListWrap  .BlogCard { 
     .blogcard-banner {
       border: 1px solid var(--base_80);
     }
+  }
+  .ListWrap  .BlogCard:hover .blog-desc {
+    background-color: var(--orange_30);
   }
   .blog .categoryMap .categoryMap-wrapeach .categoryDot {
     border: 1px solid black;
@@ -2456,6 +2513,10 @@ form {
   .dropdown-AdCards-s p { color: var(--base_46);}
   .dropdown-container {
     border: 1px solid var(--base_16);
+  }
+  .sidebar-prev { 
+    background-color: var(--base_10);
+    border-left: 2px solid var(--base_40);
   }
   .tree-label:hover span {
     color: var(--base_0);
