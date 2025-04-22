@@ -1,10 +1,14 @@
 /* import ActionButton from "../lib/actionButton";
 import { ButtonColor, ButtonState } from "../lib/actionButton"; */
 import Icons from "../lib/icons";
+/* import NoiseTrailCanvas from "./noise"; */
+/* import StarfieldCanvas from "./stars"; */
 
 export default function hero() {
     return (
         <section className="hero">
+            {/* <StarfieldCanvas /> */}
+            {/* <NoiseTrailCanvas /> */}
             <div className="column flex-spread align-y2 gap-40">
                 <div className="wrap-desc column align-y2 content-x1 gap-20">
                     <div className="desc column gap-20 m-flex-spread">

@@ -16,8 +16,7 @@ export const Tabs: React.FC<TabsProps> = ({ children }) => {
 
   return (
     <div className="tabs-container">
-      <div className="tabs-header">
-        <label className='Text_L_Normal bold tabs-label'>Tabs</label>
+      <nav className="tabs-header">
         {children.map((tab, index) => (
           <button
             key={index}
@@ -27,7 +26,7 @@ export const Tabs: React.FC<TabsProps> = ({ children }) => {
             {tab.props.label}
           </button>
         ))}
-      </div>
+      </nav>
       <div className="tabs-content">
         {children[activeIndex]}
       </div>

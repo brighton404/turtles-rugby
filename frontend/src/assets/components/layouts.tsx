@@ -69,7 +69,7 @@ export const Layout4 = () => {
     return (
         <section className="AccordionSection column spread m-column">
         <div className=" child1 column flex-spread">
-            <span className="Tagline no_margins">Info</span>
+            <span className="Tagline no_margins">FAQ</span>
             <h2 className="no_margins">Frequently Asked Questions</h2>
         </div>
             {faqs.map((faq, index) => (

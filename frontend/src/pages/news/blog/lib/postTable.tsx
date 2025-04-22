@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
-import { getBlogPosts } from './lib/utils';
-import { BlogList } from './lib/lister';
+import { getBlogPosts } from '../lib/utils';
 import { supabase } from '@/utils/supabase';
-import { category } from './lib/types';
+import ActivityTable from '../lib/blogTable';
+import Icons from '@/assets/lib/icons';
+import { category } from './types';
 
-const Blog: React.FC = () => {
+const postTable: React.FC = () => {
   const { data: posts, isLoading: loading, error } = useQuery({
     queryKey: ['blog-posts'],
     queryFn: getBlogPosts,
@@ -17,8 +18,7 @@ const Blog: React.FC = () => {
 
   useEffect(() => {
     const fetchCategories = async () => {
-      const { data, error } = await supabase.from('Newscategories')
-      .select(`*, c_categories ( Newscategories (id, name))`);
+      const { data, error } = await supabase.from('Newscategories').select('*');
       if (error) {
         console.error('Error fetching categories:', error.message);
       } else if (data) {
@@ -49,7 +49,7 @@ const Blog: React.FC = () => {
       </div>
     );
   }
-
+  
   const filteredPosts = posts?.filter(post => {
     const matchesSearch =
       post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -61,16 +61,13 @@ const Blog: React.FC = () => {
   
     return matchesSearch && matchesCategory;
   }) ?? [];
+  
 
   return (
     <section className="blog column">
       <div className="row BlogSearch-Wrap">
         <div className="selectStyle column align-y1 content-x1">
-          <select
-            value={selectedCategory || ''}
-            onChange={e => setSelectedCategory(e.target.value || null)}
-
-          >
+          <select value={selectedCategory || ''}  onChange={e => setSelectedCategory(e.target.value ? String(e.target.value) : null)}>
             <option value=""> All Categories</option>
             {categories.map(category => (
               <option key={category.id} value={category.id}>
@@ -79,24 +76,14 @@ const Blog: React.FC = () => {
             ))}
           </select>
         </div>
-        <input
-          type="text"
-          placeholder="Search posts..."
-          value={searchTerm}
-          onChange={e => setSearchTerm(e.target.value)}
-        />
+        <div style={{ position: 'relative', display: 'inline-block' }}>
+          <Icons variant="search" />
+          <input type="text" placeholder="Search posts..." value={searchTerm} onChange={e => setSearchTerm(e.target.value)} style={{ paddingLeft: '35px' }}/>
+        </div>
       </div>
-      <div className='categoryMap'>
-      {categories.map(category => ( 
-        <div className='categoryMap-wrapeach' key={category.id}>
-          <div className="categoryDot" style={{ backgroundColor: category.color}}></div>
-          <span className='Text_T_Normal'>{category.name}</span>
-        </div> 
-      ))}
-      </div>
-          <BlogList posts={filteredPosts} />
+      <ActivityTable posts={filteredPosts} />
     </section>
   );
 };
 
-export default Blog;
+export default postTable;

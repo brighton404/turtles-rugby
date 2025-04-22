@@ -1,14 +1,30 @@
 import { supabase } from '@/utils/supabase';
 
 export async function getBlogPosts() {
-  const { data, error } = await supabase.from('TurtleNews').select('*');
+  const { data, error } = await supabase
+    .from('TurtleNews')
+    .select(`*, b_writer (Writers ( id, Name, ImageUrl)), c_categories ( Newscategories (id, name, color)) `);
 
   if (error) {
     console.error('Error fetching blogs:', error);
     return [];
   }
 
-  return data.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  return data.sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
+}
+
+
+export async function getWriters() {
+  const { data, error } = await supabase.from('NewsWriters').select('*');
+
+  if (error) {
+    console.error('Error fetching writers:', error);
+    return [];
+  }
+
+  return data;
   
 }
 

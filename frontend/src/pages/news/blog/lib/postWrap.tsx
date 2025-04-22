@@ -44,7 +44,7 @@ export function BlogPage() {
   return (
     <div>
       <main className="BlogMain">
-        <Button color={ButtonColor.Primary} state={ButtonState.Default} isOutlined={false} navigateTo="/news" icon={<Icons variant='chevron-left'/>}>Back</Button>
+        <Button color={ButtonColor.Secondary} state={ButtonState.Default} isOutlined={false} navigateTo="/news" icon={<Icons variant='chevron-left'/>}>Back</Button>
         <h1>{post.title}</h1>
           <div className="row gap-10">
             <span>{new Date(post.date).toLocaleDateString()}</span>
