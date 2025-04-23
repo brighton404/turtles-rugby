@@ -5,7 +5,6 @@ import EventBanner from "@/pages/events/lib/newEvent";
 import SDGPopup from "./SDGPopup";
 import { SDG } from "../lib/types";
 import { ReviewsList } from "./testimonial";
-import { ReviewForm } from "./ads/ReviewForm";
 
 export default function Layout() {
     return (
