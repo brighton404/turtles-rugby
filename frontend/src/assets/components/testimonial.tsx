@@ -1,32 +1,43 @@
-import Icons from "../lib/icons";
+import { useEffect, useState } from 'react';
+import { supabase } from '@/utils/supabase';
 
-export default function TestimonialClub() {
-    return (
-        <div className="TestimonialCard">
-            <div className="column flex-spread align-y1 content-x1">
-                <div className="row gap-10">
-                    <Icons variant="star"/><Icons variant="star"/><Icons variant="star"/><Icons variant="star"/><Icons variant="star"/>
-                </div>
-            </div>
-            <div className="Text_L_Normal column flex-spread no_margins txt_Middle ">
-                <p>"The club's commitment to community outreach is also inspiring. <br className="m-br"/> I highly recommend the Malindi Turtles to anyone looking for a fun, <br className="m-br" /> challenging, and rewarding rugby experience."</p>
-            </div>
-            <div className="row align-y1 gap-20 TestimonialCard_user">
-                <div className="column align-y1 content-x2 m-align-y1 m-content-x2 flex-spread">
-                    <span className="Text_Normal bold">Reagan Omondi</span>
-                    <span className="Text_Normal">Referee, Kenya Rugby Union</span>
-                </div>
-                <hr />
-                <div className="row align-y content-x1 m-align-y1 m-content-x1 flex-spread gap-10">
-                    <div className="logo-small"></div>
-                    <span className="bold">Malindi Turtle Rugby Club</span>
-                </div>
-            </div>
+type Review = {
+  id: string;
+  name: string;
+  message: string;
+  created_at: string;
+};
+
+export function ReviewsList() {
+  const [reviews, setReviews] = useState<Review[]>([]);
+
+  const fetchReviews = async () => {
+    const { data, error } = await supabase
+      .from('Reviews')
+      .select('*')
+      .eq("index", "true")
+      .order('created_at', { ascending: true });
+
+    if (!error && data) setReviews(data);
+  };
+
+  useEffect(() => {
+    fetchReviews();
+  }, []);
+
+  return (
+        <div className='reviews-container'>
+            {reviews.map((review) => (
+              <div className="review-Card" key={review.id}>
+                <li style={{ marginBottom: '1rem', listStyle: 'none', margin: '0px' }}>
+                    <span><strong>{review.name}</strong> said:</span>
+                    <div className="review-message">
+                      <p>{review.message}</p>
+                    </div>                    
+                    <small>{new Date(review.created_at).toLocaleString()}</small>
+                </li>
+              </div>
+            ))}
         </div>
-    );
-}
-export const TestimonialRay = () => {
-    return {
-
-    }
+  );
 }

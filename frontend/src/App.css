@@ -454,12 +454,63 @@ article#sponsorPage {
   align-self: stretch;
   min-height: 200px;
   padding: var(--Pd_100) var(--Pd_100);
+  @media only screen and (max-width: 1000px){
+    padding: var(--Pd_100) var(--Pd_80);
+  }
+  @media only screen and (max-width: 800px){
+    padding: var(--Pd_100) var(--Pd_60);
+  }
+  @media only screen and (max-width: 600px){
+    padding: var(--Pd_100) var(--Pd_40);
+  }
+  /* padding: clamp(20px, 5vw, 100px) clamp(20px, 10vw, 100px); */
   gap: var(--Pd_100);
 }
 .FAQDiv {
   padding-bottom: var(--Pd_10);
     h1, h2, h3, h4, h5, h6, span, p {
     margin: 0px;
+  }
+}
+.inline-strip {
+  display: flex;
+  overflow: hidden;
+  gap: 20px;
+  span {
+    text-wrap: nowrap;
+    font-size: 1.2rem ;
+  }
+}
+.reviews-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 10px;
+  column-gap: 10px;
+  @media only screen and (max-width: 1000px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  @media only screen and (max-width: 760px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+}
+.review-Card {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  padding: 10px 20px;
+  padding-top: 18px;
+  border-radius: 10px;
+  li {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 0;
+  }
+  .review-message {
+    display: flex;
+    flex: 1 0 0;
   }
 }
 .TestimonialDiv {
@@ -1607,6 +1658,46 @@ form {
   align-items: center;
   justify-content: center;
 }
+#reviewForm {
+  display: flex;
+  flex-direction: column;
+
+  padding: var(--Pd_10);
+  gap: var(--Pd_30);
+
+  button {
+    text-wrap: nowrap;
+  }
+
+  .form-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: var(--Pd_20);
+  }
+
+  .form-children-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: var(--Pd_4);
+  }
+  input {
+    border-radius: var(--Cr_6);
+    border: none;
+    height: 30px;
+    padding: var(--Pd_2);
+    padding-left: var(--Pd_10);
+    background-color: var(--base_96);
+  }
+  .description {
+    color: var(--base_70);
+  }
+  textarea {
+    border-radius: var(--Cr_6);
+    border: 1px solid var(--base_84);
+    resize: none;
+    min-height: 200px;
+  }
+}
 #joinClub {
   display: flex;
   flex-direction: column;
@@ -1745,6 +1836,154 @@ form {
   background-color: var(--base_88);
   border: 1px solid var(--base_60);
 }
+.sdg-section {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.sdg-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+  max-width: 100%;
+  @media only screen and (max-width: 1000px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  @media only screen and (max-width: 760px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+  .sdg-card {
+    padding: 3px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+    p {
+      padding-left: 2px;
+      padding-right: 2px;
+    }
+    img {
+      max-width: 100%;
+      object-fit:fill;
+      background-size: cover;
+      border-radius: 8px;
+    }
+  }
+/*   .sdg-card:hover {
+    background: #f3f3f3;
+  } */
+
+}
+.sdg-grid:hover .sdg-card {
+  opacity: 1;
+  filter: grayscale(100%);
+  @media only screen and (max-width: 600px) {
+    opacity: 1;
+    filter: grayscale(0%);
+  }
+}
+.sdg-grid .sdg-card:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+  @media only screen and (max-width: 600px) {
+    opacity: 1;
+    filter: grayscale(0%);
+  }
+}
+.popup-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: #000;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-container {
+  position: fixed;
+  left: 16%;
+  top: 20%;
+  bottom: 20%;
+  right: 16%;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @media only screen and (max-width: 600px) {
+    left: 10%;
+    top: 20%;
+    bottom: 10%;
+    right: 10%;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    aspect-ratio: 16/8;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+    @media only screen and (max-width: 600px) {
+      flex-direction: column;
+      aspect-ratio: 2/4;
+      overflow: visible;
+      height: min-content;
+      /* padding-top: 1rem; */
+    }
+  }
+  .sdg-gif-container {
+    display: flex;
+    flex: 1 0 0;
+    padding: 0.5rem;
+    max-width: 100%;
+    justify-content: center;
+    @media only screen and (max-width: 600px) {
+      overflow: hidden;
+    }
+    img {
+      display: flex;
+      max-width: 100%;
+      object-fit:fill;
+      background-size: cover;
+      border-radius: 8px;
+    }
+  }
+  .sdg-description {
+    overflow-y: scroll;
+    align-self: stretch;
+    flex: 1 0 0;
+    padding: 1rem;
+    @media only screen and (max-width: 600px) {
+      height: min-content;
+      overflow: visible;
+    }
+  }
+  .popup-close {
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    @media only screen and (max-width: 600px) {
+      top: -2rem;
+      right: 2rem;
+      font-size: 3rem;
+    }
+  }
+}
+
 .AccordionSection {
   gap: 20px;
   align-self: stretch;
@@ -1752,7 +1991,24 @@ form {
   max-width: 100%;
   padding: var(--Pd_100) var(--Pd_300);
   padding-top: var(--Pd_10);
+  transition: all 0.3s ease-in-out;
 
+  @media only screen and (max-width: 1100px) {
+    padding: var(--Pd_100) var(--Pd_100);
+    padding-top: var(--Pd_10);
+  }
+  @media only screen and (max-width: 800px) {
+    padding: var(--Pd_100) var(--Pd_80);
+    padding-top: var(--Pd_10);
+  }
+  @media only screen and (max-width: 700px) {
+    padding: var(--Pd_100) var(--Pd_60);
+    padding-top: var(--Pd_10);
+  }
+  @media only screen and (max-width: 600px) {
+    padding: var(--Pd_100) var(--Pd_50);
+    padding-top: var(--Pd_10);
+  }
   @media only screen and (max-width: 540px) {
       overflow: hidden;
       padding: var(--Pd_10) var(--Pd_16);
@@ -2292,6 +2548,14 @@ form {
   .sidebar-prev { 
     background-color: var(--body-bg)
   }
+  .popup-container {
+    .content {
+      background-color: #fff;
+    }
+    .popup-close {
+      color: var(--base_0)
+    }
+  }
 
     /* banner */
   .banner { background-color: var(--base_10);}
@@ -2465,7 +2729,19 @@ form {
     color: var(--base_60);
     font-weight:400;
   }
-  /* Markdown */
+  .inline-strip {
+    background-color: var(--orange_16);
+  }
+  .Reviews-section {
+    background-color: var(--base_100);
+  }
+  .review-Card {
+    background-color: var(--base_96);
+/*     p, strong, li, small {
+      color: white;
+    } */
+  }
+    /* Markdown */
 .Markdown body { color: #333; background-color: #f8f9fa; }
 .Markdown h1 { border-bottom: 2px solid var(--base_0); }
 .Markdown h2 { border-bottom: 1px solid var(--base_0); }
@@ -2535,6 +2811,14 @@ form {
   .sidebarDropNav .link:hover { background-color: var(--base_14); padding: 2px 10px;}
   .sidebarDropNav .link:hover > span { color: var(--base_100);}
   .sidebarDropNav .link:hover .inner > svg { stroke: var(--base_100);}
+  .popup-container {
+    .content {
+      background-color: var(--base_16);
+    }
+    .popup-close {
+      color: var(--base_100)
+    }
+  }
   /* banner */
   .banner { background-color: var(--base_20);}
   .banner p { color: var(--base_60); font-weight: 400;}
@@ -2731,7 +3015,16 @@ form {
     background-color: var(--base_10);
   }
   .mgt-content .mgt-pos-wrap {background-color: var(--base_10);}
-
+  .inline-strip {
+    background-color: var(--orange_16);
+    span { color: black;}
+  }
+  .Reviews-section {
+    background-color: var(--base_10);
+  }
+  .review-Card {
+    background-color: var(--base_8)
+  }
   /* Markdown */
   .Markdown body { color: #333; background-color: #f8f9fa; }
   .Markdown h1 { border-bottom: 2px solid var(--base_100); }
@@ -3180,7 +3473,7 @@ footer a {
 .m-layouts {
   align-self: stretch;
   min-height: 200px;
-  padding: var(--Pd_100) var(--Pd_30) var(--Pd_10);
+  padding: var(--Pd_100) var(--Pd_30) var(--Pd_50);
   gap: 20px;
 }
 .FAQDiv {

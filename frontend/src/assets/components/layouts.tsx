@@ -1,10 +1,13 @@
 import { LayoutCard } from "@/pages/news/extend/card";
-import TestimonialClub from "./testimonial";
 import FAQAccordion from "./accordion";
 import { useState } from "react";
 import EventBanner from "@/pages/events/lib/newEvent";
+import SDGPopup from "./SDGPopup";
+import { SDG } from "../lib/types";
+import { ReviewsList } from "./testimonial";
+import { ReviewForm } from "./ads/ReviewForm";
 
-export default function layout() {
+export default function Layout() {
     return (
     <div className="column layouts align-y1 content-x1 banner">
         <h2>MALINDI TURTLES RUGBY CLUB</h2>
@@ -50,13 +53,31 @@ export const Layout2 = () => {
 };
 {/**Testimoninals */}
 export const Layout3 = () => {
+    const [refresh] = useState(false);
     return (
-        <section className="TestimonialDiv layouts m-layouts column spread m-column align-y1 content-x1">
-            <TestimonialClub />
+        <section className="Reviews-section">
+            <div className="inline-strip">
+                <span>Member Reviews</span>
+                <span>Member Reviews</span>
+                <span>Member Reviews</span>
+                <span>Member Reviews</span>
+                <span>Member Reviews</span>
+                <span>Member Reviews</span>
+                <span>Member Reviews</span>
+                <span>Member Reviews</span>
+                <span>Member Reviews</span>
+                <span>Member Reviews</span>
+                <span>Member Reviews</span>
+                <span>Member Reviews</span>
+                <span>Member Reviews</span>
+            </div>
+            <div className="layouts m-layouts">
+                <ReviewsList key={refresh.toString()} />
+            </div>
         </section>
     )
 };
-{/**Testimoninals */}
+{/**Acoridion */}
 export const Layout4 = () => {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
@@ -87,8 +108,88 @@ export const Layout4 = () => {
 /* Events Page banner */
 export const Layout5 = () => {
     return (
-        <>
             <EventBanner />
-        </>
+    )
+}
+/* social development goals */
+const mockSDGs: SDG[] = [
+    {
+        id: 1, title: 'SDG 3: Good Health and Well-being', description: 'Promoting physical activity, mental well-being, and healthy lifestyles through sport. Offering fitness programs that improve public health.Encouraging positive habits and helping prevent lifestyle diseases.', image: '/images/sdgs/E-WEB-Goal-03.png',
+        gif: "/images/sdgs/3_SDG_MakeEveryDayCount_Gifs_GDU.gif",
+        pdf: "/documents/sdgs/3_Why-It-Matters-2020.pdf"
+    },
+    {
+        id: 2, title: 'SDG 4: Quality Education', description: 'Providing coaching in schools supports education through physical literacy and life skills. Teaching discipline, teamwork, and leadership—critical soft skills often learned in sport. Could integrate educational support or awareness campaigns alongside rugby programs.', image: '/images/sdgs/E-WEB-Goal-04.png',
+        gif: "/images/sdgs/4_SDG_MakeEveryDayCount_Gifs_GDU.gif",
+        pdf: "/documents/sdgs/4_Why-It-Matters-2020.pdf"
+    },
+    {
+        id: 3, title: 'SDG 5: Gender Equality', description: 'By offering equal opportunities for women and girls to play and lead in rugby, the club directly supports gender inclusion and empowerment. Creating safe, supportive environments for girls in sports.', image: '/images/sdgs/E-WEB-Goal-05.png',
+        gif: "/images/sdgs/5_SDG_MakeEveryDayCount_Gifs_GDU.gif",
+        pdf: "/documents/sdgs/5_Why-It-Matters-2020.pdf"
+    },
+    {
+        id: 4, title: 'SDG 10: Reduced Inequalities', description: 'Rugby is a sport that can reach marginalized or underserved communities. Programs that offer free or subsidized access help bridge opportunity gaps for youth and low-income families.', image: '/images/sdgs/E-WEB-Goal-10.png',
+        gif: "/images/sdgs/10_SDG_MakeEveryDayCount_Gifs_GDU.gif",
+        pdf: "/documents/sdgs/10_Why-It-Matters-2020.pdf"
+    },
+    {
+        id: 5, title: 'SDG 11: Sustainable Cities and Communities', description: 'Sports clubs help build social cohesion, create safe spaces, and foster a sense of belonging. They can reduce anti-social behavior and build resilience in communities.', image: '/images/sdgs/E-WEB-Goal-11.png',
+        gif: "/images/sdgs/11_SDG_MakeEveryDayCount_Gifs_GDU.gif",
+        pdf: "/documents/sdgs/11_Why-It-Matters-2020.pdf"
+    },
+    {
+        id: 6, title: 'SDG 16: Peace, Justice and Strong Institutions', description: 'Rugby promotes teamwork, respect, and fair play—key values in building peaceful, inclusive societies. Youth involvement in structured sports helps steer them away from crime or violence.', image: '/images/sdgs/E-WEB-Goal-16.png',
+        gif: "/images/sdgs/16_SDG_MakeEveryDayCount_Gifs_GDU.gif",
+        pdf: "/documents/sdgs/16_Why-It-Matters-2020.pdf"
+    },
+    {
+        id: 7, title: 'SDG 17: Partnerships for the Goals', description: 'The club can partner with schools, health services, local governments, or other NGOs to amplify impact and share resources. Partnerships also enable better funding and sustainability.', image: '/images/sdgs/E-WEB-Goal-17.png',
+        gif: "/images/sdgs/17_SDG_MakeEveryDayCount_Gifs_GDU.gif",
+        pdf: "/documents/sdgs/17_Why-It-Matters-2020.pdf"
+    },
+    // more goals...
+  ];
+export const Layout6 = () => {
+
+    const [selectedSDG, setSelectedSDG] = useState<SDG | null>(null);
+    const [popupOpen, setPopupOpen] = useState(false);
+  
+    const openPopup = (sdg: SDG) => {
+      setSelectedSDG(sdg);
+      setPopupOpen(true);
+    };
+  
+    const closePopup = () => {
+      setSelectedSDG(null);
+      setPopupOpen(false);
+    };
+    return (
+        <section className="layouts sdg-section">
+            <div className="row spread m-column">
+                <div className="column flex-spread">
+                    <span className="Tagline no_margins">Our Impact</span>
+                    <h2 className="no_margins">SUSTAINABLE <br /> DEVELOPMENT GOALS</h2>
+                </div>
+                <div className="Text_L_Normal column flex-spread no_margins ">
+                    <p>We align our vision with Global goals. Here are the areas we are contributing to</p>
+                </div>
+            </div>
+            <>
+            <div className="sdg-grid">
+                {mockSDGs.map((sdg) => (
+                <div key={sdg.id} className="sdg-card" onClick={() => openPopup(sdg)}>
+                    <div className="sdg-image-container">
+                        <img src={sdg.image} alt="" />
+                    </div>
+                    <p>{sdg.description.slice(0, 70)} 
+                        <i><u> read more</u></i>
+                        </p>
+                </div>
+                ))}
+            </div>
+            <SDGPopup sdg={selectedSDG} isOpen={popupOpen} onClose={closePopup} />
+            </>
+          </section>
     )
 }
