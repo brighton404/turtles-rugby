@@ -208,7 +208,7 @@ const ClubManagement: React.FC = ({ }) => {
           </div>
           <div className="mgt-child" id="GetInvolved">
             <h4>Get Involved</h4>
-            <p>Our club thrives thanks to the hard work of these passionate individuals and the wider community. Interested in volunteering, coaching, or joining a committee? Reach out to <a href="mailto:malinditurtlesrugbyclub@gmail.com">Email</a> or fill out our webform <a href="/apply">Webform</a></p>
+            <p>Our club thrives thanks to the hard work of these passionate individuals and the wider community. Interested in volunteering, coaching, or joining a committee? Reach out to <a href="mailto:malinditurtlesrugbyclub@gmail.com">Email</a> or fill out our webform <a href="/apply#ManagementForm-tab">Webform</a></p>
           </div>
         </div>
         <div className="RightBar">

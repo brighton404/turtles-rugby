@@ -8,7 +8,7 @@ const mgtMemberCard: React.FC<mgtMemberCardProps> = ({ management }) => {
 
     return (
         <div className="mgt-card">
-            <img src={management.imageUrl} alt={` ${management.name}'s photo`} />
+            <img src={management.imageUrl} alt={` ${management.name}'s photo`} loading="lazy"/>
             <div className="card-description-wrap">
                 <div className="mgt-name column">
                     <div className="MTRC-Pl-name">{management.name} {management.surname}</div>

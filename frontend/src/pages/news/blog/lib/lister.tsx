@@ -36,7 +36,7 @@ export function BlogList({ posts }: BlogListProps) {
         <div key={post.id && post.title} /* to={`/news/${post.id}/${post.title}`} */>
           <div className="BlogCard" onClick={() => openSidebar(post)}>
             {/* <button >{post.title}</button> */}
-            <div className="blogcard-banner" style={{backgroundImage: `url('${post.imageUrl}')`, aspectRatio: '16 / 9', backgroundRepeat: 'no-repeat', backgroundPosition: 'top', backgroundSize: 'cover',}}></div>
+            <div className="blogcard-banner" data-bg-class="bg-loaded" style={{backgroundImage: `url('${post.imageUrl}')`, aspectRatio: '16 / 9', backgroundRepeat: 'no-repeat', backgroundPosition: 'top', backgroundSize: 'cover',}}></div>
             <div className="blog-desc">
               <div className="ArticlePropsWrap row gap-10 Text_T_Normal">              
               <span className='date'>{new Date(post.date).toLocaleDateString()}</span> 

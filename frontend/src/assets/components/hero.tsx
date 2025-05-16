@@ -36,12 +36,12 @@ export default function hero() {
                     </a>
                 </div>
                 <div className="heroCanvas align-y content-x2">
-                    <div className="img one"></div>
-                    <div className="img two"></div>
-                    <div className="img three"></div>
-                    <div className="img four"></div>
-                    <div className="img five"></div>
-                    <div className="img six"></div>
+                    <div className="img one" data-bg-class="bg-loaded"></div>
+                    <div className="img two" data-bg-class="bg-loaded"></div>
+                    <div className="img three" data-bg-class="bg-loaded"></div>
+                    <div className="img four" data-bg-class="bg-loaded"></div>
+                    <div className="img five" data-bg-class="bg-loaded"></div>
+                    <div className="img six" data-bg-class="bg-loaded"></div>
                 </div>
             </div>
         </section>
@@ -52,11 +52,11 @@ export function HeroAbout() {
     return (
         <section className="hero-about Text_L_Bold align-y1 content-x1">
             <div className="heroCanvas align-y1 content-x1">
-                <div className="img one"></div>
-                <div className="img two"></div>
-                <div className="img three"></div>
-                <div className="img four"></div>
-                <div className="img five"></div>
+                <div className="img one" data-bg-class="bg-loaded"></div>
+                <div className="img two" data-bg-class="bg-loaded"></div>
+                <div className="img three" data-bg-class="bg-loaded"></div>
+                <div className="img four" data-bg-class="bg-loaded"></div>
+                <div className="img five" data-bg-class="bg-loaded"></div>
             </div>
         </section>
     )

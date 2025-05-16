@@ -9,6 +9,14 @@ const Sidebar: React.FC = () => {
   const { isOpen, closeSidebar } = useSidebar();
   const sidebarRef = useRef<HTMLDivElement>(null);
 
+    useEffect(() => {
+      if (isOpen) document.body.style.overflow = "hidden";
+      else document.body.style.overflow = "";
+      return () => {
+        document.body.style.overflow = "";
+      };
+    }, [isOpen]);
+
   useEffect(() => {
     const handleOutsideClick = (event: MouseEvent) => {
       if (sidebarRef.current && !sidebarRef.current.contains(event.target as Node) && isOpen) {
@@ -43,11 +51,11 @@ const Sidebar: React.FC = () => {
             </div>
           </div>
           <div className='column gap-20'>
-            <Button color={ButtonColor.Primary} state={ButtonState.Default} isOutlined={false} navigateTo="/" onClick={closeSidebar}> Home </Button>
-            <Button color={ButtonColor.Primary} state={ButtonState.Default} isOutlined={false} navigateTo="/about" onClick={closeSidebar}> About </Button>
+            <Button color={ButtonColor.Optimal} state={ButtonState.Default} isOutlined={false} navigateTo="/" onClick={closeSidebar}> Home </Button>
+            <Button color={ButtonColor.Optimal} state={ButtonState.Default} isOutlined={false} navigateTo="/about" onClick={closeSidebar}> About </Button>
             <SidebarNav label={'Teams'} displayCard={'m-teams'} />
-            <Button color={ButtonColor.Primary} state={ButtonState.Default} isOutlined={false} navigateTo="/news" onClick={closeSidebar}> News </Button>
-            <Button color={ButtonColor.Primary} state={ButtonState.Default} isOutlined={false} navigateTo="/events" onClick={closeSidebar}> Events </Button>
+            <Button color={ButtonColor.Optimal} state={ButtonState.Default} isOutlined={false} navigateTo="/news" onClick={closeSidebar}> News </Button>
+            <Button color={ButtonColor.Optimal} state={ButtonState.Default} isOutlined={false} navigateTo="/events" onClick={closeSidebar}> Events </Button>
             <SidebarNav label={'Support'} displayCard={'m-support'} />
           </div>        
         </div>

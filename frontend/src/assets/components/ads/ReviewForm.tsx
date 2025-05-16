@@ -1,6 +1,6 @@
 import { supabase } from '@/utils/supabase';
 import { useState } from 'react';
-import { JoinPlayers } from './banners';
+import { LeaveReview } from './banners';
 
 
 export function ReviewForm({ onNewReview }: { onNewReview: () => void }) {
@@ -29,8 +29,8 @@ export function ReviewForm({ onNewReview }: { onNewReview: () => void }) {
   };
 
   return (
-    <>
-    <JoinPlayers/>
+    <div className='form-bannerWrap'>
+    <LeaveReview/>
     <div className="layouts joinClub">
     <form onSubmit={handleSubmit} id='reviewForm' style={{ marginTop: '2rem' }}>
         <h2>Leave a Review</h2>
@@ -63,6 +63,6 @@ export function ReviewForm({ onNewReview }: { onNewReview: () => void }) {
       </div>
     </form>
     </div>
-    </>
+    </div>
   );
 }

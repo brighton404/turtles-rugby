@@ -1,24 +1,18 @@
+import { useState } from "react";
 import Button, { ButtonColor, ButtonState } from "../lib/button";
 import Dropdown from "../lib/dropdown";
 import Icons from "../lib/icons";
+import { Sheet } from "./extend/sheet";
 import Sidebar from "./extend/sidebar";
 import { useSidebar } from "./extend/sidebarContext";
+import { ThemeToggle } from "./theme";
 
 const header: React.FC = () => {
-    const toggleTheme = () => {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-        // Apply the new theme
-        document.documentElement.setAttribute('data-theme', newTheme);
-
-        // Save the theme to localStorage
-        localStorage.setItem('theme', newTheme);
-    };
-        const handleDonate = () => {
-          window.location.href = 'https://www.buymeacoffee.com/malinditurtlesrugby';
-        };
+/*     const handleDonate = () => {
+        window.location.href = 'https://www.buymeacoffee.com/malinditurtlesrugby';
+    }; */
     const { openSidebar } = useSidebar();
+    const [open, setOpen] = useState(false);
  return (
     <header>
     <div className="row wide align-y1 content-x1">
@@ -33,8 +27,12 @@ const header: React.FC = () => {
         </nav>
         <div className="row flex-spread gap-2 align-y2 CAT">
             <div className="row m-none">
-                <Button onClick={toggleTheme} color={ButtonColor.Optimal} state={ButtonState.Default} icon={<Icons variant="sun"/>} isOutlined={false} >theme</Button>
-                <Button color={ButtonColor.Accent} state={ButtonState.Default} isOutlined={false} onClick={handleDonate} > Donate </Button>
+                <ThemeToggle />
+                <Button color={ButtonColor.Accent} state={ButtonState.Default} isOutlined={false} onClick={() => setOpen(true)} > Donate </Button>
+                <Sheet isOpen={open} onClose={() => setOpen(false)} zIndex={2000}>
+                    <h2>No payment methods are setup</h2>
+                    <p>Please try again back later</p>
+                </Sheet>
             </div>
             <div className="sideBar-button">
                 <div onClick={openSidebar}><Icons variant="menu"/></div>

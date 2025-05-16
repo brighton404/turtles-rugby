@@ -2,7 +2,7 @@
 import { ButtonColor, ButtonState } from "../../lib/actionButton";
 import Button from "../../lib/button";
 
-export default function layout() {
+export default function Layout() {
     return (
         <div className="column layouts align-y1 content-x1 banner">
         <h2>MALINDI TURTLES RUGBY CLUB</h2>
@@ -16,8 +16,8 @@ export const Support = () => {
             <h2 className="no_margins txt_Middle">Ready to Join the Pack?</h2>
             <p className="no_margins txt_Middle">Visit our training grounds, meet the team, and experience <br /> the thrill of Malindi Turtles Rugby Club for yourself.</p>
             <div className="row gap-10">
-                <Button color={ButtonColor.Primary} state={ButtonState.Default} isOutlined={false} navigateTo="/membership"> Sign Up </Button>
-                <Button color={ButtonColor.Secondary} state={ButtonState.Default} isOutlined={false} navigateTo="/about#Grounds"> See Location </Button>
+                <Button color={ButtonColor.Accent} state={ButtonState.Default} isOutlined={false} navigateTo="/apply#onBoard-tab"> Sign Up </Button>
+                {/* <Button color={ButtonColor.Secondary} state={ButtonState.Default} isOutlined={false} navigateTo="/about#Grounds"> See Location </Button> */}
             </div>
         </section>
     )
@@ -96,6 +96,14 @@ export const JoinMembers = () => {
         <section className="banner column flex-spread content-x1 gap-20">
             <h2 className="no_margins txt_Middle">Become a member</h2>
             <p className="no_margins txt_Middle"></p>
+        </section>
+    )
+};
+export const LeaveReview = () => {
+    return (
+        <section className="banner column flex-spread content-x1 gap-20">
+            <h2 className="no_margins txt_Middle">Leave a Review</h2>
+            <p>You can also email your application via <a href="mailto:malinditurtlesrugbyclub@gmail.com">Email</a></p>
         </section>
     )
 };

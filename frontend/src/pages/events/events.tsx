@@ -11,12 +11,12 @@ const events: React.FC = () => {
     <AddCalendar />
     <Layout5 />
     <Tabs>
-        <Tab label="Cards">
+        <Tab label="Cards" tabId="CardEvents-tab">
             <div className="tab-events-wrap">
                 <CompiledEvents />
             </div>          
         </Tab>
-        <Tab label="Calendar">
+        <Tab label="Calendar" tabId="CalendarEvents-tab">
             <div className="tab-calendar-wrap">
                 <Calendar />
             </div>          

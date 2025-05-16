@@ -4,6 +4,8 @@ import './PageInDevelopment.css'; // Create this CSS file
 import ConstructionTurtle from '@/unnamed.png'
 import Button, { ButtonColor, ButtonState } from '@/assets/lib/button';
 import { useLocation } from "react-router-dom";
+import ReactDOM from 'react-dom';
+ import { useEffect } from 'react';
 
 
 const PageInDevelopment: React.FC = () => {
@@ -12,10 +14,28 @@ const PageInDevelopment: React.FC = () => {
   if (!developmentPages.includes(location.pathname)) {
     return null;
   }
+  useEffect(() => {
+    const target = document.getElementById('inConstruction');
+    const parent = target?.parentElement;
 
-  return (
-    <div className='overlay-wrap'>
-    <div className="development-page" id="inConstruction">
+    if (!target || !parent) return;
+
+    const observer = new MutationObserver(() => {
+      const isRemoved = !document.getElementById('inConstruction');
+      if (isRemoved && parent) {
+        parent.appendChild(target);
+      }
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    return () => observer.disconnect();
+  }, []);
+
+
+  return ReactDOM.createPortal(
+    <div className='overlay-wrap' id="inConstruction">
+    <div className="development-page">
       <div className="content">
         <img src={ConstructionTurtle} alt="" width="300px" />
         <h1>Page Under Construction</h1>
@@ -26,7 +46,8 @@ const PageInDevelopment: React.FC = () => {
         </div>
       </div>
     </div>
-    </div>
+    </div>,
+    document.body
   );
 };
 

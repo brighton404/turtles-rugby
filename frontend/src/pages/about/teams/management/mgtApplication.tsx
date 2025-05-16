@@ -58,7 +58,7 @@ export const ApplicationForm = () => {
   }
 
   return (
-    <>
+    <div className='form-bannerWrap'>
     <JoinMgt />
     <div className="layouts joinmgt">
       <form onSubmit={handleSubmit} id="joinMgt">
@@ -112,6 +112,6 @@ export const ApplicationForm = () => {
         {error && <p style={{ color: 'red' }}>{error}</p>}
       </form>
     </div>
-    </>
+    </div>
   );
 };

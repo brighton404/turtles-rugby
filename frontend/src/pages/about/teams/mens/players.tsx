@@ -19,8 +19,18 @@ const snrMen: React.FC = () => {
       const { data, error } = await supabase
         .from("TurtlePlayers")
         .select("*")
-        .eq("gender", "male"); 
+        .eq("gender", "male")
+        .eq("approved", true)
+        /* .order("name", { ascending: true }); */
   
+      if (data) { 
+          data.sort((a, b) => {
+          const aHasC = a.surname.includes("(c)") ? 0 : 1;
+          const bHasC = b.surname.includes("(c)") ? 0 : 1;
+          if (aHasC !== bHasC) return aHasC - bHasC; // prioritize (c) entries
+          return a.name.localeCompare(b.name);       // fallback alphabetical
+        });
+      }
       if (error) {
         console.error("Error fetching items:", error);
       } else {

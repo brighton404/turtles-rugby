@@ -7,7 +7,6 @@ const mentorshipPage: React.FC = () => {
     <>
     <div className="space"></div>
     <PageInDevelopment />
-    <Support />   
     <SchoolMentorshipForm />
     </>
 );

@@ -5,6 +5,7 @@ import './App.css'
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom"
 import { showConsoleMeme } from "./console";
+import './utils/lazy.tsx'
 
 const container = document.getElementById("root");
 const root = createRoot(container!);

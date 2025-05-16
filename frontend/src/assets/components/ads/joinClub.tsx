@@ -18,7 +18,7 @@ const JoinForm = () => {
   };
 
   return (
-    <>
+    <div className="form-bannerWrap">
     <JoinPlayers/>
     <div className="layouts joinClub">
       <form onSubmit={handleSubmit} id="joinClub">
@@ -46,7 +46,7 @@ const JoinForm = () => {
         <button type="submit">Join Club</button>
       </form>
     </div>
-    </>
+    </div>
   );
 };
 

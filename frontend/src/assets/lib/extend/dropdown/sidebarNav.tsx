@@ -17,6 +17,7 @@ const sidebarNav: React.FC<sidebarNavProps> = ({ label, displayCard }) => {
     setIsOpen((prev) => !prev);
   };
   const closesidebarNav = () => setIsOpen(false);
+  const closeDropdown = () => setIsOpen(false);
 
   // Close sidebarNav if clicked outside
   useEffect(() => {
@@ -41,7 +42,7 @@ const sidebarNav: React.FC<sidebarNavProps> = ({ label, displayCard }) => {
       </ActionButton>
       </div>
       <div role="listbox" className={`sidebarNav-menu column gap-2 ${isOpen ? "open" : "close"}`}>
-        <DropCards variant={displayCard} />
+        <DropCards variant={displayCard} closeDropdown={closeDropdown} />
       </div>
     </div>
   );

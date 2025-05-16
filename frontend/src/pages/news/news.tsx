@@ -10,10 +10,10 @@ const news: React.FC = () => {
     <Articles/>
     <div className="news">        
         <Tabs>
-            <Tab label="Cards">
+            <Tab label="Cards" tabId="newsCard-tab">
                 <><Blog /></>
             </Tab>
-            <Tab label="Table">
+            <Tab label="Table" tabId="newsTable-tab">
                 <><PostTable /></>
             </Tab>
         </Tabs> 

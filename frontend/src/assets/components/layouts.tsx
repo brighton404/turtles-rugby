@@ -87,7 +87,7 @@ export const Layout4 = () => {
     ];
     
     return (
-        <section className="AccordionSection column spread m-column">
+        <section className="AccordionSection column spread layouts m-column">
         <div className=" child1 column flex-spread">
             <span className="Tagline no_margins">FAQ</span>
             <h2 className="no_margins">Frequently Asked Questions</h2>
@@ -165,7 +165,7 @@ export const Layout6 = () => {
     };
     return (
         <section className="layouts sdg-section">
-            <div className="row spread m-column">
+            <div className="row spread m-column gap-2">
                 <div className="column flex-spread">
                     <span className="Tagline no_margins">Our Impact</span>
                     <h2 className="no_margins">SUSTAINABLE <br /> DEVELOPMENT GOALS</h2>

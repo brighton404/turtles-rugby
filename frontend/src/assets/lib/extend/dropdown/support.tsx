@@ -2,11 +2,12 @@ import { useNavigate } from "react-router-dom";
 import Icons from "../../icons";
 import teamPhoto from '@/assets/lib/extend/dropdown/media/team photo.jpg';
 import { useSidebar } from "@/assets/components/extend/sidebarContext";
+import { useDropdown } from "@/assets/components/extend/dropdownContext";
 
 export default function CardSupport() {
 
     const navigate = useNavigate();
-
+    const { closeDropdown } = useDropdown();
     const onSponsor = () => {
         navigate('/sponsor');
       };
@@ -21,7 +22,7 @@ export default function CardSupport() {
                     <div className="dropdown-AdCards-l">
                         <div className="contentWrap">
                             <span>Community</span>
-                            <p>Communities run by the club</p>
+                            <p>Where all our members sit</p>
                         </div>
                         <div className="imageWrap"><img src={teamPhoto} alt="" /></div>
                     </div>
@@ -30,14 +31,14 @@ export default function CardSupport() {
                     <div className="dropdown-AdCards-l">
                         <div className="contentWrap">
                             <span>Contribute</span>
-                            <p>Pre-made essentials like buttons and toasts</p>
+                            <p>Play a part of promoting to our clause</p>
                         </div>
                         <div className="imageWrap"><img src={teamPhoto} alt="" /></div>
                     </div>
                     <div className="dropdown-AdCards-s">
                         <div className="contentWrap">
                             <span>Sports Act</span>
-                            <p>Pre-made essentials like buttons and toasts</p>
+                            <p>Legal address to our establishment as a rugby club</p>
                         </div>
                         <div className="imageWrap"><img src={teamPhoto} alt="" /></div>
                     </div>
@@ -47,7 +48,7 @@ export default function CardSupport() {
                 <div className='column gap-10'>
                     <span className='bold Text_M_Normal'>Club support</span>
                     <div className="link">
-                        <div className="inner" onClick={() => { onPartner(); closeSidebar(); }}>
+                        <div className="inner" onClick={() => { onPartner(); closeSidebar(); closeDropdown() }}>
                             <span>Patnership</span>
                             <Icons variant="chevron-right"/>
                         </div>

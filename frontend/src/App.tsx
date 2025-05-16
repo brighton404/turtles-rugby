@@ -19,6 +19,7 @@ import JoinForm from "./assets/components/ads/joinClub";
 import LoadingScreen from "@/utils/loader";
 import { SidebarProvider } from "./assets/components/extend/sidebarContext";
 import Apply from "./pages/apply";
+import AgeGradePage from "./pages/community/ageGrade";
 
 function App() {
   
@@ -152,6 +153,7 @@ function App() {
   if (isLoading) {
     return <LoadingScreen />;
   }
+  
   return (
     <>
     <QueryClientProvider client={queryClient}>
@@ -168,6 +170,7 @@ function App() {
           <Route path="/Womens-team" element={<Teams variant="womens team" />} />
           <Route path="/community" element={<Community />} />
           <Route path="/mentorship" element={<MentorshipPage />} />
+          <Route path="/age-grade" element={<AgeGradePage />} />
           <Route path="/membership" element={<JoinForm />} />
           <Route path="/sponsor" element={<Sponsor />} />
           <Route path="/partners" element={<Partner />} />

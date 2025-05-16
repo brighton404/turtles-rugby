@@ -11,6 +11,14 @@ interface SDGPopupProps {
 const SDGPopup: React.FC<SDGPopupProps> = ({ sdg, isOpen, onClose }) => {
   const popupRef = useRef<HTMLDivElement>(null);
 
+    useEffect(() => {
+      if (isOpen) document.body.style.overflow = "hidden";
+      else document.body.style.overflow = "";
+      return () => {
+        document.body.style.overflow = "";
+      };
+    }, [isOpen]);
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (popupRef.current && !popupRef.current.contains(event.target as Node)) {
@@ -42,8 +50,8 @@ const SDGPopup: React.FC<SDGPopupProps> = ({ sdg, isOpen, onClose }) => {
           <motion.div
             className="popup-container"
             ref={popupRef}
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
+            initial={{ scale: 0.8, opacity: 0, }}
+            animate={{ scale: 1, opacity: 1, }}
             exit={{ scale: 0.8, opacity: 0 }}
             transition={{ type: 'spring', stiffness: 300, damping: 25 }}            
           >

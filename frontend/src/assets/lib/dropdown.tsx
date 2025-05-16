@@ -41,7 +41,7 @@ const Dropdown: React.FC<DropdownProps> = ({ label, displayCard }) => {
       </ActionButton>
       </div>
       <div id="drop" role="listbox" className={`dropdown-menu dropWrap column gap-2 ${isOpen ? "open" : "close"}`}>
-        <DropCards variant={displayCard} />
+          <DropCards variant={displayCard} closeDropdown={closeDropdown}/>        
       </div>
     </div>
   );

@@ -31,7 +31,7 @@ const SchoolMentorshipForm = () => {
   };
 
   return (
-    <>
+    <div className="form-bannerWrap">
     <JoinSchools />
     <div className="layouts schoolMentorship">
         <form onSubmit={handleSubmit} id="schoolMentorshipForm">
@@ -86,7 +86,7 @@ const SchoolMentorshipForm = () => {
         <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Submit Application</button>
       </form>
     </div>
-    </>
+    </div>
   );
 };
 
