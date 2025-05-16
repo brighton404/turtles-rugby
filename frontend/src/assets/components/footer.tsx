@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import Button, { ButtonColor, ButtonState } from "../lib/button";
 import Icons from "../lib/icons";
 
 const footer: React.FC = () => {

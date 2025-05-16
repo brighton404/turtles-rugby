@@ -40,7 +40,7 @@ const RugbyOnboardingForm: React.FC = () => {
     approved: false,
   });
 
-  const handleNext = () => setStep((prev) => prev + 1);
+  /* const handleNext = () => setStep((prev) => prev + 1); */
   const handleBack = () => setStep((prev) => prev - 1);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {

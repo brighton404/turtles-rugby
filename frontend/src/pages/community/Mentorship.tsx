@@ -1,4 +1,3 @@
-import Support from "@/assets/components/ads/banners";
 import SchoolMentorshipForm from "@/assets/components/ads/mentorship";
 import PageInDevelopment from "@/utils/development";
 
