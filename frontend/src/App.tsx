@@ -104,6 +104,10 @@ function App() {
         title = "mentorship";
         metaDescription = "";
         break;
+      case "/age-grade":
+        title = "Age grade";
+        metaDescription = "";
+        break;
       case "/membership":
         title = "membership";
         metaDescription = "";

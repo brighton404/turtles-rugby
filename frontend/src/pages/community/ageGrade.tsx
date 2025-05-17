@@ -17,22 +17,25 @@ export default function AgeGradePage() {
   }, []);
 
   return (
-    <div className="ageGrade">
+    <section className="ageGrade layouts m-layouts column gap-20">
         <div className="space"></div>
-      <h1 className="title">🏉 Age Grade Rugby Schools</h1>
+        <div className='column gap-2'>
+          <h1 className="title no_margins">Age Grade</h1>
+          <span className="Text_Normal no_margins">Schools under our age grade rugby program</span>
+        </div>
       {loading ? (
         <p className="loading">Loading schools...</p>
       ) : (
-        <div className="school-list">
+        <div className="school-list column gap-20">
           {schools.map((school) => (
-            <div className="school-card" key={school.id}>
-              <h2>{school.name}</h2>
-              <p>Location: {school.location}</p>
-              <p>Age Group: {school.age_group}</p>
+            <div className="school-card " key={school.id}>
+              <h2 className='no_margins'>{school.name}</h2>
+              <p className='no_margins'>Location: {school.location}</p>
+              <p className='no_margins'>Age Group: {school.age_group}</p>
             </div>
           ))}
         </div>
       )}
-    </div>
+    </section>
   );
 }
