@@ -103,7 +103,7 @@ export const LeaveReview = () => {
     return (
         <section className="banner column flex-spread content-x1 gap-20">
             <h2 className="no_margins txt_Middle">Leave a Review</h2>
-            <p>You can also email your application via <a href="mailto:malinditurtlesrugbyclub@gmail.com">Email</a></p>
+            <p>You can also email your review via <a href="mailto:malinditurtlesrugbyclub@gmail.com">Email</a></p>
         </section>
     )
 };
