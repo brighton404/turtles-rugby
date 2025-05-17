@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
+import multiMonthPlugin from '@fullcalendar/multimonth'
 import timeGridPlugin from "@fullcalendar/timegrid";
 import listPlugin from "@fullcalendar/list"
 import interactionPlugin from "@fullcalendar/interaction";
@@ -17,7 +18,7 @@ const Calendar = () => {
 
   useEffect(() => {
     const fetchEvents = async () => {
-      const { data, error } = await supabase.from("TurtleEvents").select("*");
+      const { data, error } = await supabase.from("TurtleEvents").select("*").order("start", { ascending: false });
     
       if (error) {
         console.error("Error fetching events:", error);
@@ -85,10 +86,10 @@ const [open, setOpen] = useState(false);
 
 /* const handleEventClick = (clickInfo: { event: EventApi }) => {
   setSelectedEvent(clickInfo.event);
-  setOpen(true);
+  setOpen(true);  dayGridMonth
 }; */
   
-const getCalendarView = () => (window.innerWidth < 768 ? "listMonth" : "dayGridMonth");
+const getCalendarView = () => (window.innerWidth < 768 ? "listMonth" : "multiMonthYear");
 const [calendarView, setCalendarView] = useState(getCalendarView);
 
 useEffect(() => {
@@ -106,9 +107,11 @@ useEffect(() => {
   return (
     <>
       <FullCalendar
-        plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin, listPlugin]}
+        plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin, listPlugin, multiMonthPlugin]}
         initialView={calendarView}
         events={events}
+        multiMonthMaxColumns={4}
+        contentHeight={600}
         /* eventClick={handleEventClick} */
         eventContent={(eventInfo) => {
           const startDate = eventInfo.event.start ? new Date(eventInfo.event.start) : null;

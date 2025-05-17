@@ -104,12 +104,6 @@ export const Layout4 = () => {
         </section>
     )
 };
-/* Events Page banner */
-export const Layout5 = () => {
-    return (
-            <EventBanner />
-    )
-}
 /* social development goals */
 const mockSDGs: SDG[] = [
     {

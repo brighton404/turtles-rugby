@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { supabase } from '@/utils/supabase';
 import { getUpcomingEvent } from './getCal';
+import { LucideIcons } from '@/assets/lib/lucideIcons';
 
 interface Event {
     id: string;
@@ -67,17 +68,25 @@ export default function EventBanner() {
   }
 
   return (
-    <div className="FeaturedEvent" style={styles.background}>
+    <section className="FeaturedEvent">
+      <div style={styles.background}>
       <div className='shade'>
         <div className="event-banner">
           <h2>{event.title}</h2>
-          <div className='row m-column gap-10 content-x1 m-align-y'>
-          <p className='event-dates'>{new Date(event.start).toLocaleDateString()} - {new Date(event.end).toLocaleDateString()}</p>
-          <a href={event.gmaps} className='event-map'>{event.location}</a>
+          <div className='column gap-10 content-x1 m-content-x m-align-y'>
+            <div className='row content-x1 m-content-x m-align-y gap-4 event-dates'>
+              <span><LucideIcons.calendar /></span>
+              <p className=''>{new Date(event.start).toLocaleDateString()} - {new Date(event.end).toLocaleDateString()}</p>
+            </div>
+            <div className='row content-x1 align-y1 gap-10 event-map'>
+              <span><LucideIcons.map /></span>
+              <a href={event.gmaps}>{event.location}</a>
+            </div>
           </div>
-          <p className='event-desc'>{event.description}</p>
+          {/* <p className='event-desc'>{event.description}</p> */}
         </div>
       </div>
-    </div>
+      </div>
+    </section>
   );
 }

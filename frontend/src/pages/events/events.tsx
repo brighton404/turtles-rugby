@@ -1,28 +1,23 @@
-import { AddCalendar } from "@/assets/components/ads/banners";
+/* import { AddCalendar } from "@/assets/components/ads/banners"; */
+/* import { Tabs, Tab } from "@/assets/components/tabs"; */
 import Calendar from "./calendar";
-import { Layout5 } from "@/assets/components/layouts";
-import { Tabs, Tab } from "@/assets/components/tabs";
 import CompiledEvents from "./lib/compiledCards";
+import EventBanner from "./lib/newEvent";
 
 const events: React.FC = () => {
     return (
-    <>
-    <div className="space"></div>
-    <AddCalendar />
-    <Layout5 />
-    <Tabs>
-        <Tab label="Cards" tabId="CardEvents-tab">
-            <div className="tab-events-wrap">
-                <CompiledEvents />
-            </div>          
-        </Tab>
-        <Tab label="Calendar" tabId="CalendarEvents-tab">
-            <div className="tab-calendar-wrap">
-                <Calendar />
-            </div>          
-        </Tab>
-      </Tabs>
-    </>
+    <section className="eventsPage">
+        <div className="space"></div>
+        <div className="tab-newEvent-wrap">
+            <EventBanner />
+        </div>
+        <section className="tab-events-wrap">
+            <CompiledEvents /> 
+        </section>          
+        <section className="tab-calendar-wrap">
+            <Calendar />
+        </section> 
+    </section>
     );
    }
    export default events;

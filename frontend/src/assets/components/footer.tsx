@@ -59,8 +59,9 @@ const footer: React.FC = () => {
             <div className="column gap-10">
                 <hr />
                 <div className="row gap-20 m-column">
-                    <div className="row flex-spread gap-20 m-column flex-wrap">
-                        <span className="m-txt_Middle no_truncate m-truncate">© 2024 Malindi Turtles Rugby Club. <br className="s-br" /> All rights reserved.</span>
+                    <div className="row flex-spread gap-10 m-column flex-wrap">
+                        <span className="m-txt_Middle no_truncate m-truncate">© 2025 Malindi Turtles Rugby Club. <br className="s-br" /> All rights reserved.</span>
+                        <span>Maintained by <Link to="https://brighton404.vercel.app/" target="_blank">Julius Brighton</Link></span>
 {/*                         <div className="row m-align-y m-content-x1 gap-10 m-flex-wrap">
                             <Link className="no_truncate" to="">Privacy Policy</Link>
                             <Link className="no_truncate" to="">Terms of Service</Link>

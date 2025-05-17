@@ -9,4 +9,5 @@ export interface Event {
     end: string;
     imageUrl: string;
     ticket: string;
+    color: string;
 }

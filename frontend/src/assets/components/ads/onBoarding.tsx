@@ -315,15 +315,15 @@ const RugbyOnboardingForm: React.FC = () => {
               <span className='description Text_S_Normal'>Your preferred position of play</span>
               <select name="position" onChange={handleChange}>
                 <option value="">-- Select Position --</option>
-                <option value="Prop">Prop</option>
-                <option value="Hooker">Hooker</option>
-                <option value="Lock">Lock</option>
-                <option value="Flanker">Flanker</option>
-                <option value="Scrum-half">Scrum-half</option>
-                <option value="Fly-half">Fly-half</option>
-                <option value="Centre">Centre</option>
+                <option value="front-row">Front Row</option>
+                <option value="second-row">Second Row</option>
+                <option value="loose-forward">Loose Forward</option>
+                <option value="utility-forward">Utility Forward</option>
+                <option value="half-back">Half Back</option>
+                <option value="center">Center</option>
                 <option value="Winger">Winger</option>
-                <option value="Full-back">Full-back</option>
+                <option value="Full-back">Full back</option>
+                <option value="Utility-back">Utility back</option>
               </select>
             </div>
           )}

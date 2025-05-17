@@ -17,6 +17,8 @@ const compiledEvents: React.FC = () => {
       const { data, error } = await supabase
         .from("TurtleEvents")
         .select("*")
+        .order("start", { ascending: false })
+        .limit(6);
   
       if (error) {
         console.error("Error fetching items:", error);

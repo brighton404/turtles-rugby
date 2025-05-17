@@ -23,6 +23,7 @@ interface ButtonProps {
   isOutlined?: boolean;
   navigateTo?: string; // New prop for navigation
   onClick?: () => void;
+  disabled: boolean;
   children: React.ReactNode;
 }
 
@@ -32,7 +33,7 @@ const Button: FC<ButtonProps> = ({
   icon, 
   isOutlined = false, 
   navigateTo, // Destructure navigateTo
-  onClick, 
+  onClick,
   children,
 }) => {
   const navigate = useNavigate();

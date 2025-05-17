@@ -7,13 +7,18 @@ interface EventCardProps {
     event: Event;
 }
 const EventCard: React.FC<EventCardProps> = ({ event }) => {
+    const now = new Date();
+    const eventHasEnded = new Date(event.end) < now;
+
     const Ticket = () => {
-        window.location.href = `${event.ticket}`;
-      };
+        if (!eventHasEnded) {
+            window.location.href = `${event.ticket}`;
+        }
+    };
     const styles = {
         background: {
           backgroundImage: `url('${event.imageUrl}')`,
-          aspectRatio: `16 / 9`,
+          /* aspectRatio: `16 / 9`, */
           backgroundRepeat: `no-repeat`,
           backgroundPosition: `top`,
           backgroundSize: `cover`,
@@ -26,27 +31,46 @@ const EventCard: React.FC<EventCardProps> = ({ event }) => {
     return (
         <div className="event-card" style={styles.background}>
             <div className="card-description-wrap">
-                <div className="event-name column">
-                    <h3>{event.title}</h3>
-                </div>
-                <div className="column event-desc">
-                    <div className="row">
-                        <span className="Text_S_Normal bold">{event.location}</span>
+                <div className="child">
+                    <div className="event-name column">
+                        <h3>{event.title}</h3>
                     </div>
-                    <div className="event-desc-child-layer">
+                    <div className="column event-desc">
                         <div className="row gap-2">
-                            <span className="Text_S_Normal bold">Time: </span>
-                            <span className="Text_S_Normal">
-                                {new Date(event.start).toLocaleDateString()} - {new Date(event.end).toLocaleDateString()}
-                            </span>
+                            <span className="Text_Normal bold">At: </span>
+                            <span className="Text_Normal bold">{event.location}</span>
                         </div>
-                        <div className="column">
-                            <span className="Text_S_Normal bold">Description</span>
-                            <span className="Text_S_Normal">{event.description}</span>
-                        </div>
-                    </div>                    
+                        <div className="event-desc-child-layer">
+                            <div className="row gap-2">
+                                <span className="Text_Normal bold">Date: </span>
+                                <span className="Text_Normal">
+                                    {new Date(event.start).toLocaleDateString()} {/* - {new Date(event.end).toLocaleDateString()} */}
+                                </span>
+                            </div>
+                            <div className="column desc-layer">
+                                <span className="Text_Normal bold">Description:</span>
+                                <span className="Text_Normal">{event.description}</span>
+                            </div>
+                        </div>                    
+                    </div>
                 </div>
-                <Button color={ButtonColor.Secondary} state={ButtonState.Default} isOutlined={false} onClick={Ticket}> Get Tickets </Button>
+                <div className="event-action">
+                {eventHasEnded ? 
+                    <div className="eventHasEnded">
+                        <span>Event has Ended</span>
+                    </div>
+                    : 
+                    <Button
+                        color={ButtonColor.Accent}
+                        state={ButtonState.Default}
+                        isOutlined={false}
+                        onClick={Ticket}
+                        disabled={false}
+                    >
+                        Get tickets
+                    </Button>
+                 }
+                 </div>
             </div>
         </div>
     )
