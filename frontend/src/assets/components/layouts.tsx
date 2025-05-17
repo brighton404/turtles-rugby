@@ -1,7 +1,6 @@
 import { LayoutCard } from "@/pages/news/extend/card";
 import FAQAccordion from "./accordion";
 import { useState } from "react";
-import EventBanner from "@/pages/events/lib/newEvent";
 import SDGPopup from "./SDGPopup";
 import { SDG } from "../lib/types";
 import { ReviewsList } from "./testimonial";

@@ -47,15 +47,15 @@ const Sidebar: React.FC = () => {
           <div className='row content-x1'>
             <button className="close-button" onClick={closeSidebar}>&times;</button>
             <div className="column flex-spread content-x2">
-              <Button onClick={toggleTheme} color={ButtonColor.Optimal} state={ButtonState.Default} icon={<Icons variant="sun"/>} isOutlined={false} >theme</Button>
+              <Button onClick={toggleTheme} color={ButtonColor.Optimal} state={ButtonState.Default} icon={<Icons variant="sun" />} isOutlined={false} disabled={false}>theme</Button>
             </div>
           </div>
           <div className='column gap-20'>
-            <Button color={ButtonColor.Optimal} state={ButtonState.Default} isOutlined={false} navigateTo="/" onClick={closeSidebar}> Home </Button>
-            <Button color={ButtonColor.Optimal} state={ButtonState.Default} isOutlined={false} navigateTo="/about" onClick={closeSidebar}> About </Button>
+            <Button color={ButtonColor.Optimal} state={ButtonState.Default} isOutlined={false} navigateTo="/" onClick={closeSidebar} disabled={false} > Home </Button>
+            <Button color={ButtonColor.Optimal} state={ButtonState.Default} isOutlined={false} navigateTo="/about" onClick={closeSidebar} disabled={false} > About </Button>
             <SidebarNav label={'Teams'} displayCard={'m-teams'} />
-            <Button color={ButtonColor.Optimal} state={ButtonState.Default} isOutlined={false} navigateTo="/news" onClick={closeSidebar}> News </Button>
-            <Button color={ButtonColor.Optimal} state={ButtonState.Default} isOutlined={false} navigateTo="/events" onClick={closeSidebar}> Events </Button>
+            <Button color={ButtonColor.Optimal} state={ButtonState.Default} isOutlined={false} navigateTo="/news" onClick={closeSidebar} disabled={false} > News </Button>
+            <Button color={ButtonColor.Optimal} state={ButtonState.Default} isOutlined={false} navigateTo="/events" onClick={closeSidebar} disabled={false} > Events </Button>
             <SidebarNav label={'Support'} displayCard={'m-support'} />
           </div>        
         </div>

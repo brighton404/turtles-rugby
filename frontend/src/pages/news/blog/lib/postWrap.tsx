@@ -29,7 +29,7 @@ export function BlogPage() {
       <>
         <div className="space"></div>
         <div className='layouts'>
-          <Button color={ButtonColor.Secondary} state={ButtonState.Default} isOutlined={false} navigateTo="/news" icon={<Icons variant='chevron-left'/>}>
+          <Button color={ButtonColor.Secondary} state={ButtonState.Default} isOutlined={false} navigateTo="/news" icon={<Icons variant='chevron-left' />} disabled={false} >
             Return to blog list
           </Button>
           <h2>Post not found</h2>
@@ -44,7 +44,7 @@ export function BlogPage() {
   return (
     <div>
       <main className="BlogMain">
-        <Button color={ButtonColor.Secondary} state={ButtonState.Default} isOutlined={false} navigateTo="/news" icon={<Icons variant='chevron-left'/>}>Back</Button>
+        <Button color={ButtonColor.Secondary} state={ButtonState.Default} isOutlined={false} navigateTo="/news" icon={<Icons variant='chevron-left' />} disabled={false} >Back</Button>
         <h1>{post.title}</h1>
           <div className="row gap-10">
             <span>{new Date(post.date).toLocaleDateString()}</span>

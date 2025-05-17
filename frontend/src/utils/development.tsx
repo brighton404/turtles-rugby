@@ -42,7 +42,7 @@ const PageInDevelopment: React.FC = () => {
         <p>We're working hard to bring you something amazing.</p>
         <p>Please check back later.</p>
         <div className="innerDevPage">
-          <Button color={ButtonColor.Secondary} state={ButtonState.Default} navigateTo='/'>Go to homepage</Button>
+          <Button color={ButtonColor.Secondary} state={ButtonState.Default} navigateTo='/' disabled={false} >Go to homepage</Button>
         </div>
       </div>
     </div>

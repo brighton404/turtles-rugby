@@ -26,6 +26,6 @@ export const ThemeToggle: React.FC = () => {
   };
 
   return (
-   <Button onClick={toggleTheme} color={ButtonColor.Optimal} state={ButtonState.Default} icon={<Icons variant="sun"/>} isOutlined={false} >theme</Button>
+   <Button onClick={toggleTheme} color={ButtonColor.Optimal} state={ButtonState.Default} icon={<Icons variant="sun" />} isOutlined={false} disabled={false}  >theme</Button>
   );
 };
