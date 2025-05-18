@@ -21,9 +21,7 @@ const MapComponent = () => {
   }, []);
 
   return (
-    <div
-      id="map"
-      style={{ height: '400px', width: '100%' }}
+    <div id="map" style={{ height: '400px', width: '100%' }}
     ></div>
   );
 };

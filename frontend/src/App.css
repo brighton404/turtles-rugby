@@ -3368,7 +3368,7 @@ form {
   a, summary { color: var(--base_100) }
   details { color: var(--base_60) }
   #map {
-    span { color: black}
+    a, span { color: black}
   }
   .text_foreground_dark {
   color: white;
