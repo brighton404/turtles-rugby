@@ -3,9 +3,7 @@ import { Link } from 'react-router-dom';
 import { BlogPost } from '@/pages/news/blog/lib/types';
 import { marked } from 'marked';
 import { AnimatePresence, motion } from 'framer-motion';
-import Icons from '../lib/icons';
 import { LucideIcons } from '../lib/lucideIcons';
-/* import './SidebarPreview.css'; */ // we'll create this file for styles
 
 interface SidebarPreviewProps {
   post: BlogPost | null;

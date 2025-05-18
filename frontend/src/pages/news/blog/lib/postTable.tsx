@@ -5,12 +5,18 @@ import { supabase } from '@/utils/supabase';
 import ActivityTable from '../lib/blogTable';
 import Icons from '@/assets/lib/icons';
 import { category } from './types';
+import Button, { ButtonColor, ButtonState } from '@/assets/lib/button';
 
 const postTable: React.FC = () => {
-  const { data: posts, isLoading: loading, error } = useQuery({
-    queryKey: ['blog-posts'],
-    queryFn: getBlogPosts,
+    const [page, setPage] = useState(1);
+    const pageSize = 5;
+  const { data, error, isLoading: loading, isFetching, } = useQuery({
+    queryKey: ['blog-posts', page],
+    queryFn: () => getBlogPosts(page, pageSize),
+/*     keepPreviousData: true, */
   });
+  const posts = data?.data ?? [];
+  const totalPages = data?.totalPages ?? 1;
 
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
@@ -55,9 +61,11 @@ const postTable: React.FC = () => {
       post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       post.content.toLowerCase().includes(searchTerm.toLowerCase());
   
-    const matchesCategory = selectedCategory
-      ? post.c_categories.some((cat: { Newscategories: { id: string; }; }) => cat.Newscategories?.id === String(selectedCategory))
-      : true;
+     const matchesCategory = selectedCategory
+    ? post.c_categories.some(
+        (cat) => cat.Newscategories?.id === String(selectedCategory)
+      )
+    : true;
   
     return matchesSearch && matchesCategory;
   }) ?? [];
@@ -81,7 +89,25 @@ const postTable: React.FC = () => {
           <input type="text" placeholder="Search posts..." value={searchTerm} onChange={e => setSearchTerm(e.target.value)} style={{ paddingLeft: '35px' }}/>
         </div>
       </div>
-      <ActivityTable posts={filteredPosts} />
+      
+            {loading ? (
+              <p>Loading...</p>
+            ) : error ? (
+              <p>Error loading blog posts.</p>
+            ) : (
+              <>
+                <ActivityTable posts={filteredPosts} />
+                <div className='pageHandler'>
+                  <div>
+                  <Button onClick={() => setPage((p) => Math.max(p - 1, 1))} disabled={page === 1} color={ButtonColor.Secondary} state={ButtonState.Default}>Previous</Button>
+                  <Button onClick={() => setPage((p) => Math.min(p + 1, totalPages))} disabled={page === totalPages} color={ButtonColor.Secondary} state={ButtonState.Default}>Next</Button>
+                  </div>
+                  <span className='text_foreground_dark'>Page {page} of {totalPages}</span>
+                </div>
+      
+                {isFetching && <p>Getting Posts</p>}
+              </>
+            )}
     </section>
   );
 };
