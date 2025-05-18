@@ -7,9 +7,9 @@ import { ReviewsList } from "./testimonial";
 
 export default function Layout() {
     return (
-    <div className="column layouts align-y1 content-x1 banner">
+    <section className="column layouts align-y1 content-x1 banner">
         <h2>MALINDI TURTLES RUGBY CLUB</h2>
-    </div>
+    </section>
     )
 }
 {/**Homepage */}
@@ -17,10 +17,10 @@ export const Layout1 = () => {
     return (
     <section className="column layouts m-layouts FAQDiv">
         <div className="row spread m-column">
-            <div className="column flex-spread">
+            <hgroup className="column flex-spread">
                 <span className="Tagline no_margins">Info</span>
                 <h2 className="no_margins">Why Join the <br/> Malindi Turtles?</h2>
-            </div>
+            </hgroup>
             <div className="Text_L_Normal column flex-spread no_margins ">
                 <p>Combine your passion for rugby with the vibrant and laid-back atmosphere of Malindi. Enjoy the beautiful beaches, explore the local culture, and make lifelong friends.</p>
             <div>
@@ -39,10 +39,10 @@ export const Layout1 = () => {
 export const Layout2 = () => {
     return (
         <section className="layouts m-layouts row spread m-column">
-        <div className="column flex-spread">
+        <hgroup className="column flex-spread">
             <span className="Tagline no_margins">News</span>
             <h2 className="no_margins">Medium length section heading goes here</h2>
-        </div>
+        </hgroup>
         <div className="Text_L_Normal column flex-spread no_margins ">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.</p>
         </div>
@@ -87,10 +87,10 @@ export const Layout4 = () => {
     
     return (
         <section className="AccordionSection column spread layouts m-column">
-        <div className=" child1 column flex-spread">
-            <span className="Tagline no_margins">FAQ</span>
-            <h2 className="no_margins">Frequently Asked Questions</h2>
-        </div>
+            <hgroup className=" child1 column flex-spread">
+                <span className="Tagline no_margins">FAQ</span>
+                <h2 className="no_margins">Frequently Asked Questions</h2>
+            </hgroup>
             {faqs.map((faq, index) => (
                 <FAQAccordion
                 key={index}
@@ -159,29 +159,27 @@ export const Layout6 = () => {
     return (
         <section className="layouts sdg-section">
             <div className="row spread m-column gap-2">
-                <div className="column flex-spread">
+                <hgroup className="column flex-spread">
                     <span className="Tagline no_margins">Our Impact</span>
                     <h2 className="no_margins">SUSTAINABLE <br /> DEVELOPMENT GOALS</h2>
-                </div>
+                </hgroup>
                 <div className="Text_L_Normal column flex-spread no_margins ">
                     <p>We align our vision with Global goals. Here are the areas we are contributing to</p>
                 </div>
             </div>
-            <>
             <div className="sdg-grid">
                 {mockSDGs.map((sdg) => (
                 <div key={sdg.id} className="sdg-card" onClick={() => openPopup(sdg)}>
                     <div className="sdg-image-container">
                         <img src={sdg.image} alt="" />
                     </div>
-                    <p>{sdg.description.slice(0, 70)} 
+                    <p aria-label={sdg.description}>{sdg.description.slice(0, 70)} 
                         <i><u> read more</u></i>
-                        </p>
+                    </p>
                 </div>
                 ))}
             </div>
             <SDGPopup sdg={selectedSDG} isOpen={popupOpen} onClose={closePopup} />
-            </>
           </section>
     )
 }

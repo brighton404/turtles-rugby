@@ -1,5 +1,6 @@
 import React from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { LucideIcons } from '../lib/lucideIcons';
+/* import { motion, AnimatePresence } from 'framer-motion'; */
 
 const FAQAccordion: React.FC<{ question: string; 
     answer: string; 
@@ -8,12 +9,15 @@ const FAQAccordion: React.FC<{ question: string;
   }> = ({ question, answer, isOpen, onToggle }) => {
 
   return (
-    <div className="Accordion-wrap">
-      <div className="child1" onClick={onToggle}>
-        <h2 className="Text_L_Normal">{question}</h2>
-        <span>{isOpen ? '-' : '+'}</span>
-      </div>
-      <AnimatePresence>
+    <details className="Accordion-wrap">
+      <summary className="Text_L_Normal bold child1" onClick={onToggle}>
+      {question}
+        {/* <h2 className="Text_L_Normal">{question}</h2> */}
+        <span>
+          {isOpen ? <LucideIcons.chevronUp /> : <LucideIcons.chevronDown />}
+        </span>
+      </summary>
+{/*       <AnimatePresence>
         {isOpen && (
           <motion.p
             className="Text_M_Normal"
@@ -25,8 +29,9 @@ const FAQAccordion: React.FC<{ question: string;
             {answer}
           </motion.p>
         )}
-      </AnimatePresence>
-    </div>
+      </AnimatePresence> */}
+      {answer}
+    </details>
   );
 };
 

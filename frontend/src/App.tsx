@@ -163,6 +163,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <SidebarProvider>
       <Header />
+      <main id="main-content" role="main" tabIndex={-1}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -181,6 +182,7 @@ function App() {
           <Route path="/apply" element={<Apply />} />
           <Route path="*" element={<NotFound />}/>
         </Routes>
+      </main>
       <Footer />
       </SidebarProvider>
     </QueryClientProvider>

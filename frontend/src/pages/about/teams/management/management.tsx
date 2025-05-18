@@ -171,7 +171,7 @@ const ClubManagement: React.FC = ({ }) => {
             </div>
             <div className="mgt-child2">
               <h4> Membership Officer </h4>
-              <h5><h5 className="department-lead">{clubMembershipOfficer?.full_name || "No current Membership Officer"}</h5></h5>
+              <h5 className="department-lead">{clubMembershipOfficer?.full_name || "No current Membership Officer"}</h5>
               <p>Focused on the lifeblood of the club — our members — oversees sign-ups, renewals, and engagement to ensure everyone feels valued and connected.</p>
             </div>
             </div>

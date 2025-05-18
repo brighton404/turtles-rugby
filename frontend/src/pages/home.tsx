@@ -8,7 +8,6 @@ const home: React.FC = () => {
     <>
     <Hero />
     <Layout1 />
-    {/* <Layout2 /> */}
     <Layout6 />      
     <Layout4 />
     <Layout3 />  

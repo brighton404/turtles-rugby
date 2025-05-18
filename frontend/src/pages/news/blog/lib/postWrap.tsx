@@ -42,8 +42,7 @@ export function BlogPage() {
   const markdownContent = marked(post.content);
 
   return (
-    <div>
-      <main className="BlogMain">
+      <section className="BlogMain">
         <Button color={ButtonColor.Secondary} state={ButtonState.Default} isOutlined={false} navigateTo="/news" icon={<Icons variant='chevron-left' />} disabled={false} >Back</Button>
         <h1>{post.title}</h1>
           <div className="row gap-10">
@@ -52,7 +51,6 @@ export function BlogPage() {
             <span>{post.author}</span>
           </div>
         <article className="Markdown" dangerouslySetInnerHTML={{ __html: markdownContent }} />
-      </main>
-    </div>
+      </section>
   );
 }

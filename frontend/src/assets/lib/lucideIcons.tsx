@@ -3,6 +3,7 @@ import {
     ChevronLeft,
     ChevronRight,
     ChevronDown,
+    ChevronUp,
     Menu,
     X,
     Sun,
@@ -11,6 +12,7 @@ import {
     Mail,
     MapPinned,
     Calendar1,
+    Maximize,
     // ...add more from lucide-react or other libraries
   } from "lucide-react";
   
@@ -19,6 +21,7 @@ import {
     chevronLeft: ChevronLeft,
     chevronRight: ChevronRight,
     chevronDown: ChevronDown,
+    chevronUp: ChevronUp,
     menu: Menu,
     close: X,
     sun: Sun,
@@ -27,6 +30,7 @@ import {
     mail: Mail,
     map: MapPinned,
     calendar: Calendar1,
+    maximize: Maximize
     // Custom icons can go here too
   };
   

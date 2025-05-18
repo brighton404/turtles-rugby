@@ -4,6 +4,7 @@ import { BlogPost } from '@/pages/news/blog/lib/types';
 import { marked } from 'marked';
 import { AnimatePresence, motion } from 'framer-motion';
 import Icons from '../lib/icons';
+import { LucideIcons } from '../lib/lucideIcons';
 /* import './SidebarPreview.css'; */ // we'll create this file for styles
 
 interface SidebarPreviewProps {
@@ -15,6 +16,14 @@ interface SidebarPreviewProps {
 const SidebarPreview: React.FC<SidebarPreviewProps> = ({ post, isOpen, onClose }) => {
 
   const sidebarRef = useRef<HTMLDivElement>(null);
+
+      useEffect(() => {
+        if (isOpen) document.body.style.overflow = "hidden";
+        else document.body.style.overflow = "";
+        return () => {
+          document.body.style.overflow = "";
+        };
+      }, [isOpen]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -51,9 +60,11 @@ const SidebarPreview: React.FC<SidebarPreviewProps> = ({ post, isOpen, onClose }
         <div className='carriers'>             
             {/* <button className="sidebar-close-button" onClick={onClose}></button> */}
             <Link to={`/news/${post.id}/${post.title}`} className="read-more">
-            <Icons  variant='expand'/>
+            <span>
+            <LucideIcons.maximize />
+            </span>
         </Link>
-            <button className="sidebar-close-button" onClick={onClose}><Icons variant='close' /></button>
+            <span className="sidebar-close-button" onClick={onClose}><LucideIcons.close /></span>
         </div>
         <div className='column'>
         <h2>{post.title}</h2>

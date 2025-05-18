@@ -1,5 +1,6 @@
 import DropdownTree from "@/assets/lib/dropdownTree";
 import { HeroAbout } from "../../assets/components/hero";
+import MapComponent from "./map";
 
 const data = [
     { label: "About Us", link: "#aboutUs" },
@@ -16,12 +17,10 @@ const data = [
 
 const about: React.FC = () => {
     return (
-     <div className="AboutCanvas">
+     <section className="AboutCanvas">
         <HeroAbout />
-        <div className="About-SectionWrap">
-            <div className="contentTable">
-                <DropdownTree data={data} />
-            </div>
+        <section className="About-SectionWrap">
+            <DropdownTree data={data} />
             <article className="About-Turtles">
                 <div className="page-body">
                     <section id="aboutUs">
@@ -119,7 +118,8 @@ const about: React.FC = () => {
                     <section id="Grounds">
                     <h2>Grounds</h2>
                     <p>The club come into partnership with the management of <a href="https://maps.app.goo.gl/nxXv3aAmoD22Brso8">Town secondary school</a>, where the main pitch would be used as the current home ground of the club.</p>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.4204928655904!2d40.1206177757611!3d-3.245154540906477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x181585670eaaaaab%3A0x191362ecad956429!2sTown%20Secondary%20School%20Malindi!5e0!3m2!1sen!2ske!4v1736693817835!5m2!1sen!2ske" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                        <MapComponent />
+                        {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.4204928655904!2d40.1206177757611!3d-3.245154540906477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x181585670eaaaaab%3A0x191362ecad956429!2sTown%20Secondary%20School%20Malindi!5e0!3m2!1sen!2ske!4v1736693817835!5m2!1sen!2ske" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe> */}
                     </section>
                 </div>
             </article>
@@ -128,8 +128,8 @@ const about: React.FC = () => {
                     <strong>Note</strong> Malindi Rugby Community is a CBO located in Malindi constituency of Kilifi County, Kenya.
                 </blockquote>
             </div>
-        </div>
-     </div>
+        </section>
+     </section>
     );
    }
 export default about;

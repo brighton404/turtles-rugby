@@ -4,12 +4,24 @@ import { getBlogPosts } from './lib/utils';
 import { BlogList } from './lib/lister';
 import { supabase } from '@/utils/supabase';
 import { category } from './lib/types';
+import Button, { ButtonColor, ButtonState } from '@/assets/lib/button';
 
 const Blog: React.FC = () => {
-  const { data: posts, isLoading: loading, error } = useQuery({
+/*   const { data: posts, isLoading: loading, error } = useQuery({
     queryKey: ['blog-posts'],
     queryFn: getBlogPosts,
+  }); */
+  const [page, setPage] = useState(1);
+  const pageSize = 5;
+
+  const { data, error, isLoading: loading, isFetching, } = useQuery({
+    queryKey: ['blog-posts', page],
+    queryFn: () => getBlogPosts(page, pageSize),
+/*     keepPreviousData: true, */
   });
+
+  const posts = data?.data ?? [];
+  const totalPages = data?.totalPages ?? 1;
 
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
@@ -55,9 +67,11 @@ const Blog: React.FC = () => {
       post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       post.content.toLowerCase().includes(searchTerm.toLowerCase());
   
-    const matchesCategory = selectedCategory
-      ? post.c_categories.some((cat: { Newscategories: { id: string; }; }) => cat.Newscategories?.id === String(selectedCategory))
-      : true;
+     const matchesCategory = selectedCategory
+    ? post.c_categories.some(
+        (cat) => cat.Newscategories?.id === String(selectedCategory)
+      )
+    : true;
   
     return matchesSearch && matchesCategory;
   }) ?? [];
@@ -66,11 +80,7 @@ const Blog: React.FC = () => {
     <section className="blog column">
       <div className="row BlogSearch-Wrap">
         <div className="selectStyle column align-y1 content-x1">
-          <select
-            value={selectedCategory || ''}
-            onChange={e => setSelectedCategory(e.target.value || null)}
-
-          >
+          <select value={selectedCategory || ''} onChange={e => setSelectedCategory(e.target.value || null)}>
             <option value=""> All Categories</option>
             {categories.map(category => (
               <option key={category.id} value={category.id}>
@@ -79,22 +89,34 @@ const Blog: React.FC = () => {
             ))}
           </select>
         </div>
-        <input
-          type="text"
-          placeholder="Search posts..."
-          value={searchTerm}
-          onChange={e => setSearchTerm(e.target.value)}
-        />
+        <input type="text" placeholder="Search posts..." value={searchTerm} onChange={e => setSearchTerm(e.target.value)}/>
       </div>
       <div className='categoryMap'>
-      {categories.map(category => ( 
-        <div className='categoryMap-wrapeach' key={category.id}>
-          <div className="categoryDot" style={{ backgroundColor: category.color}}></div>
-          <span className='Text_T_Normal'>{category.name}</span>
-        </div> 
-      ))}
+        {categories.map(category => ( 
+          <div className='categoryMap-wrapeach' key={category.id}>
+            <div className="categoryDot" style={{ backgroundColor: category.color}}></div>
+            <span className='Text_T_Normal'>{category.name}</span>
+          </div> 
+        ))}
       </div>
+      {loading ? (
+        <p>Loading...</p>
+      ) : error ? (
+        <p>Error loading blog posts.</p>
+      ) : (
+        <>
           <BlogList posts={filteredPosts} />
+          <div className='pageHandler'>
+            <div>
+            <Button onClick={() => setPage((p) => Math.max(p - 1, 1))} disabled={page === 1} color={ButtonColor.Secondary} state={ButtonState.Default}>Previous</Button>
+            <Button onClick={() => setPage((p) => Math.min(p + 1, totalPages))} disabled={page === totalPages} color={ButtonColor.Secondary} state={ButtonState.Default}>Next</Button>
+            </div>
+            <span className='text_foreground_dark'>Page {page} of {totalPages}</span>
+          </div>
+
+          {isFetching && <p>Getting Posts</p>}
+        </>
+      )}
     </section>
   );
 };

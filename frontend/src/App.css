@@ -62,6 +62,10 @@ input[type="text"]:focus {
   outline: none;
   outline-width: 0px;
 }
+#main-content {
+	display: flex;
+	flex-direction: column;
+}
 
 /*Header*/
 header { 
@@ -286,7 +290,12 @@ footer .no_truncate {
 .alert-close:hover {
   opacity: 0.7;
 }
-
+.text_foreground_dark {
+  color: white;
+}
+.text_desc_foreground_dark {
+  color: var(--base_60);
+}
 .hero {
   width: 100%;
   height: 100vh;
@@ -412,9 +421,9 @@ footer .no_truncate {
   display: flex;
   flex-direction: row;
   height: max-content;
-  padding-top: var(--Pd_30);
-  padding-left: var(--Pd_50);
-  padding-right: var(--Pd_50);
+  padding-top: var(--Pd_0);
+  padding-left: var(--Pd_0);
+  padding-right: var(--Pd_20);
   padding-bottom: var(--Pd_30);
 
   background-color: var(--base_100);
@@ -464,9 +473,9 @@ footer .no_truncate {
   display: flex;
   min-width: max-content;
   max-width: 400px;
+  padding-left: var(--Pd_40);
   padding-right: var(--Pd_20);
 
-  height: max-content;
   flex-direction: column;
 
   position: sticky;
@@ -513,6 +522,8 @@ footer .no_truncate {
   padding: var(--Pd_10);
   gap: var(--Pd_0);
   border-radius: var(--Cr_5);
+  border-left: 2px solid red;
+  padding-left: var(--Pd_20);
 }
 .pos-sticky {
   position: sticky;
@@ -538,8 +549,10 @@ footer .no_truncate {
   display: flex;
   flex-direction: column;
   background-color: var(--orange_30);
+  border-left: 2px solid red;
   margin: 0px;
   padding: var(--Pd_10);
+  padding-left: var(--Pd_20);
   gap: var(--Pd_0);
   border-radius: var(--Cr_5);
 }
@@ -949,6 +962,21 @@ article#sponsorPage {
   @media only screen and (max-width: 900px){
     padding: var(--Pd_10) var(--Pd_0);
   }
+  .pageHandler {
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+    justify-content: space-between;
+    padding: 10px 20px;
+    padding-left: 0px;
+    gap: 20px;
+    background-color: var(--base_10);
+    border-radius: var(--Cr_8);
+  }
+  .pageHandler > div {
+    display: flex;
+    gap: 20px;
+  }
 }
 .blog .BlogSearch-Wrap svg {
   position: absolute;
@@ -1043,10 +1071,11 @@ article#sponsorPage {
 }
 .ListWrap {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 10px;
   max-width: 100%;
   padding: var(--Pd_0) ;
+  min-height: fit-content;
 }
 .ListWrap .ArticlePropsWrap {
   align-items: center;
@@ -1057,8 +1086,7 @@ article#sponsorPage {
   flex-direction: column;
   align-items: start;
   justify-content: center;
-/*   width: 10vw; */
-  min-width: 200px;
+  min-width: 250px;
   max-width: max-content;
   height: max-content;
   border-radius: var(--Cr_10);
@@ -1080,7 +1108,7 @@ article#sponsorPage {
     border-radius: var(--Cr_6);
    }
   .blogcard-banner {
-    height: 200px;
+    height: 150px;
     border-radius: 6px;
   }
   @media only screen and (max-width: 900px) {
@@ -1263,6 +1291,7 @@ article#sponsorPage {
   padding: 1rem 2rem;
   z-index: 1000;
   overflow-y: auto;
+  scrollbar-width: none;
 
   @media only screen and (max-width: 900px) {
     width: 60vw;
@@ -1430,12 +1459,18 @@ article#sponsorPage {
 .dropdown-tree {
   list-style: none;
   margin: 0;
-  padding: 5px 10px;
+  padding: 5px 0px;
 }
 
 .tree-item {
   cursor: pointer;
-  margin: 4px 0;
+  padding: 4px 4px ;
+  /* margin: 4px 0; */
+}
+.tree-toggle {
+  padding: 0px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .tree-label {
@@ -1451,8 +1486,8 @@ article#sponsorPage {
   border-radius: var(--Cr_5);
 }
 
-.arrow {
-  margin-right: 5px;
+.tree-item .arrow {
+  /* margin-right: 5px; */
   transition: transform 0.3s ease;
 }
 
@@ -3012,6 +3047,9 @@ form {
    .body-color {
     background-color: var(--body-bg);
    }
+  .text_foreground_dark {
+  color: white;
+  }
   a {   color: var(--base_0) }
   header .icon-stroke { stroke: var(--base_0);}
   .icon-fill { fill: var(--base_0);}
@@ -3033,6 +3071,9 @@ form {
 /* end of dropdown menu */
   .dropdown-container {
     border: 1px solid var(--base_80);
+  }
+  .contentTable {
+    background-color: var(--base_96);
   } 
   .tree-label:hover span {
     color: var(--base_0);
@@ -3324,8 +3365,15 @@ form {
    /*Text definition*/
   --body-bg: #fff;
   --body-bg-alt: #141414;
-  a { color: var(--base_100) }
-  .icon-stroke { stroke: var(--base_100);}
+  a, summary { color: var(--base_100) }
+  details { color: var(--base_60) }
+  .text_foreground_dark {
+  color: white;
+  }
+  .text_desc_foreground_dark {
+    color: var(--base_60);
+  }
+    .icon-stroke { stroke: var(--base_100);}
   .icon-fill { fill: var(--base_100);}
   .hero .Social-links .link span { font-weight: 400; color: var(--base_80)}
   button.button--secondary .icon-stroke { stroke: var(--base_0);}
@@ -4085,8 +4133,6 @@ footer a {
   border-radius: var(--Cr_5);
 }
 .About-SectionWrap .About-Turtles blockquote {
-  display: flex;
-  flex-direction: column;
   background-color: var(--orange_30);
   margin: 0px;
   padding: var(--Pd_10);
@@ -4189,7 +4235,6 @@ footer a {
 .blog {
   max-width: 100%;
   display: flex;
-  align-items: center;
 }
 .blog input { width: 45vw; }
 .blog select {
@@ -4239,7 +4284,7 @@ footer a {
     transition: all 0.3s ease-in-out;
    }
   .blogcard-banner {
-    height: 200px;
+    height: 150px;
     border-radius: 6px;
   }
   @media only screen and (max-width: 900px) {
