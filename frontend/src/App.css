@@ -3367,6 +3367,9 @@ form {
   --body-bg-alt: #141414;
   a, summary { color: var(--base_100) }
   details { color: var(--base_60) }
+  #map {
+    span { color: black}
+  }
   .text_foreground_dark {
   color: white;
   }
