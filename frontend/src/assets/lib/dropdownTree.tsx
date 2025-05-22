@@ -53,8 +53,8 @@ const DropdownTree: React.FC<DropdownTreeProps> = ({ data }) => {
           </a>
         ) : (
           <>
-            <button className="tree-toggle" onClick={toggleOpen} aria-expanded={isOpen} aria-controls={submenuId}>
-              {node.label}
+            <button className="tree-toggle button--optimal" onClick={toggleOpen} aria-expanded={isOpen} aria-controls={submenuId}>
+              <span>{node.label}</span>
               <LucideIcons.chevronRight aria-hidden="true" className={`arrow ${isOpen ? "open" : ""}`}/>
             </button>
             {hasChildren && isOpen && (

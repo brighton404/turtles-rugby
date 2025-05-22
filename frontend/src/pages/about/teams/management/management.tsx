@@ -80,9 +80,7 @@ const ClubManagement: React.FC = ({ }) => {
             ))}
       </div>
       <div className="mgt-content">
-        <div className="contentTable">
-                <DropdownTree data={data} />
-        </div>
+        <DropdownTree data={data} />
         <div className="mgt-pos-wrap">
           <div className="mgt-child">
             <div>

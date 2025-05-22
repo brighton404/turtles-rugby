@@ -2,18 +2,26 @@ import React from "react";
 import { Event } from "./eventTypes";
 import { ButtonColor, ButtonState } from "@/assets/lib/actionButton";
 import Button from "@/assets/lib/button";
+import { useNavigate } from "react-router-dom";
 
 interface EventCardProps {
     event: Event;
 }
 const EventCard: React.FC<EventCardProps> = ({ event }) => {
+    const navigate = useNavigate();
     const now = new Date();
     const eventHasEnded = new Date(event.end) < now;
+    const FreeEvent = event.ticket.toLowerCase().includes("free");
+
 
     const Ticket = () => {
         if (!eventHasEnded) {
+        if (FreeEvent) {
+            navigate("");
+        } else {
             window.location.href = `${event.ticket}`;
         }
+    }
     };
     const styles = {
         background: {
@@ -67,7 +75,7 @@ const EventCard: React.FC<EventCardProps> = ({ event }) => {
                         onClick={Ticket}
                         disabled={false}
                     >
-                        Get tickets
+                        {FreeEvent ? "Free Event" : "Paid Event"}
                     </Button>
                  }
                  </div>

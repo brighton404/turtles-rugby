@@ -67,6 +67,7 @@ export default function CardTeams() {
 export const MobileCardTeams = () =>  {
     const navigate = useNavigate();
     const { closeDropdown } = useDropdown();
+    const onAgeGrade = () => { navigate('/age-grade')};
     const onSeniorMen = () => { navigate('/mens-team')};
     const onSeniorWoMen = () => { navigate('/womens-team');};
     const onManagement = () => { navigate('/management')};
@@ -79,6 +80,11 @@ export const MobileCardTeams = () =>  {
         <div className="sidebarDropNav column gap-20">
             <div className='column gap-10'>
                 <span className='bold Text_M_Normal'>Teams</span>
+                <div className="link"onClick={() => { onAgeGrade(); closeSidebar(); closeDropdown() }}>
+                    <div className="inner">
+                        <span>Age Grade</span> <Icons variant="chevron-right"/>
+                    </div>
+                </div>
                 <div className="link"onClick={() => { onSeniorMen(); closeSidebar(); closeDropdown() }}>
                     <div className="inner">
                         <span>Senior Men's</span> <Icons variant="chevron-right"/>
